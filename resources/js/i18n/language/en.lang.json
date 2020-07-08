@@ -1,0 +1,93 @@
+{
+    "main": {
+        "welcome": "welcome ",
+        "english": "English",
+        "arabic": "Arabic",
+        "login": "Login",
+        "imageupload": "Image Uploader"
+    },
+    "leftbar": {
+        "dashboard": "Dashboard",
+        "overview": "Overview",
+        "services": "Services",
+        "user": "User",
+        "userlist": "User List",
+        "account": "Account",
+      
+        "invoice": "Invoices",
+       
+        "bussinessdocument": "Business Doc",
+        
+        "setting": "Setting",
+        "profile": "Profile",
+        
+
+        "vendor": "Vendor",
+        "lead": "Lead",
+        "voucher": "Voucher",
+        "shop": "Shop",
+        "product": "Product",
+        "category": "Category",
+        "branch": "Branch",
+        "page": "Page Setting",
+        "report": "Report",
+        "order": "Order",
+        "tablebooking": "Table Booking",
+        "messbooking": "Mess Booking"
+    },
+    "account":{
+        "ledgerhead": "Ledger Head",
+        "ledgerlist": "Ledger List"
+    },
+    "invoice":{
+        "invoicelist": "Invoice List",
+        "addinvoice":"Add Invoice",
+        "editinvoice":"Edit Invoice",
+        "twyla": "Twyla List",
+        "ticket":"Ticket",
+        "detail":"Ticket Detail",
+        "subscription": "Subscriptions"
+    },
+    "bussinessdocument":{
+        "doclist": "Document List"
+    },
+    "services":{
+        "webhosting": "Web Hosting",
+        "wordpresshosting": "WordPress Hosting",
+        "servers": "Servers "
+    },
+    "setting":{
+        "profile": "Profile"
+    },
+    "dashboard": {
+        "view": "Today's View",
+        "totalview": "Total View",
+        "pendingorder": "Pending Order",
+        "deliverorder": "Total Delivered",
+        "product": "Products",
+        "newcustomer": "New Customer",
+        "newinvoice": "New Invoices",
+        "renewalinvoive": "Invoice Expiry",
+        "ticket": "New Ticket",
+        "monthlyearning": "Monthly Earning",
+        "salebycountry": "Sale By Country",
+        "client": "Clients",
+        "newinvocies": "New Invoices"
+
+    },
+  
+  
+    "user": {
+        "title": "User",
+        "list": "User List",
+        "usertype": "User Type",
+        "password": "Password",
+        "deliveryagent": "Delivery Agent List",
+        "customerlist": "Customer List"
+    }
+  
+   
+ 
+
+
+} 
