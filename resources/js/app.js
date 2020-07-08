@@ -11,7 +11,7 @@ require('es6-object-assign').polyfill();
 require('es6-promise').polyfill();
 router.afterEach((to, from) => {
     Vue.nextTick(() => {
-        document.title = to.meta.title ? to.meta.title : 'SimplistQ.qa';
+        document.title = to.meta.title ? to.meta.title : 'Emicc';
     });
 })
 /**

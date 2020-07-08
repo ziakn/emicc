@@ -44411,9 +44411,7 @@ var render = function() {
         [
           _c("v-app-bar-nav-icon", { on: { click: _vm.drawerTrigger } }),
           _vm._v(" "),
-          _c("span", { staticClass: "hidden-sm-and-down" }, [
-            _vm._v("SimplistQ Solutions")
-          ])
+          _c("span", { staticClass: "hidden-sm-and-down" }, [_vm._v("EMICC")])
         ],
         1
       ),
@@ -107236,7 +107234,7 @@ __webpack_require__(/*! es6-promise */ "./node_modules/es6-promise/dist/es6-prom
 
 _router__WEBPACK_IMPORTED_MODULE_3__["default"].afterEach(function (to, from) {
   Vue.nextTick(function () {
-    document.title = to.meta.title ? to.meta.title : 'SimplistQ.qa';
+    document.title = to.meta.title ? to.meta.title : 'Emicc';
   });
 });
 /**
@@ -108249,7 +108247,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
 /* harmony default export */ __webpack_exports__["default"] = (new vue_router__WEBPACK_IMPORTED_MODULE_1__["default"]({
   mode: 'history',
   routes: [{
-    path: '/',
+    path: '/user',
     name: 'user',
     component: _components_dashboard_user_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     meta: {

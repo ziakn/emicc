@@ -23,7 +23,7 @@ export default new Router({
     mode: 'history',
     routes: [
         {
-            path: '/',
+            path: '/user',
             name: 'user',
             component: user,
             meta: {

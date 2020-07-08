@@ -2,7 +2,7 @@
   <v-app-bar :clipped-left="$vuetify.breakpoint.lgAndUp" app >
     <v-toolbar-title style="width: 300px" class="ml-0 pl-4">
       <v-app-bar-nav-icon @click="drawerTrigger"></v-app-bar-nav-icon>
-      <span class="hidden-sm-and-down">SimplistQ Solutions</span>
+      <span class="hidden-sm-and-down">EMICC</span>
     </v-toolbar-title>
     <div class="flex-grow-1"></div>
     <v-btn icon>
