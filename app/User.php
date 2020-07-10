@@ -15,10 +15,15 @@ class User extends Authenticatable
      *
      * @var array
      */
-    protected $fillable = [
-        'name', 'email', 'password',
+    protected $guarded = [
     ];
 
+
+      
+    public function user_type()
+    {
+       return $this->belongsTo('App\UserType','type');
+    } 
     /**
      * The attributes that should be hidden for arrays.
      *

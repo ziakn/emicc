@@ -2359,34 +2359,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -44409,7 +44381,14 @@ var render = function() {
         "v-toolbar-title",
         { staticClass: "ml-0 pl-4", staticStyle: { width: "300px" } },
         [
-          _c("v-app-bar-nav-icon", { on: { click: _vm.drawerTrigger } }),
+          _c(
+            "v-app-bar-nav-icon",
+            { on: { click: _vm.drawerTrigger } },
+            [
+              _c("v-icon", { attrs: { color: "primary" } }, [_vm._v("reorder")])
+            ],
+            1
+          ),
           _vm._v(" "),
           _c("span", { staticClass: "hidden-sm-and-down" }, [_vm._v("EMICC")])
         ],
@@ -44421,21 +44400,32 @@ var render = function() {
       _c(
         "v-btn",
         { attrs: { icon: "" } },
-        [_c("v-icon", [_vm._v("mdi-apps")])],
+        [_c("v-icon", { attrs: { color: "primary" } }, [_vm._v("toc")])],
         1
       ),
       _vm._v(" "),
       _c(
         "v-btn",
         { attrs: { icon: "" } },
-        [_c("v-icon", [_vm._v("mdi-bell")])],
+        [_c("v-icon", [_vm._v("notification_important")])],
         1
       ),
       _vm._v(" "),
       _c(
         "v-btn",
         { attrs: { icon: "", large: "" } },
-        [_c("v-avatar", { attrs: { size: "32px", item: "" } })],
+        [
+          _c(
+            "v-avatar",
+            { attrs: { size: "32px", item: "" } },
+            [
+              _c("v-img", {
+                attrs: { src: _vm.dataUser.image, alt: _vm.dataUser.name }
+              })
+            ],
+            1
+          )
+        ],
         1
       )
     ],
@@ -44940,142 +44930,6 @@ var render = function() {
                                       1
                                     )
                                   ])
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-row",
-                    [
-                      _c(
-                        "v-col",
-                        { attrs: { lg: "12" } },
-                        [
-                          _c(
-                            "v-card",
-                            [
-                              _c("v-card-title", [
-                                _c(
-                                  "span",
-                                  {
-                                    staticClass: "title font-weight-light",
-                                    attrs: { dark: "" }
-                                  },
-                                  [_vm._v("Comapany Profile")]
-                                )
-                              ]),
-                              _vm._v(" "),
-                              _c(
-                                "v-card-text",
-                                [
-                                  _c(
-                                    "v-row",
-                                    [
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "Company",
-                                              required: "",
-                                              disabled: "",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.dataList.company_name,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.dataList,
-                                                  "company_name",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "dataList.company_name"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "Contact",
-                                              required: "",
-                                              disabled: "",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.dataList.company_contact,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.dataList,
-                                                  "company_contact",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "dataList.company_contact"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: {
-                                            sm: "12",
-                                            md: "12",
-                                            lg: "12"
-                                          }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "Address",
-                                              disabled: "",
-                                              required: "",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.dataList.address,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.dataList,
-                                                  "address",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "dataList.address"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
                                 ],
                                 1
                               )
@@ -108190,7 +108044,6 @@ __webpack_require__.r(__webpack_exports__);
 
 
  // Ensure you are using css-loader
-// import '@mdi/font/css/materialdesignicons.css' // Ensure you are using css-loader
 
 vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vuetify__WEBPACK_IMPORTED_MODULE_1___default.a);
 var opts = {

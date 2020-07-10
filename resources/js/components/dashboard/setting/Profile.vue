@@ -54,34 +54,6 @@
               </v-card>
             </v-col>
           </v-row>
-          <v-row>
-            <v-col lg="12">
-              <v-card>
-                <v-card-title>
-                  <span class="title font-weight-light" dark>Comapany Profile</span>
-                </v-card-title>
-                <v-card-text>
-                  <v-row>
-                    <v-col sm="12" md="12" lg="6">
-                      <v-text-field
-                        v-model="dataList.company_name"
-                        label="Company"
-                        required
-                        disabled
-                        filled
-                      ></v-text-field>
-                    </v-col>
-                    <v-col sm="12" md="12" lg="6">
-                      <v-text-field v-model="dataList.company_contact" label="Contact" required disabled filled></v-text-field>
-                    </v-col>
-                    <v-col sm="12" md="12" lg="12">
-                      <v-text-field v-model="dataList.address" label="Address" disabled required filled></v-text-field>
-                    </v-col>
-                  </v-row>
-                </v-card-text>
-              </v-card>
-            </v-col>
-          </v-row>
         </v-col>
 
         <v-col sm="12" md="4" lg="4">
