@@ -20,8 +20,15 @@ class UserController extends Controller
     public function index()
     {
         $auth=Auth::user();
-        $data=User::with('user_type')
-        ->get();
+        if($auth->type==1)
+        {
+            $data=User::with('user_type')->get();
+        }
+        if($auth->type==2)
+        {
+            $data=User::where('admin_id',$auth->id)->with('user_type')->get();
+        }
+       
         return $data;
     }
 

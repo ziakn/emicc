@@ -14,11 +14,7 @@ router.afterEach((to, from) => {
         document.title = to.meta.title ? to.meta.title : 'Emicc';
     });
 })
-/**
- * Next, we will create a fresh Vue application instance and attach it to
- * the page. Then, you may begin adding components to this application
- * or customize the JavaScript scaffolding to fit your unique needs.
- */
+
 import router from './router'
 import store from './store'
 Vue.component('z-dashboard', require('./components/ExampleComponent.vue').default);

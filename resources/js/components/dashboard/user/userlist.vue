@@ -262,7 +262,7 @@ export default {
 		dataStatus: [
 			{ name: "Active", value: 1 },
 			{ name: "Disable", value: 0 }
-		]
+		],
 	}),
 
 props: {

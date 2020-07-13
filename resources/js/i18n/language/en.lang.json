@@ -32,8 +32,8 @@
         "page": "Page Setting",
         "report": "Report",
         "order": "Order",
-        "tablebooking": "Table Booking",
-        "messbooking": "Mess Booking"
+        "useract": "Act",
+        "enroll": "Enroll"
     },
     "account":{
         "ledgerhead": "Ledger Head",
@@ -84,6 +84,12 @@
         "password": "Password",
         "deliveryagent": "Delivery Agent List",
         "customerlist": "Customer List"
+    },
+    "enroll":{
+        "userenroll": "User List"
+    },
+    "useract":{
+        "list": "Act List"
     }
   
    

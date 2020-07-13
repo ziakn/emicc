@@ -18,8 +18,14 @@ class UserTypeController extends Controller
     public function index()
     {
         $auth=Auth::user();
-        $data=UserType::orderBy('id', 'DESC')
-        ->get();
+        if($auth->type==1)
+        {
+            $data=UserType::orderBy('id', 'DESC')->get();
+        }
+        if($auth->type==2)
+        {
+            $data=UserType::wherein('id', [3])->get();
+        }
         return $data;
     }
 
