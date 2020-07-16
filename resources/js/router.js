@@ -97,11 +97,9 @@ export default new Router({
                         title: i18n.t('message.enroll.userenroll'),
                         type: mentorOnly,
                         status: true,
-        
                     }
                 },
             ]
-
         },
         {
             path: '/useract',
