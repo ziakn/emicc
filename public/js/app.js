@@ -4174,6 +4174,35 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -47179,7 +47208,7 @@ var render = function() {
                       ]),
                       _vm._v(" "),
                       _c("v-tab", { attrs: { href: "#tab-3" } }, [
-                        _vm._v("\n\t\t\t\t\t\tDays\n\t\t\t\t\t")
+                        _vm._v("\n\t\t\t\t\t\tTake Actions\n\t\t\t\t\t")
                       ])
                     ],
                     1
@@ -47227,7 +47256,7 @@ var render = function() {
                                   _c(
                                     "span",
                                     { staticClass: "title font-weight-light" },
-                                    [_vm._v("Specification")]
+                                    [_vm._v("Article")]
                                   )
                                 ],
                                 1
@@ -47243,23 +47272,15 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-textarea", {
                                             attrs: {
                                               items: _vm.dataCategory,
                                               "item-text": "name",
                                               "item-value": "id",
-                                              rules: [
-                                                function(v) {
-                                                  return (
-                                                    !!v ||
-                                                    "Category  is required"
-                                                  )
-                                                }
-                                              ],
-                                              label: "Category *",
+                                              label: "A",
                                               filled: ""
                                             },
                                             model: {
@@ -47282,15 +47303,15 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-textarea", {
                                             attrs: {
                                               items: _vm.dataBedRoom,
                                               "item-value": "value",
                                               "item-text": "name",
-                                              label: "No. of Bedrooms",
+                                              label: "B",
                                               filled: ""
                                             },
                                             model: {
@@ -47312,13 +47333,13 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-textarea", {
                                             attrs: {
                                               items: _vm.dataBathroom,
-                                              label: "No. of Washroom",
+                                              label: "C",
                                               filled: ""
                                             },
                                             model: {
@@ -47331,67 +47352,6 @@ var render = function() {
                                                 )
                                               },
                                               expression: "formValue.bathroom"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "No. of Parking Space",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-select", {
-                                            attrs: {
-                                              items: _vm.dataFurnished,
-                                              label: "Furnished Type",
-                                              "item-value": "value",
-                                              "item-text": "name",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.furnish_type,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "furnish_type",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.furnish_type"
                                             }
                                           })
                                         ],
@@ -47440,7 +47400,7 @@ var render = function() {
                                   _c(
                                     "span",
                                     { staticClass: "title font-weight-light" },
-                                    [_vm._v("Specification")]
+                                    [_vm._v("Comunicate")]
                                   )
                                 ],
                                 1
@@ -47456,82 +47416,13 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
-                                          _c("v-select", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              rules: [
-                                                function(v) {
-                                                  return (
-                                                    !!v ||
-                                                    "Category  is required"
-                                                  )
-                                                }
-                                              ],
-                                              label: "Category *",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-select", {
-                                            attrs: {
-                                              items: _vm.dataBedRoom,
-                                              "item-value": "value",
-                                              "item-text": "name",
-                                              label: "No. of Bedrooms",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.room,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "room",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.room"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-select", {
+                                          _c("v-text-field", {
                                             attrs: {
                                               items: _vm.dataBathroom,
-                                              label: "No. of Washroom",
+                                              label: "A1",
                                               filled: ""
                                             },
                                             model: {
@@ -47553,12 +47444,12 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
                                           _c("v-text-field", {
                                             attrs: {
-                                              label: "No. of Parking Space",
+                                              label: "A2",
                                               type: "number",
                                               filled: ""
                                             },
@@ -47583,28 +47474,203 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-text-field", {
                                             attrs: {
-                                              items: _vm.dataFurnished,
-                                              label: "Furnished Type",
-                                              "item-value": "value",
-                                              "item-text": "name",
+                                              label: "A3",
+                                              type: "number",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.furnish_type,
+                                              value:
+                                                _vm.formValue.parking_space,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.formValue,
-                                                  "furnish_type",
+                                                  "parking_space",
                                                   $$v
                                                 )
                                               },
                                               expression:
-                                                "formValue.furnish_type"
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              items: _vm.dataBathroom,
+                                              label: "B1",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.bathroom,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "bathroom",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.bathroom"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "B2",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "B3",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              items: _vm.dataBathroom,
+                                              label: "C1",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.bathroom,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "bathroom",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.bathroom"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "C2",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "C3",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
                                             }
                                           })
                                         ],
@@ -47653,7 +47719,7 @@ var render = function() {
                                   _c(
                                     "span",
                                     { staticClass: "title font-weight-light" },
-                                    [_vm._v("Specification")]
+                                    [_vm._v("Take Action")]
                                   )
                                 ],
                                 1
@@ -47669,23 +47735,15 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "4" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-textarea", {
                                             attrs: {
                                               items: _vm.dataCategory,
                                               "item-text": "name",
                                               "item-value": "id",
-                                              rules: [
-                                                function(v) {
-                                                  return (
-                                                    !!v ||
-                                                    "Category  is required"
-                                                  )
-                                                }
-                                              ],
-                                              label: "Category *",
+                                              label: "Saturday",
                                               filled: ""
                                             },
                                             model: {
@@ -47708,85 +47766,28 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "4" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataBedRoom,
-                                              "item-value": "value",
+                                              items: _vm.dataCategory,
                                               "item-text": "name",
-                                              label: "No. of Bedrooms",
+                                              "item-value": "id",
+                                              label: "Sunday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.room,
+                                              value: _vm.formValue.category_id,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.formValue,
-                                                  "room",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.room"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-select", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "No. of Washroom",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.bathroom,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.bathroom"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "No. of Parking Space",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  "category_id",
                                                   $$v
                                                 )
                                               },
                                               expression:
-                                                "formValue.parking_space"
+                                                "formValue.category_id"
                                             }
                                           })
                                         ],
@@ -47796,28 +47797,152 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "6" }
+                                          attrs: { sm: "12", md: "12", lg: "4" }
                                         },
                                         [
-                                          _c("v-select", {
+                                          _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataFurnished,
-                                              label: "Furnished Type",
-                                              "item-value": "value",
+                                              items: _vm.dataCategory,
                                               "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Monday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.furnish_type,
+                                              value: _vm.formValue.category_id,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.formValue,
-                                                  "furnish_type",
+                                                  "category_id",
                                                   $$v
                                                 )
                                               },
                                               expression:
-                                                "formValue.furnish_type"
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Tuesday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Wednesday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Thursady",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Friday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
                                             }
                                           })
                                         ],

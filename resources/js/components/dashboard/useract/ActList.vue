@@ -19,7 +19,7 @@
 						Comunicate
 					</v-tab>
 					<v-tab href="#tab-3">
-						Days
+						Take Actions
 					</v-tab>
 					</v-tabs>
 					<v-tabs-items v-model="tab">
@@ -29,60 +29,40 @@
 									<v-icon large left color="blue" >
 										dashboard
 									</v-icon>
-									<span class="title font-weight-light">Specification</span>
+									<span class="title font-weight-light">Article</span>
 								</v-card-title>
 								<v-card-text>
 									<v-row justify="center">
-                                        <v-col sm="12" md="12" lg="6" >
-											<v-select
+                                        <v-col sm="12" md="12" lg="8" >
+											<v-textarea
 												v-model="formValue.category_id"
 												:items="dataCategory"
 												item-text="name"
 												item-value="id"
-												:rules="[v => !!v || 'Category  is required']"
-												label="Category *"
+												label="A"
 												
 												filled
-											></v-select>
+											></v-textarea>
 										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
+										<v-col sm="12" md="12" lg="8" >
+											<v-textarea
 												v-model="formValue.room"
 												:items="dataBedRoom"
 												item-value="value"
 												item-text="name"
-												label="No. of Bedrooms"
+												label="B"
 												
 												filled
-											></v-select>
+											></v-textarea>
 										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
+										<v-col sm="12" md="12" lg="8" >
+											<v-textarea
 												v-model="formValue.bathroom"
 												:items="dataBathroom"								
-												label="No. of Washroom"
+												label="C"
 												filled
-											></v-select>
+											></v-textarea>
 										</v-col>	
-										<v-col sm="12" md="12" lg="6" >
-											<v-text-field
-													v-model="formValue.parking_space"
-													label="No. of Parking Space"
-													type="number"						
-													filled
-											></v-text-field>
-										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.furnish_type"
-												:items="dataFurnished"
-												label="Furnished Type"
-												item-value="value"
-												item-text="name"												
-												
-												filled
-											></v-select>
-										</v-col>
 									</v-row>
 								</v-card-text>
 							</v-card>
@@ -93,59 +73,81 @@
 									<v-icon large left color="blue" >
 										dashboard
 									</v-icon>
-									<span class="title font-weight-light">Specification</span>
+									<span class="title font-weight-light">Comunicate</span>
 								</v-card-title>
 								<v-card-text>
 									<v-row justify="center">
-                                        <v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
-												:rules="[v => !!v || 'Category  is required']"
-												label="Category *"
-												
-												filled
-											></v-select>
-										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.room"
-												:items="dataBedRoom"
-												item-value="value"
-												item-text="name"
-												label="No. of Bedrooms"
-												
-												filled
-											></v-select>
-										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
 												v-model="formValue.bathroom"
 												:items="dataBathroom"								
-												label="No. of Washroom"
+												label="A1"
 												filled
-											></v-select>
+											></v-text-field>
 										</v-col>	
-										<v-col sm="12" md="12" lg="6" >
+										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
 													v-model="formValue.parking_space"
-													label="No. of Parking Space"
+													label="A2"
 													type="number"						
 													filled
 											></v-text-field>
 										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.furnish_type"
-												:items="dataFurnished"
-												label="Furnished Type"
-												item-value="value"
-												item-text="name"												
-												
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+													v-model="formValue.parking_space"
+													label="A3"
+													type="number"						
+													filled
+											></v-text-field>
+										</v-col>
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+												v-model="formValue.bathroom"
+												:items="dataBathroom"								
+												label="B1"
 												filled
-											></v-select>
+											></v-text-field>
+										</v-col>	
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+													v-model="formValue.parking_space"
+													label="B2"
+													type="number"						
+													filled
+											></v-text-field>
+										</v-col>
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+													v-model="formValue.parking_space"
+													label="B3"
+													type="number"						
+													filled
+											></v-text-field>
+										</v-col>
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+												v-model="formValue.bathroom"
+												:items="dataBathroom"								
+												label="C1"
+												filled
+											></v-text-field>
+										</v-col>	
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+													v-model="formValue.parking_space"
+													label="C2"
+													type="number"						
+													filled
+											></v-text-field>
+										</v-col>
+										<v-col sm="12" md="12" lg="8" >
+											<v-text-field
+													v-model="formValue.parking_space"
+													label="C3"
+													type="number"						
+													filled
+											></v-text-field>
 										</v-col>
 									</v-row>
 								</v-card-text>
@@ -157,59 +159,86 @@
 									<v-icon large left color="blue" >
 										dashboard
 									</v-icon>
-									<span class="title font-weight-light">Specification</span>
+									<span class="title font-weight-light">Take Action</span>
 								</v-card-title>
 								<v-card-text>
 									<v-row justify="center">
-                                        <v-col sm="12" md="12" lg="6" >
-											<v-select
+                                        <v-col sm="12" md="12" lg="4" >
+											<v-textarea
 												v-model="formValue.category_id"
 												:items="dataCategory"
 												item-text="name"
 												item-value="id"
-												:rules="[v => !!v || 'Category  is required']"
-												label="Category *"
+												label="Saturday"
 												
 												filled
-											></v-select>
+											></v-textarea>
 										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.room"
-												:items="dataBedRoom"
-												item-value="value"
+									 <v-col sm="12" md="12" lg="4" >
+											<v-textarea
+												v-model="formValue.category_id"
+												:items="dataCategory"
 												item-text="name"
-												label="No. of Bedrooms"
+												item-value="id"
+												label="Sunday"
 												
 												filled
-											></v-select>
+											></v-textarea>
 										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.bathroom"
-												:items="dataBathroom"								
-												label="No. of Washroom"
+									 <v-col sm="12" md="12" lg="4" >
+											<v-textarea
+												v-model="formValue.category_id"
+												:items="dataCategory"
+												item-text="name"
+												item-value="id"
+												label="Monday"
+												
 												filled
-											></v-select>
+											></v-textarea>
 										</v-col>	
-										<v-col sm="12" md="12" lg="6" >
-											<v-text-field
-													v-model="formValue.parking_space"
-													label="No. of Parking Space"
-													type="number"						
-													filled
-											></v-text-field>
-										</v-col>
-										<v-col sm="12" md="12" lg="6" >
-											<v-select
-												v-model="formValue.furnish_type"
-												:items="dataFurnished"
-												label="Furnished Type"
-												item-value="value"
-												item-text="name"												
+										 <v-col sm="12" md="12" lg="4" >
+											<v-textarea
+												v-model="formValue.category_id"
+												:items="dataCategory"
+												item-text="name"
+												item-value="id"
+												label="Tuesday"
 												
 												filled
-											></v-select>
+											></v-textarea>
+										</v-col>
+									 <v-col sm="12" md="12" lg="4" >
+											<v-textarea
+												v-model="formValue.category_id"
+												:items="dataCategory"
+												item-text="name"
+												item-value="id"
+												label="Wednesday"
+												
+												filled
+											></v-textarea>
+										</v-col>
+									 <v-col sm="12" md="12" lg="4" >
+											<v-textarea
+												v-model="formValue.category_id"
+												:items="dataCategory"
+												item-text="name"
+												item-value="id"
+												label="Thursady"
+												
+												filled
+											></v-textarea>
+										</v-col>
+										 <v-col sm="12" md="12" lg="4" >
+											<v-textarea
+												v-model="formValue.category_id"
+												:items="dataCategory"
+												item-text="name"
+												item-value="id"
+												label="Friday"
+												
+												filled
+											></v-textarea>
 										</v-col>
 									</v-row>
 								</v-card-text>
