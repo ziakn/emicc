@@ -16,9 +16,11 @@ class CreateArticulatsTable extends Migration
         Schema::create('articulats', function (Blueprint $table) {
             $table->id();
             $table->integer('user_id');
+            $table->integer('articulate_id');
             $table->text('arta')->Nullable();
             $table->text('artb')->Nullable();
             $table->text('artc')->Nullable();
+            $table->date('date')->Nullable();
             $table->tinyInteger('status')->default(1)->comment('0-InActive,1-Active,2-Deleted');
             $table->softDeletes();
             $table->timestamps();

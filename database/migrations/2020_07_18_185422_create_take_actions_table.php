@@ -15,6 +15,17 @@ class CreateTakeActionsTable extends Migration
     {
         Schema::create('take_actions', function (Blueprint $table) {
             $table->id();
+            $table->integer('user_id');
+            $table->integer('articulate_id');
+            $table->text('saturday')->Nullable();
+            $table->text('sunday')->Nullable();
+            $table->text('monday')->Nullable();
+            $table->text('tuesday')->Nullable();
+            $table->text('wednesday')->Nullable();
+            $table->text('thursday')->Nullable();
+            $table->text('friday')->Nullable();
+            $table->date('date')->Nullable();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
