@@ -4471,6 +4471,586 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/AddList.vue?vue&type=script&lang=js&":
+/*!************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/useract/AddList.vue?vue&type=script&lang=js& ***!
+  \************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {},
+  data: function data() {
+    var _ref;
+
+    return _ref = {
+      loadingdialog: false,
+      menu2: false,
+      loadingselectimage: false
+    }, _defineProperty(_ref, "loadingdialog", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "text", "Your Total Images Size is more than 2 Mb Plz Compress or resize..."), _defineProperty(_ref, "text1", "Please select image for uploading"), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "formValue", {
+      room: '',
+      bathroom: '',
+      parking_space: '',
+      furnish_type: '',
+      rent_type: '',
+      service_charges: '',
+      payment_type: '',
+      availability: '',
+      category_id: '',
+      title: '',
+      description: '',
+      price: 0,
+      meta_keyword: '',
+      meta_description: '',
+      meta_title: '',
+      property_location: '',
+      street_name: '',
+      street_no: '',
+      building_no: '',
+      data_percentage: '',
+      percentvalue: ''
+    }), _defineProperty(_ref, "dataAmenities", []), _defineProperty(_ref, "dataBedRoom", [{
+      name: 'Studio',
+      value: 'studio'
+    }, {
+      name: '1',
+      value: '1'
+    }, {
+      name: '2',
+      value: '2'
+    }, {
+      name: '3',
+      value: '3'
+    }, {
+      name: '4',
+      value: '4'
+    }, {
+      name: '5',
+      value: '5'
+    }, {
+      name: '6',
+      value: '6'
+    }, {
+      name: '7',
+      value: '7'
+    }, {
+      name: '8',
+      value: '8'
+    }, {
+      name: '9',
+      value: '9'
+    }, {
+      name: '10',
+      value: '10'
+    }, {
+      name: '11',
+      value: '11'
+    }, {
+      name: '12',
+      value: '12'
+    }, {
+      name: '13',
+      value: '13'
+    }, {
+      name: '14',
+      value: '14'
+    }, {
+      name: '15',
+      value: '15'
+    }]), _defineProperty(_ref, "dataBathroom", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20]), _defineProperty(_ref, "dataFurnished", ['Furnished', 'Un-Furnished', 'Semi-Furnished']), _defineProperty(_ref, "dataRentType", ['Daily', 'Weekly', 'Monthly', 'Yearly']), _defineProperty(_ref, "dataPercentage", ['Days', 'Percentage(%)']), _defineProperty(_ref, "dataCategory", []), _defineProperty(_ref, "paymentType", [{
+      name: 'Cheque',
+      value: 'cheque'
+    }, {
+      name: 'Cash',
+      value: 'cash'
+    }]), _defineProperty(_ref, "dataAvailability", [{
+      name: 'Available',
+      value: 'available'
+    }, {
+      name: 'Not Available',
+      value: 'notavailable'
+    }]), _defineProperty(_ref, "absolute", true), _defineProperty(_ref, "editedIndex", null), _defineProperty(_ref, "tab", null), _defineProperty(_ref, "files", []), _defineProperty(_ref, "amenities", []), _ref;
+  },
+  computed: {
+    accept: function accept() {
+      if (this.formValue.title && this.formValue.description && this.formValue.category_id && this.formValue.price && this.formValue.property_location) {
+        return true;
+      } else {
+        return false;
+      }
+    }
+  },
+  watch: {
+    'formValue.title': function formValueTitle(data) {
+      this.formValue.meta_title = data;
+    },
+    'formValue.description': function formValueDescription(data) {
+      this.formValue.meta_description = data;
+    }
+  },
+  created: function created() {
+    this.initialize();
+  },
+  methods: {
+    seoValue: function seoValue(item) {
+      this.formValue.meta_description = item.meta_description;
+      this.formValue.meta_title = item.meta_title;
+      this.formValue.meta_keyword = item.meta_keyword;
+    },
+    locationValue: function locationValue(item) {
+      this.formValue.property_location = item.property_location;
+      this.formValue.street_name = item.street_name;
+      this.formValue.street_no = item.street_no;
+      this.formValue.building_no = item.building_no;
+    },
+    filesValue: function filesValue(item) {
+      this.files = item;
+    },
+    initialize: function initialize() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _yield$axios, data, _yield$axios2, _data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _this.start();
+
+                _context.prev = 1;
+                _context.next = 4;
+                return axios({
+                  method: "get",
+                  url: "/app/category"
+                });
+
+              case 4:
+                _yield$axios = _context.sent;
+                data = _yield$axios.data;
+                _this.dataCategory = data;
+                _context.next = 12;
+                break;
+
+              case 9:
+                _context.prev = 9;
+                _context.t0 = _context["catch"](1);
+
+                _this.fail();
+
+              case 12:
+                _context.prev = 12;
+                _context.next = 15;
+                return axios({
+                  method: "get",
+                  url: "/app/amenity"
+                });
+
+              case 15:
+                _yield$axios2 = _context.sent;
+                _data = _yield$axios2.data;
+                _this.dataAmenities = _data;
+                _context.next = 23;
+                break;
+
+              case 20:
+                _context.prev = 20;
+                _context.t1 = _context["catch"](12);
+
+                _this.fail();
+
+              case 23:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[1, 9], [12, 20]]);
+      }))();
+    },
+    addData: function addData() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var formData, key, _yield$axios3, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (!_this2.files.some(function (file) {
+                  return file.size > 2e6;
+                })) {
+                  _context2.next = 6;
+                  break;
+                }
+
+                _this2.loading = true;
+                _this2.totalFiles = [];
+                return _context2.abrupt("return", false);
+
+              case 6:
+                _this2.loadingdialog = true;
+                formData = new FormData();
+
+                _this2.amenities.forEach(function (file) {
+                  formData.append("amenities[]", JSON.stringify(file));
+                });
+
+                _this2.files.forEach(function (file) {
+                  formData.append("media[]", file, file.name);
+                });
+
+                for (key in _this2.formValue) {
+                  formData.append(key, _this2.formValue[key]);
+                }
+
+                _context2.prev = 11;
+                _context2.next = 14;
+                return axios({
+                  method: "post",
+                  url: "/app/property",
+                  data: formData
+                });
+
+              case 14:
+                _yield$axios3 = _context2.sent;
+                data = _yield$axios3.data;
+
+                _this2.snacks('Successfully Done', 'green');
+
+                _this2.loadingdialog = false;
+
+                _this2.$router.push('/dashboard/property/list');
+
+                _context2.next = 25;
+                break;
+
+              case 21:
+                _context2.prev = 21;
+                _context2.t0 = _context2["catch"](11);
+
+                _this2.fail();
+
+                _this2.snacks('Failed', 'Red');
+
+              case 25:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[11, 21]]);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/bootstrap/dist/js/bootstrap.js":
 /*!*****************************************************!*\
   !*** ./node_modules/bootstrap/dist/js/bootstrap.js ***!
@@ -45273,6 +45853,30 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/setting/Home.vue?vue&type=template&id=42df9c84&":
 /*!*************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/setting/Home.vue?vue&type=template&id=42df9c84& ***!
@@ -47152,6 +47756,938 @@ render._withStripped = true
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/ActList.vue?vue&type=template&id=2a5de752&":
 /*!****************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/useract/ActList.vue?vue&type=template&id=2a5de752& ***!
+  \****************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-content",
+    [
+      _c(
+        "v-container",
+        { attrs: { fluid: "" } },
+        [
+          _c(
+            "v-row",
+            { attrs: { justify: "center" } },
+            [
+              _c(
+                "v-col",
+                { attrs: { sm: "12", md: "12", lg: "12" } },
+                [
+                  _c(
+                    "v-tabs",
+                    {
+                      attrs: {
+                        "background-color": "primary",
+                        centered: "",
+                        dark: "",
+                        grow: ""
+                      },
+                      model: {
+                        value: _vm.tab,
+                        callback: function($$v) {
+                          _vm.tab = $$v
+                        },
+                        expression: "tab"
+                      }
+                    },
+                    [
+                      _c("v-tabs-slider"),
+                      _vm._v(" "),
+                      _c("v-tab", { attrs: { href: "#tab-1" } }, [
+                        _vm._v("\n\t\t\t\t\t\tArticle\n\t\t\t\t\t")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-tab", { attrs: { href: "#tab-2" } }, [
+                        _vm._v("\n\t\t\t\t\t\tComunicate\n\t\t\t\t\t")
+                      ]),
+                      _vm._v(" "),
+                      _c("v-tab", { attrs: { href: "#tab-3" } }, [
+                        _vm._v("\n\t\t\t\t\t\tTake Actions\n\t\t\t\t\t")
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-tabs-items",
+                    {
+                      model: {
+                        value: _vm.tab,
+                        callback: function($$v) {
+                          _vm.tab = $$v
+                        },
+                        expression: "tab"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-tab-item",
+                        { attrs: { value: "tab-1" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mt-5" },
+                            [
+                              _c(
+                                "v-card-title",
+                                [
+                                  _c(
+                                    "v-icon",
+                                    {
+                                      attrs: {
+                                        large: "",
+                                        left: "",
+                                        color: "blue"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "title font-weight-light" },
+                                    [_vm._v("Article")]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "A",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataBedRoom,
+                                              "item-value": "value",
+                                              "item-text": "name",
+                                              label: "B",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.room,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "room",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.room"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataBathroom,
+                                              label: "C",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.bathroom,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "bathroom",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.bathroom"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-tab-item",
+                        { attrs: { value: "tab-2" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mt-5" },
+                            [
+                              _c(
+                                "v-card-title",
+                                [
+                                  _c(
+                                    "v-icon",
+                                    {
+                                      attrs: {
+                                        large: "",
+                                        left: "",
+                                        color: "blue"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "title font-weight-light" },
+                                    [_vm._v("Comunicate")]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              items: _vm.dataBathroom,
+                                              label: "A1",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.bathroom,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "bathroom",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.bathroom"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "A2",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "A3",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              items: _vm.dataBathroom,
+                                              label: "B1",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.bathroom,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "bathroom",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.bathroom"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "B2",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "B3",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              items: _vm.dataBathroom,
+                                              label: "C1",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.bathroom,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "bathroom",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "formValue.bathroom"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "C2",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: {
+                                              label: "C3",
+                                              type: "number",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.formValue.parking_space,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "parking_space",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.parking_space"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-tab-item",
+                        { attrs: { value: "tab-3" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mt-5" },
+                            [
+                              _c(
+                                "v-card-title",
+                                [
+                                  _c(
+                                    "v-icon",
+                                    {
+                                      attrs: {
+                                        large: "",
+                                        left: "",
+                                        color: "blue"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "title font-weight-light" },
+                                    [_vm._v("Take Action")]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Saturday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Sunday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Monday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Tuesday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Wednesday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Thursady",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              items: _vm.dataCategory,
+                                              "item-text": "name",
+                                              "item-value": "id",
+                                              label: "Friday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.formValue.category_id,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.formValue,
+                                                  "category_id",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "formValue.category_id"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-dialog",
+        {
+          attrs: { "hide-overlay": "", persistent: "", width: "300" },
+          model: {
+            value: _vm.loadingdialog,
+            callback: function($$v) {
+              _vm.loadingdialog = $$v
+            },
+            expression: "loadingdialog"
+          }
+        },
+        [
+          _c(
+            "v-card",
+            { attrs: { color: "primary", dark: "" } },
+            [
+              _c(
+                "v-card-text",
+                [
+                  _vm._v(
+                    "\n                    Please wait data and images is storing...\n                    "
+                  ),
+                  _c("v-progress-linear", {
+                    staticClass: "mb-0",
+                    attrs: { indeterminate: "", color: "white" }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          attrs: {
+            vertical: _vm.snackvertical,
+            timeout: _vm.snacktimeout,
+            top: _vm.snacktop,
+            color: "red"
+          },
+          model: {
+            value: _vm.loading,
+            callback: function($$v) {
+              _vm.loading = $$v
+            },
+            expression: "loading"
+          }
+        },
+        [
+          _vm._v("\n\t\t\t" + _vm._s(_vm.text) + "\n\t\t\t"),
+          _c(
+            "v-btn",
+            {
+              attrs: { color: "white", text: "" },
+              on: {
+                click: function($event) {
+                  _vm.loading = false
+                }
+              }
+            },
+            [_vm._v("\n\t\t\t\tClose\n      \t\t")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-btn",
+        {
+          directives: [
+            {
+              name: "show",
+              rawName: "v-show",
+              value: _vm.accept,
+              expression: "accept"
+            }
+          ],
+          attrs: {
+            bottom: "",
+            color: "success",
+            dark: "",
+            fab: "",
+            fixed: "",
+            large: "",
+            right: ""
+          },
+          on: { click: _vm.addData }
+        },
+        [_c("v-icon", [_vm._v("check")])],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/AddList.vue?vue&type=template&id=4b3f2f3e&":
+/*!****************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/useract/AddList.vue?vue&type=template&id=4b3f2f3e& ***!
   \****************************************************************************************************************************************************************************************************************************/
 /*! exports provided: render, staticRenderFns */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
@@ -109195,6 +110731,123 @@ component.options.__file = "resources/js/components/dashboard/enroll/userenroll.
 
 /***/ }),
 
+/***/ "./resources/js/components/dashboard/setting/AboutUs.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/dashboard/setting/AboutUs.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/dashboard/setting/AboutUs.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/setting/ContactUs.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/dashboard/setting/ContactUs.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _ContactUs_vue_vue_type_template_id_e6efe3ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./ContactUs.vue?vue&type=template&id=e6efe3ee& */ "./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee&");
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_1__["default"])(
+  script,
+  _ContactUs_vue_vue_type_template_id_e6efe3ee___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _ContactUs_vue_vue_type_template_id_e6efe3ee___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/dashboard/setting/ContactUs.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactUs_vue_vue_type_template_id_e6efe3ee___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./ContactUs.vue?vue&type=template&id=e6efe3ee& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactUs_vue_vue_type_template_id_e6efe3ee___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_ContactUs_vue_vue_type_template_id_e6efe3ee___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/setting/Faqs.vue":
+/*!************************************************************!*\
+  !*** ./resources/js/components/dashboard/setting/Faqs.vue ***!
+  \************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+var render, staticRenderFns
+var script = {}
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
+  script,
+  render,
+  staticRenderFns,
+  false,
+  null,
+  null,
+  null
+  
+)
+
+component.options.__file = "resources/js/components/dashboard/setting/Faqs.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboard/setting/Home.vue":
 /*!************************************************************!*\
   !*** ./resources/js/components/dashboard/setting/Home.vue ***!
@@ -109646,6 +111299,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/dashboard/useract/AddList.vue":
+/*!***************************************************************!*\
+  !*** ./resources/js/components/dashboard/useract/AddList.vue ***!
+  \***************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _AddList_vue_vue_type_template_id_4b3f2f3e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./AddList.vue?vue&type=template&id=4b3f2f3e& */ "./resources/js/components/dashboard/useract/AddList.vue?vue&type=template&id=4b3f2f3e&");
+/* harmony import */ var _AddList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./AddList.vue?vue&type=script&lang=js& */ "./resources/js/components/dashboard/useract/AddList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _AddList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _AddList_vue_vue_type_template_id_4b3f2f3e___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _AddList_vue_vue_type_template_id_4b3f2f3e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/dashboard/useract/AddList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/useract/AddList.vue?vue&type=script&lang=js&":
+/*!****************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/useract/AddList.vue?vue&type=script&lang=js& ***!
+  \****************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AddList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/AddList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_AddList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/useract/AddList.vue?vue&type=template&id=4b3f2f3e&":
+/*!**********************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/useract/AddList.vue?vue&type=template&id=4b3f2f3e& ***!
+  \**********************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddList_vue_vue_type_template_id_4b3f2f3e___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./AddList.vue?vue&type=template&id=4b3f2f3e& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/AddList.vue?vue&type=template&id=4b3f2f3e&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddList_vue_vue_type_template_id_4b3f2f3e___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_AddList_vue_vue_type_template_id_4b3f2f3e___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboard/useract/Home.vue":
 /*!************************************************************!*\
   !*** ./resources/js/components/dashboard/useract/Home.vue ***!
@@ -109774,10 +111496,10 @@ webpackContext.id = "./resources/js/i18n/language sync recursive ^\\.\\/.*\\.lan
 /*!*************************************************!*\
   !*** ./resources/js/i18n/language/en.lang.json ***!
   \*************************************************/
-/*! exports provided: main, leftbar, account, invoice, bussinessdocument, services, setting, dashboard, user, enroll, useract, default */
+/*! exports provided: main, leftbar, account, bussinessdocument, services, setting, dashboard, user, enroll, useract, contactus, aboutus, faqs, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"enroll\":\"Enroll\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"invoice\":{\"invoicelist\":\"Invoice List\",\"addinvoice\":\"Add Invoice\",\"editinvoice\":\"Edit Invoice\",\"twyla\":\"Twyla List\",\"ticket\":\"Ticket\",\"detail\":\"Ticket Detail\",\"subscription\":\"Subscriptions\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\"}}");
+module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Enroll\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"}}");
 
 /***/ }),
 
@@ -109846,9 +111568,20 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_user_Type_vue__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./components/dashboard/user/Type.vue */ "./resources/js/components/dashboard/user/Type.vue");
 /* harmony import */ var _components_dashboard_user_Password_vue__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./components/dashboard/user/Password.vue */ "./resources/js/components/dashboard/user/Password.vue");
 /* harmony import */ var _components_dashboard_setting_Profile_vue__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./components/dashboard/setting/Profile.vue */ "./resources/js/components/dashboard/setting/Profile.vue");
-/* harmony import */ var _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/dashboard/enroll/userenroll.vue */ "./resources/js/components/dashboard/enroll/userenroll.vue");
-/* harmony import */ var _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/dashboard/useract/ActList.vue */ "./resources/js/components/dashboard/useract/ActList.vue");
-/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
+/* harmony import */ var _components_dashboard_setting_ContactUs_vue__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./components/dashboard/setting/ContactUs.vue */ "./resources/js/components/dashboard/setting/ContactUs.vue");
+/* harmony import */ var _components_dashboard_setting_AboutUs_vue__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./components/dashboard/setting/AboutUs.vue */ "./resources/js/components/dashboard/setting/AboutUs.vue");
+/* harmony import */ var _components_dashboard_setting_Faqs_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/dashboard/setting/Faqs.vue */ "./resources/js/components/dashboard/setting/Faqs.vue");
+/* harmony import */ var _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/dashboard/enroll/userenroll.vue */ "./resources/js/components/dashboard/enroll/userenroll.vue");
+/* harmony import */ var _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/dashboard/useract/ActList.vue */ "./resources/js/components/dashboard/useract/ActList.vue");
+/* harmony import */ var _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/dashboard/useract/AddList.vue */ "./resources/js/components/dashboard/useract/AddList.vue");
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
+
+
+
+
+
+
+
 
 
 
@@ -109876,7 +111609,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_user_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     meta: {
       icon: 'face',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.leftbar.user'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.user'),
       type: onlyAdminMentor,
       status: true
     },
@@ -109886,7 +111619,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_userlist_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.user.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.user.list'),
         type: onlyAdminMentor,
         status: true
       }
@@ -109896,7 +111629,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_Type_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.user.usertype'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.user.usertype'),
         type: onlyAdmin,
         status: true
       }
@@ -109906,7 +111639,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_Password_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.user.password'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.user.password'),
         type: onlyAdminMentor,
         status: true
       }
@@ -109916,18 +111649,18 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'enroll',
     component: _components_dashboard_enroll_Home_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     meta: {
-      icon: 'settings',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.leftbar.enroll'),
+      icon: 'alarm_add',
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.enroll'),
       type: mentorOnly,
       status: true
     },
     children: [{
       path: 'userenroll',
       name: 'userenroll',
-      component: _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+      component: _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.enroll.userenroll'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.enroll.userenroll'),
         type: mentorOnly,
         status: true
       }
@@ -109937,19 +111670,92 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'useract',
     component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
-      icon: 'settings',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.leftbar.useract'),
+      icon: 'account_circle',
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.useract'),
       type: customerOnly,
       status: true
     },
     children: [{
-      path: 'useractlist',
-      name: 'useractlist',
-      component: _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+      path: 'useractadd',
+      name: 'useractadd',
+      component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_17__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.useract.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.useract.add'),
         type: customerOnly,
+        status: true
+      }
+    }, {
+      path: 'useractlist',
+      name: 'useractlist',
+      component: _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.useract.list'),
+        type: customerOnly,
+        status: true
+      }
+    }]
+  }, {
+    path: '/contactus',
+    name: 'contactus',
+    component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    meta: {
+      icon: 'perm_phone_msg',
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.contactus'),
+      type: allOnly,
+      status: true
+    },
+    children: [{
+      path: 'contactuslist',
+      name: 'contactuslist',
+      component: _components_dashboard_setting_ContactUs_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.contactus.list'),
+        type: allOnly,
+        status: true
+      }
+    }]
+  }, {
+    path: '/aboutus',
+    name: 'aboutus',
+    component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    meta: {
+      icon: 'question_answer',
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.aboutus'),
+      type: allOnly,
+      status: true
+    },
+    children: [{
+      path: 'aboutuslist',
+      name: 'aboutuslist',
+      component: _components_dashboard_setting_AboutUs_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.aboutus.list'),
+        type: allOnly,
+        status: true
+      }
+    }]
+  }, {
+    path: '/faqs',
+    name: 'faqs',
+    component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
+    meta: {
+      icon: 'report_problem',
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.faqs'),
+      type: allOnly,
+      status: true
+    },
+    children: [{
+      path: 'faqslist',
+      name: 'faqslist',
+      component: _components_dashboard_setting_Faqs_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.faqs.list'),
+        type: allOnly,
         status: true
       }
     }]
@@ -109959,7 +111765,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'settings',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.leftbar.setting'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.setting'),
       type: allOnly,
       status: true
     },
@@ -109969,7 +111775,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_Profile_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_12__["default"].t('message.setting.profile'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.setting.profile'),
         type: allOnly,
         status: true
       }

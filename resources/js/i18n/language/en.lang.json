@@ -33,21 +33,16 @@
         "report": "Report",
         "order": "Order",
         "useract": "Act",
+        "contactus": "Contact Us",
+        "aboutus": "About Us",
+        "faqs": "FAQS",
         "enroll": "Enroll"
     },
     "account":{
         "ledgerhead": "Ledger Head",
         "ledgerlist": "Ledger List"
     },
-    "invoice":{
-        "invoicelist": "Invoice List",
-        "addinvoice":"Add Invoice",
-        "editinvoice":"Edit Invoice",
-        "twyla": "Twyla List",
-        "ticket":"Ticket",
-        "detail":"Ticket Detail",
-        "subscription": "Subscriptions"
-    },
+ 
     "bussinessdocument":{
         "doclist": "Document List"
     },
@@ -90,6 +85,15 @@
     },
     "useract":{
         "list": "Act List"
+    },
+    "contactus":{
+        "list": "List"
+    },
+    "aboutus":{
+        "list": "List"
+    },
+    "faqs":{
+        "list": "List"
     }
   
    

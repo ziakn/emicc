@@ -3,6 +3,9 @@ import Router from 'vue-router'
 
 import user from './components/dashboard/user/Home.vue'
 import setting from './components/dashboard/setting/Home.vue'
+import contactus from './components/dashboard/setting/Home.vue'
+import aboutus from './components/dashboard/setting/Home.vue'
+import faqs from './components/dashboard/setting/Home.vue'
 import enroll from './components/dashboard/enroll/Home.vue'
 import useract from './components/dashboard/useract/Home.vue'
 
@@ -10,8 +13,12 @@ import userlist from './components/dashboard/user/userlist.vue'
 import usertype from './components/dashboard/user/Type.vue'
 import userpassword from './components/dashboard/user/Password.vue'
 import profile from './components/dashboard/setting/Profile.vue'
+import contactuslist from './components/dashboard/setting/ContactUs.vue'
+import aboutuslist from './components/dashboard/setting/AboutUs.vue'
+import faqslist from './components/dashboard/setting/Faqs.vue'
 import userenroll from './components/dashboard/enroll/userenroll.vue'
 import useractlist from './components/dashboard/useract/ActList.vue'
+import useractadd from './components/dashboard/useract/AddList.vue'
 
 import i18n from './i18n';
 
@@ -82,7 +89,7 @@ export default new Router({
             name: 'enroll',
             component: enroll,
             meta: {
-                icon: 'settings',
+                icon: 'alarm_add',
                 title: i18n.t('message.leftbar.enroll'),
                 type: mentorOnly,
                 status: true,
@@ -106,12 +113,24 @@ export default new Router({
             name: 'useract',
             component: useract,
             meta: {
-                icon: 'settings',
+                icon: 'account_circle',
                 title: i18n.t('message.leftbar.useract'),
                 type: customerOnly,
                 status: true,
             },
             children: [
+                {
+                    path: 'useractadd',
+                    name: 'useractadd',
+                    component: useractadd,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.useract.add'),
+                        type: customerOnly,
+                        status: true,
+        
+                    }
+                },
                 {
                     path: 'useractlist',
                     name: 'useractlist',
@@ -127,6 +146,81 @@ export default new Router({
             ]
 
         },
+        {
+            path: '/contactus',
+            name: 'contactus',
+            component: contactus,
+            meta: {
+                icon: 'perm_phone_msg',
+                title: i18n.t('message.leftbar.contactus'),
+                type: allOnly,
+                status: true,
+            },
+            children: [
+                {
+                    path: 'contactuslist',
+                    name: 'contactuslist',
+                    component: contactuslist,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.contactus.list'),
+                        type: allOnly,
+                        status: true,
+        
+                    }
+                },
+            ]
+        }, 
+        {
+            path: '/aboutus',
+            name: 'aboutus',
+            component: aboutus,
+            meta: {
+                icon: 'question_answer',
+                title: i18n.t('message.leftbar.aboutus'),
+                type: allOnly,
+                status: true,
+            },
+            children: [
+                {
+                    path: 'aboutuslist',
+                    name: 'aboutuslist',
+                    component: aboutuslist,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.aboutus.list'),
+                        type: allOnly,
+                        status: true,
+        
+                    }
+                },
+            ]
+        }, 
+        {
+            path: '/faqs',
+            name: 'faqs',
+            component: faqs,
+            meta: {
+                icon: 'report_problem',
+                title: i18n.t('message.leftbar.faqs'),
+                type: allOnly,
+                status: true,
+            },
+            children: [
+                {
+                    path: 'faqslist',
+                    name: 'faqslist',
+                    component: faqslist,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.faqs.list'),
+                        type: allOnly,
+                        status: true,
+        
+                    }
+                },
+            ]
+        }, 
         {
             path: '/setting',
             name: 'setting',
