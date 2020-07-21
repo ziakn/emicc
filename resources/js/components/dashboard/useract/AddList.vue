@@ -26,12 +26,39 @@
 						<v-tab-item value="tab-1">
 							<v-card  class="mt-5">
 								<v-card-title> 
-									<v-icon large left color="blue" >
-										dashboard
-									</v-icon>
-									<span class="title font-weight-light">Article</span>
+										<v-row>
+											<v-col>
+												<v-icon large left color="blue" >
+													dashboard
+												</v-icon>
+												<span class="title font-weight-light">Article</span>
+											</v-col>
+												<v-col cols="12" sm="6" md="4">
+												<v-menu
+													v-model="menu2"
+													:close-on-content-click="false"
+													:nudge-right="40"
+													transition="scale-transition"
+													offset-y
+													min-width="290px"
+												>
+													<template v-slot:activator="{ on, attrs }">
+													<v-text-field
+														v-model="date"
+														label="Picker without buttons"
+														prepend-icon="event"
+														readonly
+														v-bind="attrs"
+														v-on="on"
+													></v-text-field>
+													</template>
+													<v-date-picker v-model="date" @input="menu2 = false"></v-date-picker>
+												</v-menu>
+												</v-col>
+  										</v-row>
 								</v-card-title>
 								<v-card-text>
+								
 									<v-row justify="center">
                                         <v-col sm="12" md="12" lg="8" >
 											<v-textarea
@@ -69,12 +96,28 @@
 						</v-tab-item>
 						<v-tab-item value="tab-2">
 							<v-card  class="mt-5">
-								<v-card-title> 
+								<v-row>
+									<v-col>
+										<v-card-title> 
 									<v-icon large left color="blue" >
 										dashboard
 									</v-icon>
 									<span class="title font-weight-light">Comunicate</span>
+									
 								</v-card-title>
+									</v-col>
+										<v-col cols="12" sm="6" md="4">
+													<v-select
+														v-model="date"
+														label="Picker without buttons"
+														prepend-icon="event"
+														readonly
+														v-bind="attrs"
+														v-on="on"
+													></v-select>
+												</v-col>
+								
+								</v-row>
 								<v-card-text>
 									<v-row justify="center">
 										<v-col sm="12" md="12" lg="8" >
@@ -299,6 +342,8 @@ export default {
 		
 	},
 	data: () => ({
+		 date: new Date().toISOString().substr(0, 10),
+      menu2: false,
 		loadingdialog:false,
 		menu2: false,
 			loadingselectimage:false,

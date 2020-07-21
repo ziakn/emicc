@@ -84,7 +84,8 @@
         "userenroll": "User List"
     },
     "useract":{
-        "list": "Act List"
+        "list": "Act List",
+        "add":"Add"
     },
     "contactus":{
         "list": "List"

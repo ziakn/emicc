@@ -4783,16 +4783,59 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
     var _ref;
 
     return _ref = {
-      loadingdialog: false,
+      date: new Date().toISOString().substr(0, 10),
       menu2: false,
-      loadingselectimage: false
-    }, _defineProperty(_ref, "loadingdialog", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "text", "Your Total Images Size is more than 2 Mb Plz Compress or resize..."), _defineProperty(_ref, "text1", "Please select image for uploading"), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "formValue", {
+      loadingdialog: false
+    }, _defineProperty(_ref, "menu2", false), _defineProperty(_ref, "loadingselectimage", false), _defineProperty(_ref, "loadingdialog", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "text", "Your Total Images Size is more than 2 Mb Plz Compress or resize..."), _defineProperty(_ref, "text1", "Please select image for uploading"), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "formValue", {
       room: '',
       bathroom: '',
       parking_space: '',
@@ -48774,25 +48817,132 @@ var render = function() {
                                 "v-card-title",
                                 [
                                   _c(
-                                    "v-icon",
-                                    {
-                                      attrs: {
-                                        large: "",
-                                        left: "",
-                                        color: "blue"
-                                      }
-                                    },
+                                    "v-row",
                                     [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                      _c(
+                                        "v-col",
+                                        [
+                                          _c(
+                                            "v-icon",
+                                            {
+                                              attrs: {
+                                                large: "",
+                                                left: "",
+                                                color: "blue"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "title font-weight-light"
+                                            },
+                                            [_vm._v("Article")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "4"
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "v-menu",
+                                            {
+                                              attrs: {
+                                                "close-on-content-click": false,
+                                                "nudge-right": 40,
+                                                transition: "scale-transition",
+                                                "offset-y": "",
+                                                "min-width": "290px"
+                                              },
+                                              scopedSlots: _vm._u([
+                                                {
+                                                  key: "activator",
+                                                  fn: function(ref) {
+                                                    var on = ref.on
+                                                    var attrs = ref.attrs
+                                                    return [
+                                                      _c(
+                                                        "v-text-field",
+                                                        _vm._g(
+                                                          _vm._b(
+                                                            {
+                                                              attrs: {
+                                                                label:
+                                                                  "Picker without buttons",
+                                                                "prepend-icon":
+                                                                  "event",
+                                                                readonly: ""
+                                                              },
+                                                              model: {
+                                                                value: _vm.date,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.date = $$v
+                                                                },
+                                                                expression:
+                                                                  "date"
+                                                              }
+                                                            },
+                                                            "v-text-field",
+                                                            attrs,
+                                                            false
+                                                          ),
+                                                          on
+                                                        )
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ]),
+                                              model: {
+                                                value: _vm.menu2,
+                                                callback: function($$v) {
+                                                  _vm.menu2 = $$v
+                                                },
+                                                expression: "menu2"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(" "),
+                                              _c("v-date-picker", {
+                                                on: {
+                                                  input: function($event) {
+                                                    _vm.menu2 = false
+                                                  }
+                                                },
+                                                model: {
+                                                  value: _vm.date,
+                                                  callback: function($$v) {
+                                                    _vm.date = $$v
+                                                  },
+                                                  expression: "date"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
                                       )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "title font-weight-light" },
-                                    [_vm._v("Article")]
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -48915,28 +49065,76 @@ var render = function() {
                             { staticClass: "mt-5" },
                             [
                               _c(
-                                "v-card-title",
+                                "v-row",
                                 [
                                   _c(
-                                    "v-icon",
-                                    {
-                                      attrs: {
-                                        large: "",
-                                        left: "",
-                                        color: "blue"
-                                      }
-                                    },
+                                    "v-col",
                                     [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                      _c(
+                                        "v-card-title",
+                                        [
+                                          _c(
+                                            "v-icon",
+                                            {
+                                              attrs: {
+                                                large: "",
+                                                left: "",
+                                                color: "blue"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "title font-weight-light"
+                                            },
+                                            [_vm._v("Comunicate")]
+                                          )
+                                        ],
+                                        1
                                       )
-                                    ]
+                                    ],
+                                    1
                                   ),
                                   _vm._v(" "),
                                   _c(
-                                    "span",
-                                    { staticClass: "title font-weight-light" },
-                                    [_vm._v("Comunicate")]
+                                    "v-col",
+                                    { attrs: { cols: "12", sm: "6", md: "4" } },
+                                    [
+                                      _c(
+                                        "v-select",
+                                        _vm._g(
+                                          _vm._b(
+                                            {
+                                              attrs: {
+                                                label: "Picker without buttons",
+                                                "prepend-icon": "event",
+                                                readonly: ""
+                                              },
+                                              model: {
+                                                value: _vm.date,
+                                                callback: function($$v) {
+                                                  _vm.date = $$v
+                                                },
+                                                expression: "date"
+                                              }
+                                            },
+                                            "v-select",
+                                            _vm.attrs,
+                                            false
+                                          ),
+                                          _vm.on
+                                        )
+                                      )
+                                    ],
+                                    1
                                   )
                                 ],
                                 1
@@ -111499,7 +111697,7 @@ webpackContext.id = "./resources/js/i18n/language sync recursive ^\\.\\/.*\\.lan
 /*! exports provided: main, leftbar, account, bussinessdocument, services, setting, dashboard, user, enroll, useract, contactus, aboutus, faqs, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Enroll\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"}}");
+module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Enroll\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\",\"add\":\"Add\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"}}");
 
 /***/ }),
 
@@ -111573,7 +111771,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_setting_Faqs_vue__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./components/dashboard/setting/Faqs.vue */ "./resources/js/components/dashboard/setting/Faqs.vue");
 /* harmony import */ var _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/dashboard/enroll/userenroll.vue */ "./resources/js/components/dashboard/enroll/userenroll.vue");
 /* harmony import */ var _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/dashboard/useract/ActList.vue */ "./resources/js/components/dashboard/useract/ActList.vue");
-/* harmony import */ var _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/dashboard/useract/AddList.vue */ "./resources/js/components/dashboard/useract/AddList.vue");
+/* harmony import */ var _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/dashboard/useract/AddList.vue */ "./resources/js/components/dashboard/useract/AddList.vue");
 /* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
 
 
@@ -111678,7 +111876,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     children: [{
       path: 'useractadd',
       name: 'useractadd',
-      component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_17__["default"],
+      component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
       meta: {
         icon: 'dashboard',
         title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.useract.add'),
