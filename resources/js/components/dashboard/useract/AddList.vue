@@ -109,11 +109,8 @@
 										<v-col cols="12" sm="6" md="4">
 													<v-select
 														v-model="date"
-														label="Picker without buttons"
-														prepend-icon="event"
+														label="Select level"
 														readonly
-														v-bind="attrs"
-														v-on="on"
 													></v-select>
 												</v-col>
 								

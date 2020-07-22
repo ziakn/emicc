@@ -4823,9 +4823,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -49108,31 +49105,19 @@ var render = function() {
                                     "v-col",
                                     { attrs: { cols: "12", sm: "6", md: "4" } },
                                     [
-                                      _c(
-                                        "v-select",
-                                        _vm._g(
-                                          _vm._b(
-                                            {
-                                              attrs: {
-                                                label: "Picker without buttons",
-                                                "prepend-icon": "event",
-                                                readonly: ""
-                                              },
-                                              model: {
-                                                value: _vm.date,
-                                                callback: function($$v) {
-                                                  _vm.date = $$v
-                                                },
-                                                expression: "date"
-                                              }
-                                            },
-                                            "v-select",
-                                            _vm.attrs,
-                                            false
-                                          ),
-                                          _vm.on
-                                        )
-                                      )
+                                      _c("v-select", {
+                                        attrs: {
+                                          label: "Select level",
+                                          readonly: ""
+                                        },
+                                        model: {
+                                          value: _vm.date,
+                                          callback: function($$v) {
+                                            _vm.date = $$v
+                                          },
+                                          expression: "date"
+                                        }
+                                      })
                                     ],
                                     1
                                   )
