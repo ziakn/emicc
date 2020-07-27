@@ -22,6 +22,7 @@ Auth::routes();
 Route::prefix('/app')->group(function () {
     Route::resource('/usertype', 'UserTypeController');
     Route::resource('/user', 'UserController');
+    Route::resource('/articulate', 'ArticulatController');
 });
 
 

@@ -14,7 +14,6 @@
 					<v-tab href="#tab-1">
 						Article
 					</v-tab>
-
 					<v-tab href="#tab-2">
 						Comunicate
 					</v-tab>
@@ -62,21 +61,14 @@
 									<v-row justify="center">
                                         <v-col sm="12" md="12" lg="8" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.arta"
 												label="A"
-												
 												filled
 											></v-textarea>
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-textarea
-												v-model="formValue.room"
-												:items="dataBedRoom"
-												item-value="value"
-												item-text="name"
+												v-model="editedItem.artb"
 												label="B"
 												
 												filled
@@ -84,8 +76,7 @@
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-textarea
-												v-model="formValue.bathroom"
-												:items="dataBathroom"								
+												v-model="editedItem.artc"							
 												label="C"
 												filled
 											></v-textarea>
@@ -108,9 +99,9 @@
 									</v-col>
 										<v-col cols="12" sm="6" md="4">
 													<v-select
-														v-model="date"
+														v-model="editedItem.status"
 														label="Select level"
-														readonly
+														:items="statusType"
 													></v-select>
 												</v-col>
 								
@@ -119,73 +110,65 @@
 									<v-row justify="center">
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-												v-model="formValue.bathroom"
-												:items="dataBathroom"								
+												v-model="editedItem.arta1"
+																		
 												label="A1"
 												filled
 											></v-text-field>
 										</v-col>	
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-													v-model="formValue.parking_space"
-													label="A2"
-													type="number"						
+													v-model="editedItem.arta2"
+													label="A2"				
 													filled
 											></v-text-field>
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-													v-model="formValue.parking_space"
-													label="A3"
-													type="number"						
+													v-model="editedItem.arta3"
+													label="A3"					
 													filled
 											></v-text-field>
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-												v-model="formValue.bathroom"
-												:items="dataBathroom"								
+												v-model="editedItem.artb1"								
 												label="B1"
 												filled
 											></v-text-field>
 										</v-col>	
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-													v-model="formValue.parking_space"
-													label="B2"
-													type="number"						
+													v-model="editedItem.artb2"
+													label="B2"					
 													filled
 											></v-text-field>
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-													v-model="formValue.parking_space"
-													label="B3"
-													type="number"						
+													v-model="editedItem.artb3"
+													label="B3"					
 													filled
 											></v-text-field>
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-												v-model="formValue.bathroom"
-												:items="dataBathroom"								
+												v-model="editedItem.artc1"							
 												label="C1"
 												filled
 											></v-text-field>
 										</v-col>	
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-													v-model="formValue.parking_space"
-													label="C2"
-													type="number"						
+													v-model="editedItem.artc2"
+													label="C2"				
 													filled
 											></v-text-field>
 										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-													v-model="formValue.parking_space"
-													label="C3"
-													type="number"						
+													v-model="editedItem.artc3"
+													label="C3"					
 													filled
 											></v-text-field>
 										</v-col>
@@ -205,78 +188,50 @@
 									<v-row justify="center">
                                         <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.saturday"
 												label="Saturday"
-												
 												filled
 											></v-textarea>
 										</v-col>
 									 <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.sunday"
 												label="Sunday"
-												
 												filled
 											></v-textarea>
 										</v-col>
 									 <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.monday"
 												label="Monday"
-												
 												filled
 											></v-textarea>
 										</v-col>	
 										 <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.tuesday"
 												label="Tuesday"
-												
 												filled
 											></v-textarea>
 										</v-col>
 									 <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.wednesday"
 												label="Wednesday"
-												
 												filled
 											></v-textarea>
 										</v-col>
 									 <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.thursaday"
 												label="Thursady"
-												
 												filled
 											></v-textarea>
 										</v-col>
 										 <v-col sm="12" md="12" lg="4" >
 											<v-textarea
-												v-model="formValue.category_id"
-												:items="dataCategory"
-												item-text="name"
-												item-value="id"
+												v-model="editedItem.friday"
 												label="Friday"
-												
 												filled
 											></v-textarea>
 										</v-col>
@@ -285,7 +240,6 @@
 							</v-card>
 						</v-tab-item>
 					</v-tabs-items>
-
 				</v-col>
 			</v-row>
 		</v-container>
@@ -316,7 +270,6 @@
 			:top="snacktop"
 			color="red"
 			>
-			{{ text }}
 			<v-btn
 				color="white"
 				text
@@ -325,7 +278,7 @@
 				Close
       		</v-btn>
     	</v-snackbar>
-		<v-btn bottom color="success" dark fab fixed large right v-show="accept" @click="addData" >
+		<v-btn bottom color="success" dark fab fixed large right  @click="addData" >
 			<v-icon>check</v-icon>
 		</v-btn>
 	</v-content>
@@ -343,192 +296,76 @@ export default {
       menu2: false,
 		loadingdialog:false,
 		menu2: false,
-			loadingselectimage:false,
-			loadingdialog:false,
-			loading:false,
-		   mode: "",
+		loading:false,
+		mode: "",
         timeout: 6000,
-	  text: "Your Total Images Size is more than 2 Mb Plz Compress or resize...",
-	  text1: "Please select image for uploading",
-        snackbar: false,
-		formValue:
+		snackbar: false,
+		tab:null,
+		editedItem:
 		{
-            room:'',
-            bathroom:'',
-            parking_space:'',
-            furnish_type:'',
-            rent_type:'',
-            service_charges:'',
-            payment_type:'',
-            availability:'',
-			category_id:'',
-			title:'',
-			description:'',
-			price:0,
-			meta_keyword:'',
-			meta_description:'',
-            meta_title:'',
-            property_location:'',
-            street_name:'',
-            street_no:'',
-			building_no:'',
-			data_percentage:'',
-			percentvalue:'',
+            arta:'',
+            artb:'',
+			artc:'',
+			date:'',
+			arta1:'',
+			status:'',
+            arta2:'',
+            arta3:'',
+            artb1:'',
+            artb2:'',
+			artb3:'',
+			artc1:'',
+			artc2:'',
+			artc3:'',
+			saturday:'',
+			sunday:'',
+			monday:'',
+			tuesday:'',
+			wednesday:'',
+			thursday:'',
+			friday:'',
 		},
 		
-		dataAmenities: [
-        ],
-
-		dataBedRoom:[
-			{name:'Studio', value:'studio'},
-			{name:'1', value:'1'},{name:'2', value:'2'},{name:'3', value:'3'},{name:'4', value:'4'},{name:'5', value:'5'},
-			{name:'6', value:'6'},{name:'7', value:'7'},{name:'8', value:'8'},{name:'9', value:'9'},{name:'10', value:'10'},
-			{name:'11', value:'11'},{name:'12', value:'12'},{name:'13', value:'13'},{name:'14', value:'14'},{name:'15', value:'15'},
-		],
-		dataBathroom:[
-			1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,20
-		],
-		dataFurnished:[
-			'Furnished', 'Un-Furnished', 'Semi-Furnished'
-		],
-		dataRentType:[
-			'Daily', 'Weekly', 'Monthly','Yearly'
-		],
-		dataPercentage:[
-			'Days', 'Percentage(%)',
-		],
-		dataCategory:[],
-		paymentType:[
-			{name:'Cheque', value:'cheque'},
-			{name:'Cash', value:'cash'},
-
-		],
-		dataAvailability:[
-			{name:'Available', value:'available'},
-			{name:'Not Available', value:'notavailable'},
-
-		],
-			
-        absolute: true,
-		editedIndex:null,
-		tab: null,
-		files:[],
-		amenities:[],
-	
-      
 		
+		statusType:[
+			{name:'Low', value:0},
+			{name:'Medium', value:1},
+			{name:'High', value:2},
+
+		],
+      
 	}),
 
 	computed: {
-
-		accept()
-		{
-			if(this.formValue.title && this.formValue.description 
-				 && this.formValue.category_id && this.formValue.price && this.formValue.property_location)
-            {
-			    return true
-            }
-            else
-            {
-                return false
-            }
-			
-		},
-		
-            
-
 	},
 	watch: {
-		'formValue.title': function (data)
-		{
-			this.formValue.meta_title=data
-		},
-		'formValue.description': function (data)
-		{
-			this.formValue.meta_description=data
-		},
+		
 	},
 	created() {
 		this.initialize();
 	},
 	methods: {	
-		seoValue(item)
-		{
-			this.formValue.meta_description=item.meta_description;
-			this.formValue.meta_title=item.meta_title;
-			this.formValue.meta_keyword=item.meta_keyword;
-		},
-		locationValue(item)
-		{
-			this.formValue.property_location=item.property_location;
-			this.formValue.street_name=item.street_name;
-			this.formValue.street_no=item.street_no;
-			this.formValue.building_no=item.building_no;
-		},
-		filesValue(item)
-		{
-			this.files=item;
-        },
-        
+		
 		async initialize() {
-			this.start();
-			try {
-				let { data } = await axios({
-					method: "get",
-					url: "/app/category"
-				});
-				this.dataCategory = data;
-			} catch (e) {
-				this.fail();
-			}
-			try {
-				let { data } = await axios({
-					method: "get",
-					url: "/app/amenity"
-				});
-				this.dataAmenities = data;
-			} catch (e) {
-				this.fail();
-			}
-			
-			
+		
         },
         
 
 		async addData()
 		{
-		if(this.files.some(file => file.size > 2e6))
+
+			try 
 			{
-				this.loading=true
-				 this.totalFiles=[];
-					return false
-			}
-			else{
-			 this.loadingdialog=true
-			      const formData = new FormData();
-					this.amenities.forEach(file => {
-						formData.append("amenities[]", JSON.stringify(file));
-					});
-					this.files.forEach(file => {
-						formData.append("media[]", file, file.name);
-					});
-					for ( var key in this.formValue ) {
-						formData.append(key, this.formValue[key]);
-					}
-			try {
 				let { data } = await axios({
 					method: "post",
-					url: "/app/property",
-					data: formData
+					url: "/app/articulate",
+					data: this.editedItem
 				});
 				this.snacks('Successfully Done','green')
-				 this.loadingdialog=false
-				this.$router.push('/dashboard/property/list')
-			} catch (e) {
-				this.fail();
+			}catch (e) 
+			{
 				this.snacks('Failed','Red')
 				
-			}
 			}
 		}
 

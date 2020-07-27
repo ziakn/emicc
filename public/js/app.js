@@ -4776,53 +4776,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -4832,258 +4785,97 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       date: new Date().toISOString().substr(0, 10),
       menu2: false,
       loadingdialog: false
-    }, _defineProperty(_ref, "menu2", false), _defineProperty(_ref, "loadingselectimage", false), _defineProperty(_ref, "loadingdialog", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "text", "Your Total Images Size is more than 2 Mb Plz Compress or resize..."), _defineProperty(_ref, "text1", "Please select image for uploading"), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "formValue", {
-      room: '',
-      bathroom: '',
-      parking_space: '',
-      furnish_type: '',
-      rent_type: '',
-      service_charges: '',
-      payment_type: '',
-      availability: '',
-      category_id: '',
-      title: '',
-      description: '',
-      price: 0,
-      meta_keyword: '',
-      meta_description: '',
-      meta_title: '',
-      property_location: '',
-      street_name: '',
-      street_no: '',
-      building_no: '',
-      data_percentage: '',
-      percentvalue: ''
-    }), _defineProperty(_ref, "dataAmenities", []), _defineProperty(_ref, "dataBedRoom", [{
-      name: 'Studio',
-      value: 'studio'
+    }, _defineProperty(_ref, "menu2", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "tab", null), _defineProperty(_ref, "editedItem", {
+      arta: '',
+      artb: '',
+      artc: '',
+      date: '',
+      arta1: '',
+      status: '',
+      arta2: '',
+      arta3: '',
+      artb1: '',
+      artb2: '',
+      artb3: '',
+      artc1: '',
+      artc2: '',
+      artc3: '',
+      saturday: '',
+      sunday: '',
+      monday: '',
+      tuesday: '',
+      wednesday: '',
+      thursday: '',
+      friday: ''
+    }), _defineProperty(_ref, "statusType", [{
+      name: 'Low',
+      value: 0
     }, {
-      name: '1',
-      value: '1'
+      name: 'Medium',
+      value: 1
     }, {
-      name: '2',
-      value: '2'
-    }, {
-      name: '3',
-      value: '3'
-    }, {
-      name: '4',
-      value: '4'
-    }, {
-      name: '5',
-      value: '5'
-    }, {
-      name: '6',
-      value: '6'
-    }, {
-      name: '7',
-      value: '7'
-    }, {
-      name: '8',
-      value: '8'
-    }, {
-      name: '9',
-      value: '9'
-    }, {
-      name: '10',
-      value: '10'
-    }, {
-      name: '11',
-      value: '11'
-    }, {
-      name: '12',
-      value: '12'
-    }, {
-      name: '13',
-      value: '13'
-    }, {
-      name: '14',
-      value: '14'
-    }, {
-      name: '15',
-      value: '15'
-    }]), _defineProperty(_ref, "dataBathroom", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20]), _defineProperty(_ref, "dataFurnished", ['Furnished', 'Un-Furnished', 'Semi-Furnished']), _defineProperty(_ref, "dataRentType", ['Daily', 'Weekly', 'Monthly', 'Yearly']), _defineProperty(_ref, "dataPercentage", ['Days', 'Percentage(%)']), _defineProperty(_ref, "dataCategory", []), _defineProperty(_ref, "paymentType", [{
-      name: 'Cheque',
-      value: 'cheque'
-    }, {
-      name: 'Cash',
-      value: 'cash'
-    }]), _defineProperty(_ref, "dataAvailability", [{
-      name: 'Available',
-      value: 'available'
-    }, {
-      name: 'Not Available',
-      value: 'notavailable'
-    }]), _defineProperty(_ref, "absolute", true), _defineProperty(_ref, "editedIndex", null), _defineProperty(_ref, "tab", null), _defineProperty(_ref, "files", []), _defineProperty(_ref, "amenities", []), _ref;
+      name: 'High',
+      value: 2
+    }]), _ref;
   },
-  computed: {
-    accept: function accept() {
-      if (this.formValue.title && this.formValue.description && this.formValue.category_id && this.formValue.price && this.formValue.property_location) {
-        return true;
-      } else {
-        return false;
-      }
-    }
-  },
-  watch: {
-    'formValue.title': function formValueTitle(data) {
-      this.formValue.meta_title = data;
-    },
-    'formValue.description': function formValueDescription(data) {
-      this.formValue.meta_description = data;
-    }
-  },
+  computed: {},
+  watch: {},
   created: function created() {
     this.initialize();
   },
   methods: {
-    seoValue: function seoValue(item) {
-      this.formValue.meta_description = item.meta_description;
-      this.formValue.meta_title = item.meta_title;
-      this.formValue.meta_keyword = item.meta_keyword;
-    },
-    locationValue: function locationValue(item) {
-      this.formValue.property_location = item.property_location;
-      this.formValue.street_name = item.street_name;
-      this.formValue.street_no = item.street_no;
-      this.formValue.building_no = item.building_no;
-    },
-    filesValue: function filesValue(item) {
-      this.files = item;
-    },
     initialize: function initialize() {
-      var _this = this;
-
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _yield$axios, data, _yield$axios2, _data;
-
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.start();
-
-                _context.prev = 1;
-                _context.next = 4;
-                return axios({
-                  method: "get",
-                  url: "/app/category"
-                });
-
-              case 4:
-                _yield$axios = _context.sent;
-                data = _yield$axios.data;
-                _this.dataCategory = data;
-                _context.next = 12;
-                break;
-
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](1);
-
-                _this.fail();
-
-              case 12:
-                _context.prev = 12;
-                _context.next = 15;
-                return axios({
-                  method: "get",
-                  url: "/app/amenity"
-                });
-
-              case 15:
-                _yield$axios2 = _context.sent;
-                _data = _yield$axios2.data;
-                _this.dataAmenities = _data;
-                _context.next = 23;
-                break;
-
-              case 20:
-                _context.prev = 20;
-                _context.t1 = _context["catch"](12);
-
-                _this.fail();
-
-              case 23:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[1, 9], [12, 20]]);
+        }, _callee);
       }))();
     },
     addData: function addData() {
-      var _this2 = this;
+      var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var formData, key, _yield$axios3, data;
+        var _yield$axios, data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                if (!_this2.files.some(function (file) {
-                  return file.size > 2e6;
-                })) {
-                  _context2.next = 6;
-                  break;
-                }
-
-                _this2.loading = true;
-                _this2.totalFiles = [];
-                return _context2.abrupt("return", false);
-
-              case 6:
-                _this2.loadingdialog = true;
-                formData = new FormData();
-
-                _this2.amenities.forEach(function (file) {
-                  formData.append("amenities[]", JSON.stringify(file));
-                });
-
-                _this2.files.forEach(function (file) {
-                  formData.append("media[]", file, file.name);
-                });
-
-                for (key in _this2.formValue) {
-                  formData.append(key, _this2.formValue[key]);
-                }
-
-                _context2.prev = 11;
-                _context2.next = 14;
+                _context2.prev = 0;
+                _context2.next = 3;
                 return axios({
                   method: "post",
-                  url: "/app/property",
-                  data: formData
+                  url: "/app/articulate",
+                  data: _this.editedItem
                 });
 
-              case 14:
-                _yield$axios3 = _context2.sent;
-                data = _yield$axios3.data;
+              case 3:
+                _yield$axios = _context2.sent;
+                data = _yield$axios.data;
 
-                _this2.snacks('Successfully Done', 'green');
+                _this.snacks('Successfully Done', 'green');
 
-                _this2.loadingdialog = false;
-
-                _this2.$router.push('/dashboard/property/list');
-
-                _context2.next = 25;
+                _context2.next = 11;
                 break;
 
-              case 21:
-                _context2.prev = 21;
-                _context2.t0 = _context2["catch"](11);
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2["catch"](0);
 
-                _this2.fail();
+                _this.snacks('Failed', 'Red');
 
-                _this2.snacks('Failed', 'Red');
-
-              case 25:
+              case 11:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[11, 21]]);
+        }, _callee2, null, [[0, 8]]);
       }))();
     }
   }
@@ -48959,24 +48751,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "A",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "A", filled: "" },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.arta,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "arta",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.arta"
                                             }
                                           })
                                         ],
@@ -48990,23 +48775,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataBedRoom,
-                                              "item-value": "value",
-                                              "item-text": "name",
-                                              label: "B",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "B", filled: "" },
                                             model: {
-                                              value: _vm.formValue.room,
+                                              value: _vm.editedItem.artb,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "room",
+                                                  _vm.editedItem,
+                                                  "artb",
                                                   $$v
                                                 )
                                               },
-                                              expression: "formValue.room"
+                                              expression: "editedItem.artb"
                                             }
                                           })
                                         ],
@@ -49020,21 +48799,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "C",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "C", filled: "" },
                                             model: {
-                                              value: _vm.formValue.bathroom,
+                                              value: _vm.editedItem.artc,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
+                                                  _vm.editedItem,
+                                                  "artc",
                                                   $$v
                                                 )
                                               },
-                                              expression: "formValue.bathroom"
+                                              expression: "editedItem.artc"
                                             }
                                           })
                                         ],
@@ -49108,14 +48883,18 @@ var render = function() {
                                       _c("v-select", {
                                         attrs: {
                                           label: "Select level",
-                                          readonly: ""
+                                          items: _vm.statusType
                                         },
                                         model: {
-                                          value: _vm.date,
+                                          value: _vm.editedItem.status,
                                           callback: function($$v) {
-                                            _vm.date = $$v
+                                            _vm.$set(
+                                              _vm.editedItem,
+                                              "status",
+                                              $$v
+                                            )
                                           },
-                                          expression: "date"
+                                          expression: "editedItem.status"
                                         }
                                       })
                                     ],
@@ -49139,21 +48918,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "A1",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "A1", filled: "" },
                                             model: {
-                                              value: _vm.formValue.bathroom,
+                                              value: _vm.editedItem.arta1,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
+                                                  _vm.editedItem,
+                                                  "arta1",
                                                   $$v
                                                 )
                                               },
-                                              expression: "formValue.bathroom"
+                                              expression: "editedItem.arta1"
                                             }
                                           })
                                         ],
@@ -49167,23 +48942,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              label: "A2",
-                                              type: "number",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "A2", filled: "" },
                                             model: {
-                                              value:
-                                                _vm.formValue.parking_space,
+                                              value: _vm.editedItem.arta2,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  _vm.editedItem,
+                                                  "arta2",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.parking_space"
+                                              expression: "editedItem.arta2"
                                             }
                                           })
                                         ],
@@ -49197,23 +48966,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              label: "A3",
-                                              type: "number",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "A3", filled: "" },
                                             model: {
-                                              value:
-                                                _vm.formValue.parking_space,
+                                              value: _vm.editedItem.arta3,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  _vm.editedItem,
+                                                  "arta3",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.parking_space"
+                                              expression: "editedItem.arta3"
                                             }
                                           })
                                         ],
@@ -49227,21 +48990,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "B1",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "B1", filled: "" },
                                             model: {
-                                              value: _vm.formValue.bathroom,
+                                              value: _vm.editedItem.artb1,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
+                                                  _vm.editedItem,
+                                                  "artb1",
                                                   $$v
                                                 )
                                               },
-                                              expression: "formValue.bathroom"
+                                              expression: "editedItem.artb1"
                                             }
                                           })
                                         ],
@@ -49255,23 +49014,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              label: "B2",
-                                              type: "number",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "B2", filled: "" },
                                             model: {
-                                              value:
-                                                _vm.formValue.parking_space,
+                                              value: _vm.editedItem.artb2,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  _vm.editedItem,
+                                                  "artb2",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.parking_space"
+                                              expression: "editedItem.artb2"
                                             }
                                           })
                                         ],
@@ -49285,23 +49038,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              label: "B3",
-                                              type: "number",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "B3", filled: "" },
                                             model: {
-                                              value:
-                                                _vm.formValue.parking_space,
+                                              value: _vm.editedItem.artb3,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  _vm.editedItem,
+                                                  "artb3",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.parking_space"
+                                              expression: "editedItem.artb3"
                                             }
                                           })
                                         ],
@@ -49315,21 +49062,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "C1",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "C1", filled: "" },
                                             model: {
-                                              value: _vm.formValue.bathroom,
+                                              value: _vm.editedItem.artc1,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
+                                                  _vm.editedItem,
+                                                  "artc1",
                                                   $$v
                                                 )
                                               },
-                                              expression: "formValue.bathroom"
+                                              expression: "editedItem.artc1"
                                             }
                                           })
                                         ],
@@ -49343,23 +49086,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              label: "C2",
-                                              type: "number",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "C2", filled: "" },
                                             model: {
-                                              value:
-                                                _vm.formValue.parking_space,
+                                              value: _vm.editedItem.artc2,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  _vm.editedItem,
+                                                  "artc2",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.parking_space"
+                                              expression: "editedItem.artc2"
                                             }
                                           })
                                         ],
@@ -49373,23 +49110,17 @@ var render = function() {
                                         },
                                         [
                                           _c("v-text-field", {
-                                            attrs: {
-                                              label: "C3",
-                                              type: "number",
-                                              filled: ""
-                                            },
+                                            attrs: { label: "C3", filled: "" },
                                             model: {
-                                              value:
-                                                _vm.formValue.parking_space,
+                                              value: _vm.editedItem.artc3,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
+                                                  _vm.editedItem,
+                                                  "artc3",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.parking_space"
+                                              expression: "editedItem.artc3"
                                             }
                                           })
                                         ],
@@ -49459,23 +49190,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Saturday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.saturday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "saturday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.saturday"
                                             }
                                           })
                                         ],
@@ -49490,23 +49217,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Sunday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.sunday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "sunday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.sunday"
                                             }
                                           })
                                         ],
@@ -49521,23 +49244,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Monday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.monday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "monday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.monday"
                                             }
                                           })
                                         ],
@@ -49552,23 +49271,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Tuesday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.tuesday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "tuesday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.tuesday"
                                             }
                                           })
                                         ],
@@ -49583,23 +49298,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Wednesday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.wednesday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "wednesday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.wednesday"
                                             }
                                           })
                                         ],
@@ -49614,23 +49325,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Thursady",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.thursaday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "thursaday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.thursaday"
                                             }
                                           })
                                         ],
@@ -49645,23 +49352,19 @@ var render = function() {
                                         [
                                           _c("v-textarea", {
                                             attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
                                               label: "Friday",
                                               filled: ""
                                             },
                                             model: {
-                                              value: _vm.formValue.category_id,
+                                              value: _vm.editedItem.friday,
                                               callback: function($$v) {
                                                 _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
+                                                  _vm.editedItem,
+                                                  "friday",
                                                   $$v
                                                 )
                                               },
-                                              expression:
-                                                "formValue.category_id"
+                                              expression: "editedItem.friday"
                                             }
                                           })
                                         ],
@@ -49747,7 +49450,6 @@ var render = function() {
           }
         },
         [
-          _vm._v("\n\t\t\t" + _vm._s(_vm.text) + "\n\t\t\t"),
           _c(
             "v-btn",
             {
@@ -49767,14 +49469,6 @@ var render = function() {
       _c(
         "v-btn",
         {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.accept,
-              expression: "accept"
-            }
-          ],
           attrs: {
             bottom: "",
             color: "success",

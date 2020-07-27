@@ -26,7 +26,6 @@ class CreateComunicatesTable extends Migration
             $table->text('artc1')->Nullable();
             $table->text('artc2')->Nullable();
             $table->text('artc3')->Nullable();
-            $table->date('date')->Nullable();
             $table->tinyInteger('status')->default(1)->comment('0,1,2,3');
             $table->softDeletes();
             $table->timestamps();
