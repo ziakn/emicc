@@ -110,8 +110,7 @@
 									<v-row justify="center">
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
-												v-model="editedItem.arta1"
-																		
+												v-model="editedItem.arta1"					
 												label="A1"
 												filled
 											></v-text-field>
@@ -243,26 +242,6 @@
 				</v-col>
 			</v-row>
 		</v-container>
-		<v-dialog
-                v-model="loadingdialog"
-                hide-overlay
-                persistent
-                width="300"
-                >
-                <v-card
-                    color="primary"
-                    dark
-                >
-                    <v-card-text>
-                    Please wait data and images is storing...
-                    <v-progress-linear
-                        indeterminate
-                        color="white"
-                        class="mb-0"
-                    ></v-progress-linear>
-                    </v-card-text>
-                </v-card>
-        </v-dialog>
         <v-snackbar
 			v-model="loading"
 			:vertical="snackvertical"
@@ -293,7 +272,7 @@ export default {
 	},
 	data: () => ({
 		 date: new Date().toISOString().substr(0, 10),
-      menu2: false,
+     	 menu2: false,
 		loadingdialog:false,
 		menu2: false,
 		loading:false,
@@ -301,6 +280,8 @@ export default {
         timeout: 6000,
 		snackbar: false,
 		tab:null,
+			edit: true,
+			dialog: false,
 		editedItem:
 		{
             arta:'',
@@ -350,7 +331,14 @@ export default {
 		
         },
         
-
+		editItem(item) 
+		{
+			this.edit = false;
+			this.editedIndex = this.dataList.indexOf(item);
+			this.editedItem = Object.assign({}, item);
+			this.dialog = true;
+		},
+		
 		async addData()
 		{
 

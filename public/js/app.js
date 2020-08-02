@@ -4755,27 +4755,6 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {},
   data: function data() {
@@ -4785,7 +4764,7 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
       date: new Date().toISOString().substr(0, 10),
       menu2: false,
       loadingdialog: false
-    }, _defineProperty(_ref, "menu2", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "tab", null), _defineProperty(_ref, "editedItem", {
+    }, _defineProperty(_ref, "menu2", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "tab", null), _defineProperty(_ref, "edit", true), _defineProperty(_ref, "dialog", false), _defineProperty(_ref, "editedItem", {
       arta: '',
       artb: '',
       artc: '',
@@ -4836,6 +4815,12 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
           }
         }, _callee);
       }))();
+    },
+    editItem: function editItem(item) {
+      this.edit = false;
+      this.editedIndex = this.dataList.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
     },
     addData: function addData() {
       var _this = this;
@@ -49385,43 +49370,6 @@ var render = function() {
                     ],
                     1
                   )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: { "hide-overlay": "", persistent: "", width: "300" },
-          model: {
-            value: _vm.loadingdialog,
-            callback: function($$v) {
-              _vm.loadingdialog = $$v
-            },
-            expression: "loadingdialog"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            { attrs: { color: "primary", dark: "" } },
-            [
-              _c(
-                "v-card-text",
-                [
-                  _vm._v(
-                    "\n                    Please wait data and images is storing...\n                    "
-                  ),
-                  _c("v-progress-linear", {
-                    staticClass: "mb-0",
-                    attrs: { indeterminate: "", color: "white" }
-                  })
                 ],
                 1
               )
