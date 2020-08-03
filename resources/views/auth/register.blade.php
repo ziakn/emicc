@@ -12,7 +12,7 @@
             <form class="regis100-form" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="reg100-pic">
-                    <img src="images/img-02.png" class="d-flex" alt="">
+                    <img src="/images/img-02.png" class="d-flex" alt="">
                 </div>
                 <span class="reg100-form-title">
                     Registration

@@ -115,6 +115,9 @@
 												filled
 											></v-text-field>
 										</v-col>	
+										<v-col sm="12" md="12" lg="2">
+											<v-btn color="primary" small @click="openModel()" dark>Open Dialog</v-btn>
+										</v-col>
 										<v-col sm="12" md="12" lg="8" >
 											<v-text-field
 													v-model="editedItem.arta2"
@@ -242,46 +245,32 @@
 				</v-col>
 			</v-row>
 		</v-container>
-        <v-snackbar
-			v-model="loading"
-			:vertical="snackvertical"
-			:timeout="snacktimeout"
-			:top="snacktop"
-			color="red"
-			>
-			<v-btn
-				color="white"
-				text
-				@click="loading = false"
-			>
-				Close
-      		</v-btn>
-    	</v-snackbar>
 		<v-btn bottom color="success" dark fab fixed large right  @click="addData" >
 			<v-icon>check</v-icon>
 		</v-btn>
+		<Comunicate :trigger="isDelete" :title="deleteTitle" :body="deleteBody" @request="remove"></Comunicate>
 	</v-content>
 </template>
 
 <script>
-
+import Comunicate from "./../../common/Comunicate";
 export default {
-	components: {
-	
-		
+  components: {
+        Comunicate,
 	},
 	data: () => ({
 		 date: new Date().toISOString().substr(0, 10),
-     	 menu2: false,
-		loadingdialog:false,
 		menu2: false,
 		loading:false,
 		mode: "",
         timeout: 6000,
 		snackbar: false,
 		tab:null,
-			edit: true,
-			dialog: false,
+		edit: true,
+		dialog: false,
+		dialog1: false,
+		dialog2: false,
+		dialog3: false,
 		editedItem:
 		{
             arta:'',
@@ -339,6 +328,13 @@ export default {
 			this.dialog = true;
 		},
 		
+		openModel()
+		{
+			        this.dataIndex = this.dataList.indexOf(item);
+			        this.deleteTitle = "Are you sure you want to delete this item?";
+			        this.isDelete = !this.isDelete;
+		},
+
 		async addData()
 		{
 
