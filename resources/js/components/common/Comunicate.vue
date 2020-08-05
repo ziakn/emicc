@@ -1,8 +1,20 @@
 <template>
-    	 <v-dialog v-model="dialog1" persistent max-width="500">
+    	 <v-dialog v-model="dialog1" persistent max-width="30%">
 			<v-card>
-				<v-card-title class="headline">Use Google's location service?</v-card-title>
-				<v-card-text>Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running.</v-card-text>
+				<v-card-title class="headline">{{articulateFlag }} | {{articulate}}</v-card-title>
+				<v-card-text>
+                    <v-text-field
+                    v-model="artData"
+                     filled
+                    >
+                    </v-text-field>
+                    <v-textarea
+                      v-model="articulateData"
+                      filled
+                      disabled
+                    >
+                    </v-textarea>
+                </v-card-text>
 				<v-card-actions>
 				<v-spacer></v-spacer>
 				<v-btn color="green darken-1" text @click="dialog1 = false">Disagree</v-btn>
@@ -14,14 +26,16 @@
 <script>
 export default {
     data: () => ({
-        dialog1:false
+    
+        dialog1:false,
+        artData:null,
     }),
     props:
     {
         trigger: false,
-        title: '',
-        body: '',
-
+        articulateData: String,
+		articulate: String,
+	    articulateFlag: String
     },
     methods:
     {

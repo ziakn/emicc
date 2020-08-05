@@ -2025,16 +2025,30 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   data: function data() {
     return {
-      dialog1: false
+      dialog1: false,
+      artData: null
     };
   },
   props: {
     trigger: false,
-    title: '',
-    body: ''
+    articulateData: String,
+    articulate: String,
+    articulateFlag: String
   },
   methods: {
     deleteData: function deleteData() {
@@ -4791,6 +4805,38 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4808,39 +4854,40 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       edit: true,
       dialog: false,
       dialog1: false,
-      dialog2: false,
-      dialog3: false,
+      articulateData: null,
+      articulate: null,
+      articulateFlag: null,
       editedItem: {
-        arta: '',
-        artb: '',
-        artc: '',
-        date: '',
-        arta1: '',
-        status: '',
-        arta2: '',
-        arta3: '',
-        artb1: '',
-        artb2: '',
-        artb3: '',
-        artc1: '',
-        artc2: '',
-        artc3: '',
-        saturday: '',
-        sunday: '',
-        monday: '',
-        tuesday: '',
-        wednesday: '',
-        thursday: '',
-        friday: ''
+        arta: "",
+        artb: "",
+        artc: "",
+        date: "",
+        arta1: "",
+        status: "",
+        arta2: "",
+        arta3: "",
+        artb1: "",
+        artb2: "",
+        artb3: "",
+        artc1: "",
+        artc2: "",
+        artc3: "",
+        saturday: "",
+        sunday: "",
+        monday: "",
+        tuesday: "",
+        wednesday: "",
+        thursday: "",
+        friday: ""
       },
       statusType: [{
-        name: 'Low',
+        name: "Low",
         value: 0
       }, {
-        name: 'Medium',
+        name: "Medium",
         value: 1
       }, {
-        name: 'High',
+        name: "High",
         value: 2
       }]
     };
@@ -4870,10 +4917,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
     },
-    openModel: function openModel() {
-      this.dataIndex = this.dataList.indexOf(item);
-      this.deleteTitle = "Are you sure you want to delete this item?";
-      this.isDelete = !this.isDelete;
+    openModel: function openModel(param1, param2, param3) {
+      this.articulateData = param1;
+      this.articulate = param2, this.articulateFlag = param3;
+      this.dialog1 = !this.dialog1;
     },
     addData: function addData() {
       var _this = this;
@@ -4897,7 +4944,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _yield$axios = _context2.sent;
                 data = _yield$axios.data;
 
-                _this.snacks('Successfully Done', 'green');
+                _this.snacks("Successfully Done", "green");
 
                 _context2.next = 11;
                 break;
@@ -4906,7 +4953,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context2.prev = 8;
                 _context2.t0 = _context2["catch"](0);
 
-                _this.snacks('Failed', 'Red');
+                _this.snacks("Failed", "Red");
 
               case 11:
               case "end":
@@ -45406,7 +45453,7 @@ var render = function() {
   return _c(
     "v-dialog",
     {
-      attrs: { persistent: "", "max-width": "500" },
+      attrs: { persistent: "", "max-width": "30%" },
       model: {
         value: _vm.dialog1,
         callback: function($$v) {
@@ -45420,14 +45467,36 @@ var render = function() {
         "v-card",
         [
           _c("v-card-title", { staticClass: "headline" }, [
-            _vm._v("Use Google's location service?")
+            _vm._v(_vm._s(_vm.articulateFlag) + " | " + _vm._s(_vm.articulate))
           ]),
           _vm._v(" "),
-          _c("v-card-text", [
-            _vm._v(
-              "Let Google help apps determine location. This means sending anonymous location data to Google, even when no apps are running."
-            )
-          ]),
+          _c(
+            "v-card-text",
+            [
+              _c("v-text-field", {
+                attrs: { filled: "" },
+                model: {
+                  value: _vm.artData,
+                  callback: function($$v) {
+                    _vm.artData = $$v
+                  },
+                  expression: "artData"
+                }
+              }),
+              _vm._v(" "),
+              _c("v-textarea", {
+                attrs: { filled: "", disabled: "" },
+                model: {
+                  value: _vm.articulateData,
+                  callback: function($$v) {
+                    _vm.articulateData = $$v
+                  },
+                  expression: "articulateData"
+                }
+              })
+            ],
+            1
+          ),
           _vm._v(" "),
           _c(
             "v-card-actions",
@@ -48694,15 +48763,21 @@ var render = function() {
                       _c("v-tabs-slider"),
                       _vm._v(" "),
                       _c("v-tab", { attrs: { href: "#tab-1" } }, [
-                        _vm._v("\n\t\t\t\t\t\tArticle\n\t\t\t\t\t")
+                        _vm._v(
+                          "\n                            Article\n                        "
+                        )
                       ]),
                       _vm._v(" "),
                       _c("v-tab", { attrs: { href: "#tab-2" } }, [
-                        _vm._v("\n\t\t\t\t\t\tComunicate\n\t\t\t\t\t")
+                        _vm._v(
+                          "\n                            Comunicate\n                        "
+                        )
                       ]),
                       _vm._v(" "),
                       _c("v-tab", { attrs: { href: "#tab-3" } }, [
-                        _vm._v("\n\t\t\t\t\t\tTake Actions\n\t\t\t\t\t")
+                        _vm._v(
+                          "\n                            Take Actions\n                        "
+                        )
                       ])
                     ],
                     1
@@ -48748,7 +48823,7 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n\t\t\t\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t\t\t\t"
+                                                "\n                                                dashboard\n                                            "
                                               )
                                             ]
                                           ),
@@ -48982,7 +49057,7 @@ var render = function() {
                                             },
                                             [
                                               _vm._v(
-                                                "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                                "\n                                                dashboard\n                                            "
                                               )
                                             ]
                                           ),
@@ -49077,7 +49152,11 @@ var render = function() {
                                               },
                                               on: {
                                                 click: function($event) {
-                                                  return _vm.openModel()
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.arta,
+                                                    "A1",
+                                                    "A"
+                                                  )
                                                 }
                                               }
                                             },
@@ -49313,7 +49392,7 @@ var render = function() {
                                     },
                                     [
                                       _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
+                                        "\n                                        dashboard\n                                    "
                                       )
                                     ]
                                   ),
@@ -49567,11 +49646,11 @@ var render = function() {
       _vm._v(" "),
       _c("Comunicate", {
         attrs: {
-          trigger: _vm.isDelete,
-          title: _vm.deleteTitle,
-          body: _vm.deleteBody
-        },
-        on: { request: _vm.remove }
+          trigger: _vm.dialog1,
+          articulateData: _vm.articulateData,
+          articulate: _vm.articulate,
+          articulateFlag: _vm.articulateFlag
+        }
       })
     ],
     1
