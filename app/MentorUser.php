@@ -6,5 +6,6 @@ use Illuminate\Database\Eloquent\Model;
 
 class MentorUser extends Model
 {
-    //
+    protected $guarded = [
+    ];
 }

@@ -1,15 +1,15 @@
 <template>
     	 <v-dialog v-model="dialog1" persistent max-width="30%">
 			<v-card>
-				<v-card-title class="headline">{{articulateFlag }} | {{articulate}}</v-card-title>
+				<v-card-title class="headline">{{articulateObj.articulateFlag }} | {{articulateObj.articulate}}</v-card-title>
 				<v-card-text>
                     <v-text-field
-                    v-model="artData"
+                    v-model="articulateObj.artData"
                      filled
                     >
                     </v-text-field>
                     <v-textarea
-                      v-model="articulateData"
+                      v-model="articulateObj.articulateData"
                       filled
                       disabled
                     >
@@ -17,8 +17,8 @@
                 </v-card-text>
 				<v-card-actions>
 				<v-spacer></v-spacer>
-				<v-btn color="green darken-1" text @click="dialog1 = false">Disagree</v-btn>
-				<v-btn color="green darken-1" text @click="dialog1 = false">Agree</v-btn>
+				<v-btn color="green darken-1" text @click="dialog1 = false">close</v-btn>
+				<v-btn color="green darken-1" text @click="sendBackData">Edit </v-btn>
 				</v-card-actions>
 			</v-card>
 			</v-dialog>
@@ -33,15 +33,13 @@ export default {
     props:
     {
         trigger: false,
-        articulateData: String,
-		articulate: String,
-	    articulateFlag: String
+        articulateObj: Object,
     },
     methods:
     {
-        deleteData()
+        sendBackData()
         {
-            this.$emit('request')
+            this.$emit('send', this.articulateObj)
             this.dialog1=false
         }
 

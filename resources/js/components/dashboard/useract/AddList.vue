@@ -51,16 +51,17 @@
                                                     }"
                                                 >
                                                     <v-text-field
-                                                        v-model="date"
+                                                        v-model="editedItem.date"
                                                         label="Picker without buttons"
                                                         prepend-icon="event"
                                                         readonly
                                                         v-bind="attrs"
                                                         v-on="on"
+                                                        required
                                                     ></v-text-field>
                                                 </template>
                                                 <v-date-picker
-                                                    v-model="date"
+                                                    v-model="editedItem.date"
                                                     @input="menu2 = false"
                                                 ></v-date-picker>
                                             </v-menu>
@@ -113,6 +114,8 @@
                                             v-model="editedItem.status"
                                             label="Select level"
                                             :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
                                         ></v-select>
                                     </v-col>
                                 </v-row>
@@ -141,12 +144,30 @@
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                        <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.arta,'A2', 'A')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
+                                        </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
                                                 v-model="editedItem.arta3"
                                                 label="A3"
                                                 filled
                                             ></v-text-field>
+                                        </v-col>
+                                        <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.arta,'A3', 'A')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
@@ -155,12 +176,30 @@
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                        <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.artb,'B1', 'B')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
+                                        </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
                                                 v-model="editedItem.artb2"
                                                 label="B2"
                                                 filled
                                             ></v-text-field>
+                                        </v-col>
+                                           <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.artb,'B2', 'B')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
@@ -169,12 +208,30 @@
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                           <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.artb,'B3', 'B')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
+                                        </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
                                                 v-model="editedItem.artc1"
                                                 label="C1"
                                                 filled
                                             ></v-text-field>
+                                        </v-col>
+                                           <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.artc,'C1', 'C')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
@@ -183,12 +240,30 @@
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                           <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.artc,'C2', 'C')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
+                                        </v-col>
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
                                                 v-model="editedItem.artc3"
                                                 label="C3"
                                                 filled
                                             ></v-text-field>
+                                        </v-col>
+                                           <v-col sm="12" md="12" lg="2">
+                                            <v-btn
+                                                color="primary"
+                                                small
+                                                @click="openModel(editedItem.artc,'C3', 'C')"
+                                                dark
+                                                >Open Dialog</v-btn
+                                            >
                                         </v-col>
                                     </v-row>
                                 </v-card-text>
@@ -256,30 +331,41 @@
                                             ></v-textarea>
                                         </v-col>
                                     </v-row>
+                                     <v-btn
+                                        bottom
+                                        color="success"
+                                        dark
+                                        fab
+                                        fixed
+                                        large
+                                        right
+                                        @click="addData"
+                                    >
+                                        <v-icon>check</v-icon>
+                                    </v-btn>
                                 </v-card-text>
+
                             </v-card>
                         </v-tab-item>
                     </v-tabs-items>
                 </v-col>
             </v-row>
         </v-container>
-        <v-btn
-            bottom
-            color="success"
-            dark
-            fab
-            fixed
-            large
-            right
-            @click="addData"
-        >
-            <v-icon>check</v-icon>
-        </v-btn>
+       	<v-snackbar
+			v-model="snackbar"
+			:vertical="snackvertical"
+			:timeout="snacktimeout"
+			:top="snacktop"
+			:right="snackright"
+			:color="snackcolor"
+		>
+			{{ snacktext }}
+			<v-btn color="white" text right @click="snackbar = false">Close</v-btn>
+		</v-snackbar>
         <Comunicate
             :trigger="dialog1"
-			:articulateData="articulateData"
-			:articulate="articulate"
-			:articulateFlag="articulateFlag"
+			:articulateObj="articulateObj"
+            @send="getarticulateObj"
         ></Comunicate>
     </v-content>
 </template>
@@ -301,9 +387,6 @@ export default {
         edit: true,
         dialog: false,
 		dialog1: false,
-		articulateData:null,
-		articulate:null,
-		articulateFlag:null,
         editedItem: {
             arta: "",
             artb: "",
@@ -327,7 +410,13 @@ export default {
             thursday: "",
             friday: ""
         },
-
+        articulateObj:
+        {
+            articulateData:null,
+            articulate:null,
+            articulateFlag:null,
+            artData:null,
+        },
         statusType: [
             { name: "Low", value: 0 },
             { name: "Medium", value: 1 },
@@ -352,21 +441,80 @@ export default {
 
 		openModel(param1, param2, param3) 
 		{
-			this.articulateData=param1
-			this.articulate=param2,
-			this.articulateFlag=param3
+			this.articulateObj.articulateData=param1
+			this.articulateObj.articulate=param2,
+			this.articulateObj.articulateFlag=param3
             this.dialog1 = !this.dialog1;
         },
 
-        async addData() {
-            try {
+        getarticulateObj(item)
+        {
+            console.log(item)
+            if(item.articulate=="A1" && item.articulateFlag =="A")
+            {
+                editedItem.arta1 = item.artData
+            }
+            if(item.articulate=="A2" && item.articulateFlag =="A")
+            {
+                editedItem.arta2 = item.artData
+            }
+            if(item.articulate=="A3" && item.articulateFlag =="A")
+            {
+                editedItem.arta3 = item.artData
+            }
+            if(item.articulate=="B1" && item.articulateFlag =="B")
+            {
+                editedItem.artb1 = item.artData
+            }
+            if(item.articulate=="B2" && item.articulateFlag =="B")
+            {
+                editedItem.artb2 = item.artData
+            }
+            if(item.articulate=="B3" && item.articulateFlag =="B")
+            {
+                editedItem.artb3 = item.artData
+            }
+            if(item.articulate=="C1" && item.articulateFlag =="C")
+            {
+                editedItem.artc1 = item.artData
+            }
+            if(item.articulate=="C2" && item.articulateFlag =="C")
+            {
+                editedItem.artc2 = item.artData
+            }
+            if(item.articulate=="C3" && item.articulateFlag =="C")
+            {
+                editedItem.artc3 = item.artData
+            }
+        },
+
+        async addData() 
+        {
+
+            if(this.editedItem.date == '')
+            {
+                 this.snacks("Select date", "warning");
+                 return
+            }
+            try 
+            {
                 let { data } = await axios({
                     method: "post",
                     url: "/app/articulate",
                     data: this.editedItem
                 });
-                this.snacks("Successfully Done", "green");
-            } catch (e) {
+                if(data.status)
+                {
+                    this.snacks("Successfully Done", "green");
+                }
+                else
+                {
+                    this.snacks("Data Once Used", "red");
+                }
+                
+            } 
+            catch (e) 
+            {
                 this.snacks("Failed", "Red");
             }
         }

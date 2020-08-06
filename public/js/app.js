@@ -2046,13 +2046,11 @@ __webpack_require__.r(__webpack_exports__);
   },
   props: {
     trigger: false,
-    articulateData: String,
-    articulate: String,
-    articulateFlag: String
+    articulateObj: Object
   },
   methods: {
-    deleteData: function deleteData() {
-      this.$emit('request');
+    sendBackData: function sendBackData() {
+      this.$emit('send', this.articulateObj);
       this.dialog1 = false;
     }
   },
@@ -3964,568 +3962,271 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
 /* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_Breadcrumbs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../common/Breadcrumbs */ "./resources/js/components/common/Breadcrumbs.vue");
+/* harmony import */ var _common_NoDataList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../common/NoDataList */ "./resources/js/components/common/NoDataList.vue");
 
 
 function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
 
 function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
+
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {},
+  components: {
+    Breadcrumbs: _common_Breadcrumbs__WEBPACK_IMPORTED_MODULE_1__["default"],
+    NoDataList: _common_NoDataList__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
   data: function data() {
-    var _ref;
-
-    return _ref = {
-      loadingdialog: false,
-      menu2: false,
-      loadingselectimage: false
-    }, _defineProperty(_ref, "loadingdialog", false), _defineProperty(_ref, "loading", false), _defineProperty(_ref, "mode", ""), _defineProperty(_ref, "timeout", 6000), _defineProperty(_ref, "text", "Your Total Images Size is more than 2 Mb Plz Compress or resize..."), _defineProperty(_ref, "text1", "Please select image for uploading"), _defineProperty(_ref, "snackbar", false), _defineProperty(_ref, "formValue", {
-      room: '',
-      bathroom: '',
-      parking_space: '',
-      furnish_type: '',
-      rent_type: '',
-      service_charges: '',
-      payment_type: '',
-      availability: '',
-      category_id: '',
-      title: '',
-      description: '',
-      price: 0,
-      meta_keyword: '',
-      meta_description: '',
-      meta_title: '',
-      property_location: '',
-      street_name: '',
-      street_no: '',
-      building_no: '',
-      data_percentage: '',
-      percentvalue: ''
-    }), _defineProperty(_ref, "dataAmenities", []), _defineProperty(_ref, "dataBedRoom", [{
-      name: 'Studio',
-      value: 'studio'
-    }, {
-      name: '1',
-      value: '1'
-    }, {
-      name: '2',
-      value: '2'
-    }, {
-      name: '3',
-      value: '3'
-    }, {
-      name: '4',
-      value: '4'
-    }, {
-      name: '5',
-      value: '5'
-    }, {
-      name: '6',
-      value: '6'
-    }, {
-      name: '7',
-      value: '7'
-    }, {
-      name: '8',
-      value: '8'
-    }, {
-      name: '9',
-      value: '9'
-    }, {
-      name: '10',
-      value: '10'
-    }, {
-      name: '11',
-      value: '11'
-    }, {
-      name: '12',
-      value: '12'
-    }, {
-      name: '13',
-      value: '13'
-    }, {
-      name: '14',
-      value: '14'
-    }, {
-      name: '15',
-      value: '15'
-    }]), _defineProperty(_ref, "dataBathroom", [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 20]), _defineProperty(_ref, "dataFurnished", ['Furnished', 'Un-Furnished', 'Semi-Furnished']), _defineProperty(_ref, "dataRentType", ['Daily', 'Weekly', 'Monthly', 'Yearly']), _defineProperty(_ref, "dataPercentage", ['Days', 'Percentage(%)']), _defineProperty(_ref, "dataCategory", []), _defineProperty(_ref, "paymentType", [{
-      name: 'Cheque',
-      value: 'cheque'
-    }, {
-      name: 'Cash',
-      value: 'cash'
-    }]), _defineProperty(_ref, "dataAvailability", [{
-      name: 'Available',
-      value: 'available'
-    }, {
-      name: 'Not Available',
-      value: 'notavailable'
-    }]), _defineProperty(_ref, "absolute", true), _defineProperty(_ref, "editedIndex", null), _defineProperty(_ref, "tab", null), _defineProperty(_ref, "files", []), _defineProperty(_ref, "amenities", []), _ref;
+    return {
+      search: "",
+      absolute: true,
+      loading: false,
+      edit: true,
+      dialog: false,
+      dataList: [],
+      dataBreadcrumbs: [],
+      items: [{
+        text: 'Dashboard',
+        disabled: false,
+        href: 'breadcrumbs_dashboard'
+      }, {
+        text: 'Link 1',
+        disabled: false,
+        href: 'breadcrumbs_link_1'
+      }, {
+        text: 'Link 2',
+        disabled: true,
+        href: 'breadcrumbs_link_2'
+      }],
+      userType: [],
+      headers: [{
+        text: "ID",
+        align: "left",
+        value: "id"
+      }, {
+        text: "A",
+        value: "arta"
+      }, {
+        text: "B",
+        value: "artb"
+      }, {
+        text: "C",
+        value: "artc"
+      }, {
+        text: "Action",
+        value: "action"
+      }],
+      emailRules: [function (v) {
+        return !!v || "E-mail is required";
+      }, function (v) {
+        return /.+@.+.\.+.+/.test(v) || "E-mail must be valid";
+      }],
+      usernameRules: [function (v) {
+        return !!v || "Name is required";
+      }, function (v) {
+        return (v || "").indexOf(" ") < 0 || "No spaces are allowed";
+      }],
+      passwordRules: [function (v) {
+        return (v || "").length >= 8 || "A minimum of 8 characters is allowed";
+      }],
+      editedIndex: -1,
+      editedItem: {
+        name: "",
+        email: "",
+        type: "",
+        contact: "",
+        address: "",
+        status: 1,
+        company_name: "",
+        company_contact: "",
+        city: "",
+        postcode: ""
+      },
+      defaultItem: {
+        name: "",
+        email: "",
+        type: "",
+        contact: "",
+        address: "",
+        status: 1,
+        company_name: "",
+        company_contact: "",
+        city: "",
+        postcode: ""
+      },
+      dataStatus: [{
+        name: "Active",
+        value: 1
+      }, {
+        name: "Disable",
+        value: 0
+      }]
+    };
+  },
+  props: {
+    source: String
   },
   computed: {
-    accept: function accept() {
-      if (this.formValue.title && this.formValue.description && this.formValue.category_id && this.formValue.price && this.formValue.property_location) {
-        return true;
-      } else {
-        return false;
-      }
+    formTitle: function formTitle() {
+      return this.editedIndex === -1 ? "New Item" : "Edit Item";
     }
   },
-  watch: {
-    'formValue.title': function formValueTitle(data) {
-      this.formValue.meta_title = data;
-    },
-    'formValue.description': function formValueDescription(data) {
-      this.formValue.meta_description = data;
-    }
-  },
+  watch: {},
   created: function created() {
     this.initialize();
   },
   methods: {
-    seoValue: function seoValue(item) {
-      this.formValue.meta_description = item.meta_description;
-      this.formValue.meta_title = item.meta_title;
-      this.formValue.meta_keyword = item.meta_keyword;
-    },
-    locationValue: function locationValue(item) {
-      this.formValue.property_location = item.property_location;
-      this.formValue.street_name = item.street_name;
-      this.formValue.street_no = item.street_no;
-      this.formValue.building_no = item.building_no;
-    },
-    filesValue: function filesValue(item) {
-      this.files = item;
-    },
     initialize: function initialize() {
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _yield$axios, data, _yield$axios2, _data;
+        var _yield$axios, data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _this.start();
-
-                _context.prev = 1;
-                _context.next = 4;
+                _context.prev = 0;
+                _context.next = 3;
                 return axios({
                   method: "get",
-                  url: "/app/category"
+                  url: "/app/articulate"
                 });
 
-              case 4:
+              case 3:
                 _yield$axios = _context.sent;
                 data = _yield$axios.data;
-                _this.dataCategory = data;
-                _context.next = 12;
+                _this.dataList = data;
+                _context.next = 10;
                 break;
 
-              case 9:
-                _context.prev = 9;
-                _context.t0 = _context["catch"](1);
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
 
-                _this.fail();
-
-              case 12:
-                _context.prev = 12;
-                _context.next = 15;
-                return axios({
-                  method: "get",
-                  url: "/app/amenity"
-                });
-
-              case 15:
-                _yield$axios2 = _context.sent;
-                _data = _yield$axios2.data;
-                _this.dataAmenities = _data;
-                _context.next = 23;
-                break;
-
-              case 20:
-                _context.prev = 20;
-                _context.t1 = _context["catch"](12);
-
-                _this.fail();
-
-              case 23:
+              case 10:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[1, 9], [12, 20]]);
+        }, _callee, null, [[0, 8]]);
       }))();
     },
-    addData: function addData() {
+    editItem: function editItem(item) {
+      this.edit = false;
+      this.editedIndex = this.dataList.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
+    },
+    deleteItem: function deleteItem(item) {
+      this.dataIndex = this.dataList.indexOf(item);
+      this.deleteTitle = "Are you sure you want to delete this item?";
+      this.isDelete = !this.isDelete;
+    },
+    remove: function remove() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var formData, key, _yield$axios3, data;
+        var _yield$axios2, data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                if (!_this2.files.some(function (file) {
-                  return file.size > 2e6;
-                })) {
-                  _context2.next = 6;
-                  break;
-                }
-
-                _this2.loading = true;
-                _this2.totalFiles = [];
-                return _context2.abrupt("return", false);
-
-              case 6:
-                _this2.loadingdialog = true;
-                formData = new FormData();
-
-                _this2.amenities.forEach(function (file) {
-                  formData.append("amenities[]", JSON.stringify(file));
-                });
-
-                _this2.files.forEach(function (file) {
-                  formData.append("media[]", file, file.name);
-                });
-
-                for (key in _this2.formValue) {
-                  formData.append(key, _this2.formValue[key]);
-                }
-
-                _context2.prev = 11;
-                _context2.next = 14;
+                _context2.prev = 0;
+                _context2.next = 3;
                 return axios({
-                  method: "post",
-                  url: "/app/property",
-                  data: formData
+                  method: "delete",
+                  url: "/app/user/" + _this2.dataList[_this2.dataIndex].id
                 });
 
-              case 14:
-                _yield$axios3 = _context2.sent;
-                data = _yield$axios3.data;
+              case 3:
+                _yield$axios2 = _context2.sent;
+                data = _yield$axios2.data;
 
-                _this2.snacks('Successfully Done', 'green');
+                if (data.status) {
+                  _this2.snacks('Successfully Done', 'green');
 
-                _this2.loadingdialog = false;
+                  _this2.dataList.splice(_this2.dataIndex, 1);
 
-                _this2.$router.push('/dashboard/property/list');
+                  _this2.close();
+                } else {
+                  _this2.snacks(data.data, 'red');
 
-                _context2.next = 25;
+                  _this2.loading = false;
+                }
+
+                _context2.next = 12;
                 break;
 
-              case 21:
-                _context2.prev = 21;
-                _context2.t0 = _context2["catch"](11);
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2["catch"](0);
 
-                _this2.fail();
+                _this2.snacks('Operation Failed', 'red');
 
-                _this2.snacks('Failed', 'Red');
+                _this2.loading = false;
 
-              case 25:
+              case 12:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[11, 21]]);
+        }, _callee2, null, [[0, 8]]);
       }))();
     }
   }
@@ -4837,6 +4538,92 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4854,9 +4641,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       edit: true,
       dialog: false,
       dialog1: false,
-      articulateData: null,
-      articulate: null,
-      articulateFlag: null,
       editedItem: {
         arta: "",
         artb: "",
@@ -4879,6 +4663,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         wednesday: "",
         thursday: "",
         friday: ""
+      },
+      articulateObj: {
+        articulateData: null,
+        articulate: null,
+        articulateFlag: null,
+        artData: null
       },
       statusType: [{
         name: "Low",
@@ -4918,9 +4708,48 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.dialog = true;
     },
     openModel: function openModel(param1, param2, param3) {
-      this.articulateData = param1;
-      this.articulate = param2, this.articulateFlag = param3;
+      this.articulateObj.articulateData = param1;
+      this.articulateObj.articulate = param2, this.articulateObj.articulateFlag = param3;
       this.dialog1 = !this.dialog1;
+    },
+    getarticulateObj: function getarticulateObj(item) {
+      console.log(item);
+
+      if (item.articulate == "A1" && item.articulateFlag == "A") {
+        editedItem.arta1 = item.artData;
+      }
+
+      if (item.articulate == "A2" && item.articulateFlag == "A") {
+        editedItem.arta2 = item.artData;
+      }
+
+      if (item.articulate == "A3" && item.articulateFlag == "A") {
+        editedItem.arta3 = item.artData;
+      }
+
+      if (item.articulate == "B1" && item.articulateFlag == "B") {
+        editedItem.artb1 = item.artData;
+      }
+
+      if (item.articulate == "B2" && item.articulateFlag == "B") {
+        editedItem.artb2 = item.artData;
+      }
+
+      if (item.articulate == "B3" && item.articulateFlag == "B") {
+        editedItem.artb3 = item.artData;
+      }
+
+      if (item.articulate == "C1" && item.articulateFlag == "C") {
+        editedItem.artc1 = item.artData;
+      }
+
+      if (item.articulate == "C2" && item.articulateFlag == "C") {
+        editedItem.artc2 = item.artData;
+      }
+
+      if (item.articulate == "C3" && item.articulateFlag == "C") {
+        editedItem.artc3 = item.artData;
+      }
     },
     addData: function addData() {
       var _this = this;
@@ -4932,35 +4761,49 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
+                if (!(_this.editedItem.date == '')) {
+                  _context2.next = 3;
+                  break;
+                }
+
+                _this.snacks("Select date", "warning");
+
+                return _context2.abrupt("return");
+
+              case 3:
+                _context2.prev = 3;
+                _context2.next = 6;
                 return axios({
                   method: "post",
                   url: "/app/articulate",
                   data: _this.editedItem
                 });
 
-              case 3:
+              case 6:
                 _yield$axios = _context2.sent;
                 data = _yield$axios.data;
 
-                _this.snacks("Successfully Done", "green");
+                if (data.status) {
+                  _this.snacks("Successfully Done", "green");
+                } else {
+                  _this.snacks("Data Once Used", "red");
+                }
 
-                _context2.next = 11;
+                _context2.next = 14;
                 break;
 
-              case 8:
-                _context2.prev = 8;
-                _context2.t0 = _context2["catch"](0);
+              case 11:
+                _context2.prev = 11;
+                _context2.t0 = _context2["catch"](3);
 
                 _this.snacks("Failed", "Red");
 
-              case 11:
+              case 14:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 8]]);
+        }, _callee2, null, [[3, 11]]);
       }))();
     }
   }
@@ -45467,7 +45310,11 @@ var render = function() {
         "v-card",
         [
           _c("v-card-title", { staticClass: "headline" }, [
-            _vm._v(_vm._s(_vm.articulateFlag) + " | " + _vm._s(_vm.articulate))
+            _vm._v(
+              _vm._s(_vm.articulateObj.articulateFlag) +
+                " | " +
+                _vm._s(_vm.articulateObj.articulate)
+            )
           ]),
           _vm._v(" "),
           _c(
@@ -45476,22 +45323,22 @@ var render = function() {
               _c("v-text-field", {
                 attrs: { filled: "" },
                 model: {
-                  value: _vm.artData,
+                  value: _vm.articulateObj.artData,
                   callback: function($$v) {
-                    _vm.artData = $$v
+                    _vm.$set(_vm.articulateObj, "artData", $$v)
                   },
-                  expression: "artData"
+                  expression: "articulateObj.artData"
                 }
               }),
               _vm._v(" "),
               _c("v-textarea", {
                 attrs: { filled: "", disabled: "" },
                 model: {
-                  value: _vm.articulateData,
+                  value: _vm.articulateObj.articulateData,
                   callback: function($$v) {
-                    _vm.articulateData = $$v
+                    _vm.$set(_vm.articulateObj, "articulateData", $$v)
                   },
-                  expression: "articulateData"
+                  expression: "articulateObj.articulateData"
                 }
               })
             ],
@@ -45513,20 +45360,16 @@ var render = function() {
                     }
                   }
                 },
-                [_vm._v("Disagree")]
+                [_vm._v("close")]
               ),
               _vm._v(" "),
               _c(
                 "v-btn",
                 {
                   attrs: { color: "green darken-1", text: "" },
-                  on: {
-                    click: function($event) {
-                      _vm.dialog1 = false
-                    }
-                  }
+                  on: { click: _vm.sendBackData }
                 },
-                [_vm._v("Agree")]
+                [_vm._v("Edit ")]
               )
             ],
             1
@@ -47803,6 +47646,59 @@ var render = function() {
         { attrs: { fluid: "" } },
         [
           _c(
+            "v-overlay",
+            { attrs: { value: _vm.showFullLoading, absolute: _vm.absolute } },
+            [
+              _c("v-progress-circular", {
+                attrs: { indeterminate: "", size: "64" }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-toolbar",
+            { attrs: { color: "transparent", flat: "" } },
+            [
+              _c(
+                "v-avatar",
+                {
+                  staticClass: " elevation-12",
+                  attrs: { tile: "", color: "primary" }
+                },
+                [_c("v-icon", { attrs: { dark: "" } }, [_vm._v("face")])],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-toolbar-title", { staticClass: "ml-4 primary--text" }, [
+                _vm._v(_vm._s(_vm.$t("message.user.list")))
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  "append-icon": "search",
+                  label: "Search",
+                  "hide-details": "",
+                  outlined: "",
+                  dense: ""
+                },
+                model: {
+                  value: _vm.search,
+                  callback: function($$v) {
+                    _vm.search = $$v
+                  },
+                  expression: "search"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("Breadcrumbs"),
+          _vm._v(" "),
+          _c(
             "v-row",
             { attrs: { justify: "center" } },
             [
@@ -47810,831 +47706,54 @@ var render = function() {
                 "v-col",
                 { attrs: { sm: "12", md: "12", lg: "12" } },
                 [
-                  _c(
-                    "v-tabs",
-                    {
-                      attrs: {
-                        "background-color": "primary",
-                        centered: "",
-                        dark: "",
-                        grow: ""
-                      },
-                      model: {
-                        value: _vm.tab,
-                        callback: function($$v) {
-                          _vm.tab = $$v
-                        },
-                        expression: "tab"
-                      }
+                  _c("v-data-table", {
+                    staticClass: "elevation-4",
+                    attrs: {
+                      color: "white",
+                      headers: _vm.headers,
+                      items: _vm.dataList,
+                      search: _vm.search
                     },
-                    [
-                      _c("v-tabs-slider"),
-                      _vm._v(" "),
-                      _c("v-tab", { attrs: { href: "#tab-1" } }, [
-                        _vm._v("\n\t\t\t\t\t\tArticle\n\t\t\t\t\t")
-                      ]),
-                      _vm._v(" "),
-                      _c("v-tab", { attrs: { href: "#tab-2" } }, [
-                        _vm._v("\n\t\t\t\t\t\tComunicate\n\t\t\t\t\t")
-                      ]),
-                      _vm._v(" "),
-                      _c("v-tab", { attrs: { href: "#tab-3" } }, [
-                        _vm._v("\n\t\t\t\t\t\tTake Actions\n\t\t\t\t\t")
-                      ])
-                    ],
-                    1
-                  ),
-                  _vm._v(" "),
-                  _c(
-                    "v-tabs-items",
-                    {
-                      model: {
-                        value: _vm.tab,
-                        callback: function($$v) {
-                          _vm.tab = $$v
+                    scopedSlots: _vm._u([
+                      {
+                        key: "no-data",
+                        fn: function() {
+                          return [
+                            _c("NoDataList", {
+                              attrs: { loading: _vm.loading },
+                              on: { initialize: _vm.initialize }
+                            })
+                          ]
                         },
-                        expression: "tab"
+                        proxy: true
                       }
-                    },
-                    [
-                      _c(
-                        "v-tab-item",
-                        { attrs: { value: "tab-1" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "mt-5" },
-                            [
-                              _c(
-                                "v-card-title",
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      attrs: {
-                                        large: "",
-                                        left: "",
-                                        color: "blue"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "title font-weight-light" },
-                                    [_vm._v("Article")]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-card-text",
-                                [
-                                  _c(
-                                    "v-row",
-                                    { attrs: { justify: "center" } },
-                                    [
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "A",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataBedRoom,
-                                              "item-value": "value",
-                                              "item-text": "name",
-                                              label: "B",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.room,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "room",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.room"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "C",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.bathroom,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.bathroom"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tab-item",
-                        { attrs: { value: "tab-2" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "mt-5" },
-                            [
-                              _c(
-                                "v-card-title",
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      attrs: {
-                                        large: "",
-                                        left: "",
-                                        color: "blue"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "title font-weight-light" },
-                                    [_vm._v("Comunicate")]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-card-text",
-                                [
-                                  _c(
-                                    "v-row",
-                                    { attrs: { justify: "center" } },
-                                    [
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "A1",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.bathroom,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.bathroom"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "A2",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "A3",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "B1",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.bathroom,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.bathroom"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "B2",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "B3",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              items: _vm.dataBathroom,
-                                              label: "C1",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.bathroom,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "bathroom",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "formValue.bathroom"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "C2",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
-                                        },
-                                        [
-                                          _c("v-text-field", {
-                                            attrs: {
-                                              label: "C3",
-                                              type: "number",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value:
-                                                _vm.formValue.parking_space,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "parking_space",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.parking_space"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      ),
-                      _vm._v(" "),
-                      _c(
-                        "v-tab-item",
-                        { attrs: { value: "tab-3" } },
-                        [
-                          _c(
-                            "v-card",
-                            { staticClass: "mt-5" },
-                            [
-                              _c(
-                                "v-card-title",
-                                [
-                                  _c(
-                                    "v-icon",
-                                    {
-                                      attrs: {
-                                        large: "",
-                                        left: "",
-                                        color: "blue"
-                                      }
-                                    },
-                                    [
-                                      _vm._v(
-                                        "\n\t\t\t\t\t\t\t\t\t\tdashboard\n\t\t\t\t\t\t\t\t\t"
-                                      )
-                                    ]
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "span",
-                                    { staticClass: "title font-weight-light" },
-                                    [_vm._v("Take Action")]
-                                  )
-                                ],
-                                1
-                              ),
-                              _vm._v(" "),
-                              _c(
-                                "v-card-text",
-                                [
-                                  _c(
-                                    "v-row",
-                                    { attrs: { justify: "center" } },
-                                    [
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Saturday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Sunday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Monday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Tuesday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Wednesday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Thursady",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              items: _vm.dataCategory,
-                                              "item-text": "name",
-                                              "item-value": "id",
-                                              label: "Friday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.formValue.category_id,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.formValue,
-                                                  "category_id",
-                                                  $$v
-                                                )
-                                              },
-                                              expression:
-                                                "formValue.category_id"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      )
-                                    ],
-                                    1
-                                  )
-                                ],
-                                1
-                              )
-                            ],
-                            1
-                          )
-                        ],
-                        1
-                      )
-                    ],
-                    1
-                  )
-                ],
-                1
-              )
-            ],
-            1
-          )
-        ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-dialog",
-        {
-          attrs: { "hide-overlay": "", persistent: "", width: "300" },
-          model: {
-            value: _vm.loadingdialog,
-            callback: function($$v) {
-              _vm.loadingdialog = $$v
-            },
-            expression: "loadingdialog"
-          }
-        },
-        [
-          _c(
-            "v-card",
-            { attrs: { color: "primary", dark: "" } },
-            [
-              _c(
-                "v-card-text",
-                [
-                  _vm._v(
-                    "\n                    Please wait data and images is storing...\n                    "
-                  ),
-                  _c("v-progress-linear", {
-                    staticClass: "mb-0",
-                    attrs: { indeterminate: "", color: "white" }
+                    ])
                   })
                 ],
                 1
               )
             ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-btn",
+            {
+              attrs: {
+                bottom: "",
+                color: "primary",
+                dark: "",
+                fab: "",
+                fixed: "",
+                right: ""
+              },
+              on: {
+                click: function($event) {
+                  _vm.dialog = !_vm.dialog
+                }
+              }
+            },
+            [_c("v-icon", [_vm._v("mdi-plus")])],
             1
           )
         ],
@@ -48648,57 +47767,32 @@ var render = function() {
             vertical: _vm.snackvertical,
             timeout: _vm.snacktimeout,
             top: _vm.snacktop,
-            color: "red"
+            right: _vm.snackright,
+            color: _vm.snackcolor
           },
           model: {
-            value: _vm.loading,
+            value: _vm.snackbar,
             callback: function($$v) {
-              _vm.loading = $$v
+              _vm.snackbar = $$v
             },
-            expression: "loading"
+            expression: "snackbar"
           }
         },
         [
-          _vm._v("\n\t\t\t" + _vm._s(_vm.text) + "\n\t\t\t"),
+          _vm._v("\n\t\t\t" + _vm._s(_vm.snacktext) + "\n\t\t\t"),
           _c(
             "v-btn",
             {
               attrs: { color: "white", text: "" },
               on: {
                 click: function($event) {
-                  _vm.loading = false
+                  _vm.snackbar = false
                 }
               }
             },
-            [_vm._v("\n\t\t\t\tClose\n      \t\t")]
+            [_vm._v("Close")]
           )
         ],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        {
-          directives: [
-            {
-              name: "show",
-              rawName: "v-show",
-              value: _vm.accept,
-              expression: "accept"
-            }
-          ],
-          attrs: {
-            bottom: "",
-            color: "success",
-            dark: "",
-            fab: "",
-            fixed: "",
-            large: "",
-            right: ""
-          },
-          on: { click: _vm.addData }
-        },
-        [_c("v-icon", [_vm._v("check")])],
         1
       )
     ],
@@ -48877,17 +47971,24 @@ var render = function() {
                                                                   "Picker without buttons",
                                                                 "prepend-icon":
                                                                   "event",
-                                                                readonly: ""
+                                                                readonly: "",
+                                                                required: ""
                                                               },
                                                               model: {
-                                                                value: _vm.date,
+                                                                value:
+                                                                  _vm.editedItem
+                                                                    .date,
                                                                 callback: function(
                                                                   $$v
                                                                 ) {
-                                                                  _vm.date = $$v
+                                                                  _vm.$set(
+                                                                    _vm.editedItem,
+                                                                    "date",
+                                                                    $$v
+                                                                  )
                                                                 },
                                                                 expression:
-                                                                  "date"
+                                                                  "editedItem.date"
                                                               }
                                                             },
                                                             "v-text-field",
@@ -48918,11 +48019,15 @@ var render = function() {
                                                   }
                                                 },
                                                 model: {
-                                                  value: _vm.date,
+                                                  value: _vm.editedItem.date,
                                                   callback: function($$v) {
-                                                    _vm.date = $$v
+                                                    _vm.$set(
+                                                      _vm.editedItem,
+                                                      "date",
+                                                      $$v
+                                                    )
                                                   },
-                                                  expression: "date"
+                                                  expression: "editedItem.date"
                                                 }
                                               })
                                             ],
@@ -49084,7 +48189,9 @@ var render = function() {
                                       _c("v-select", {
                                         attrs: {
                                           label: "Select level",
-                                          items: _vm.statusType
+                                          items: _vm.statusType,
+                                          "item-text": "name",
+                                          "item-value": "value"
                                         },
                                         model: {
                                           value: _vm.editedItem.status,
@@ -49193,6 +48300,36 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.arta,
+                                                    "A2",
+                                                    "A"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
                                           attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
@@ -49210,6 +48347,36 @@ var render = function() {
                                               expression: "editedItem.arta3"
                                             }
                                           })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.arta,
+                                                    "A3",
+                                                    "A"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
                                         ],
                                         1
                                       ),
@@ -49241,6 +48408,36 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artb,
+                                                    "B1",
+                                                    "B"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
                                           attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
@@ -49258,6 +48455,36 @@ var render = function() {
                                               expression: "editedItem.artb2"
                                             }
                                           })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artb,
+                                                    "B2",
+                                                    "B"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
                                         ],
                                         1
                                       ),
@@ -49289,6 +48516,36 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artb,
+                                                    "B3",
+                                                    "B"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
                                           attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
@@ -49306,6 +48563,36 @@ var render = function() {
                                               expression: "editedItem.artc1"
                                             }
                                           })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artc,
+                                                    "C1",
+                                                    "C"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
                                         ],
                                         1
                                       ),
@@ -49337,6 +48624,36 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artc,
+                                                    "C2",
+                                                    "C"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
                                           attrs: { sm: "12", md: "12", lg: "8" }
                                         },
                                         [
@@ -49354,6 +48671,36 @@ var render = function() {
                                               expression: "editedItem.artc3"
                                             }
                                           })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artc,
+                                                    "C3",
+                                                    "C"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
                                         ],
                                         1
                                       )
@@ -49603,6 +48950,24 @@ var render = function() {
                                       )
                                     ],
                                     1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-btn",
+                                    {
+                                      attrs: {
+                                        bottom: "",
+                                        color: "success",
+                                        dark: "",
+                                        fab: "",
+                                        fixed: "",
+                                        large: "",
+                                        right: ""
+                                      },
+                                      on: { click: _vm.addData }
+                                    },
+                                    [_c("v-icon", [_vm._v("check")])],
+                                    1
                                   )
                                 ],
                                 1
@@ -49627,30 +48992,44 @@ var render = function() {
       ),
       _vm._v(" "),
       _c(
-        "v-btn",
+        "v-snackbar",
         {
           attrs: {
-            bottom: "",
-            color: "success",
-            dark: "",
-            fab: "",
-            fixed: "",
-            large: "",
-            right: ""
+            vertical: _vm.snackvertical,
+            timeout: _vm.snacktimeout,
+            top: _vm.snacktop,
+            right: _vm.snackright,
+            color: _vm.snackcolor
           },
-          on: { click: _vm.addData }
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
         },
-        [_c("v-icon", [_vm._v("check")])],
+        [
+          _vm._v("\n\t\t\t" + _vm._s(_vm.snacktext) + "\n\t\t\t"),
+          _c(
+            "v-btn",
+            {
+              attrs: { color: "white", text: "", right: "" },
+              on: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Close")]
+          )
+        ],
         1
       ),
       _vm._v(" "),
       _c("Comunicate", {
-        attrs: {
-          trigger: _vm.dialog1,
-          articulateData: _vm.articulateData,
-          articulate: _vm.articulate,
-          articulateFlag: _vm.articulateFlag
-        }
+        attrs: { trigger: _vm.dialog1, articulateObj: _vm.articulateObj },
+        on: { send: _vm.getarticulateObj }
       })
     ],
     1

@@ -3,80 +3,112 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Auth;
+use App\Articulat;
+use App\Comunicate;
+use App\TakeAction;
+use Mail;
+use Session;
+use Redirect;
+use DB;
+use Carbon\Carbon;
 
 class ArticulatController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+    
     public function index()
     {
-        //
+        $data = Articulat::orderBy('id','DESC')->get();
+        return $data;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
+   
     public function create()
     {
         //
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
+   
     public function store(Request $request)
     {
-       dd($request);
+    //    dd($request->all());
+       $response=array();
+        $response['status']=false;
+        $response['data'] ='';
+        DB::beginTransaction();
+        try {
+
+        $auth_id = Auth::id();
+
+        $create=Articulat::create(
+        [
+            'user_id' => $auth_id,
+            'arta' => $request->arta,
+            'artb' => $request->artb,
+            'artc' => $request->artc,
+            'date' => $request->date,
+        ]);
+
+        Comunicate::create(
+            [
+                'articulate_id' => $create->id,
+                'user_id' => $auth_id,
+                'arta1' => $request->arta1,
+                'arta2' => $request->arta2,
+                'arta3' => $request->arta3,
+                'artb1' => $request->artb1,
+                'artb2' => $request->artb2,
+                'artb3' => $request->artb3,
+                'artc1' => $request->artc1,
+                'artc2' => $request->artc2,
+                'artc3' => $request->artc3,
+                'status' => $request->status,
+            ]);
+        
+        TakeAction::create(
+            [
+                'articulate_id' => $create->id,
+                'user_id' => $auth_id,
+                'saturday' => $request->saturday,
+                'sunday' => $request->sunday,
+                'monday' => $request->monday,
+                'tuesday' => $request->tuesday,
+                'wednesday' => $request->wednesday,
+                'thursday' => $request->thursday,
+                'friday' => $request->friday,
+            ]);
+
+
+            DB::commit();
+            $response['status'] = true;
+        } catch (\Exception $e) {
+            $response['data']=$e->getMessage();
+            $response['status'] = false;
+            DB::rollback();
+        }
+        return response()->json($response);
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function show($id)
     {
         //
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+   
     public function edit($id)
     {
         //
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function update(Request $request, $id)
     {
         //
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
+    
     public function destroy($id)
     {
         //
