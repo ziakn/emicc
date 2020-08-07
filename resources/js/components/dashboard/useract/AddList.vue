@@ -426,11 +426,24 @@ export default {
 
     computed: {},
     watch: {},
-    created() {
+
+    created() 
+    {
         this.initialize();
     },
-    methods: {
-        async initialize() {},
+
+
+
+    methods: 
+    {
+
+        async initialize()
+        {
+            if(this.$route.params.id)
+            {
+                console.log(this.$route.params.id)
+            }
+        },
 
         editItem(item) {
             this.edit = false;
@@ -449,7 +462,6 @@ export default {
 
         getarticulateObj(item)
         {
-            console.log(item)
             if(item.articulate=="A1" && item.articulateFlag =="A")
             {
                 editedItem.arta1 = item.artData
@@ -490,7 +502,6 @@ export default {
 
         async addData() 
         {
-
             if(this.editedItem.date == '')
             {
                  this.snacks("Select date", "warning");
@@ -510,8 +521,7 @@ export default {
                 else
                 {
                     this.snacks("Data Once Used", "red");
-                }
-                
+                }                
             } 
             catch (e) 
             {

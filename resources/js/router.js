@@ -143,6 +143,18 @@ export default new Router({
         
                     }
                 },
+                {
+                    path: 'useractadd/:id',
+                    name: 'useractadd',
+                    component: useractadd,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.useract.add'),
+                        type: customerOnly,
+                        status: false,
+        
+                    }
+                },
             ]
 
         },

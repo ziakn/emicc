@@ -8,9 +8,7 @@
                 <v-avatar tile color="primary" class=" elevation-12">
                     <v-icon dark>face</v-icon>
                 </v-avatar>
-
                 <v-toolbar-title class="ml-4 primary--text" >{{$t('message.user.list')}}</v-toolbar-title>
-
                 <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
@@ -19,14 +17,16 @@
                     hide-details
                     outlined
                     dense
-
                 ></v-text-field>
             </v-toolbar>
 			<Breadcrumbs/>
 			<v-row justify="center">
 				<v-col sm="12" md="12" lg="12">
 					<v-data-table color="white" :headers="headers" :items="dataList" :search="search" class="elevation-4">
-					
+						<template v-slot:item.action="{ item }">
+							<v-icon small @click="editItem(item)">edit</v-icon>
+							<v-icon small @click="deleteItem(item)">delete</v-icon>
+						</template>
 						<template v-slot:no-data>
 							<NoDataList :loading="loading" @initialize="initialize"></NoDataList>
 						</template>
@@ -48,134 +48,102 @@
 			{{ snacktext }}
 			<v-btn color="white" text @click="snackbar = false">Close</v-btn>
 		</v-snackbar>
+		<DeleteModal :trigger="isDelete" :title="deleteTitle" :body="deleteBody" @request="remove"></DeleteModal>
 	</v-content>
 </template>
 
 <script>
 import Breadcrumbs from "./../../common/Breadcrumbs"
 import NoDataList from "./../../common/NoDataList"
+import DeleteModal from "./../../common/DeleteModal";
 export default {
 	components:{
 		Breadcrumbs,
-		NoDataList
+		NoDataList,
+		DeleteModal,
 	},
 	data: () => ({
 		search: "",
 		absolute: true,
 		loading: false,
+		dataIndex: null,
+		deleteTitle: "",
+		deleteBody: "",
+        isDelete: false,
 		edit: true,
 		dialog: false,
 		dataList: [],
-		dataBreadcrumbs:[],
-		items: [
-        {
-          text: 'Dashboard',
-          disabled: false,
-          href: 'breadcrumbs_dashboard',
-        },
-        {
-          text: 'Link 1',
-          disabled: false,
-          href: 'breadcrumbs_link_1',
-        },
-        {
-          text: 'Link 2',
-          disabled: true,
-          href: 'breadcrumbs_link_2',
-        },
-      ],
 		userType: [],
-		headers: [
+		headers: 
+		[
 		    { text: "ID", align: "left", value: "id" },
 			{text: "A", value: "arta"},
 			{ text: "B", value: "artb" },
 			{ text: "C", value: "artc" },
+			{ text: "Date", value: "date" },
 			{ text: "Action", value: "action" }
 		],
-		emailRules: [
-			v => !!v || "E-mail is required",
-			v => /.+@.+.\.+.+/.test(v) || "E-mail must be valid"
-		],
-		usernameRules: [
-			v => !!v || "Name is required",
-			v => (v || "").indexOf(" ") < 0 || "No spaces are allowed"
-		],
-		passwordRules: [
-			v => (v || "").length >= 8 || `A minimum of 8 characters is allowed`
-		],
-		editedIndex: -1,
-		editedItem: {
-			name: "",
-			email: "",
-			type: "",
-			contact: "",
-			address: "",
-      status: 1,
-      company_name: "",
-			company_contact: "",
-			city: "",
-			postcode: "",
-		},
-		defaultItem: {
-			name: "",
-			email: "",
-			type: "",
-			contact: "",
-			address: "",
-      status: 1,
-       company_name: "",
-			company_contact: "",
-			city: "",
-			postcode: "",
-		},
-		dataStatus: [
-			{ name: "Active", value: 1 },
-			{ name: "Disable", value: 0 }
-		],
+		
 	}),
 
 props: {
     source: String
   },
-  computed: {
-    formTitle() {
-      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+  computed: 
+  {
+	formTitle() 
+	{
+        return this.editedIndex === -1 ? "New Item" : "Edit Item";
     }
   },
   watch: {},
-  created() {
+  
+  created() 
+  {
     this.initialize();
   },
-  methods: {
-    async initialize() {
-      try {
+
+  methods: 
+  {
+
+	async initialize() 
+	{
+	  try 
+	  {
         let { data } = await axios({
           method: "get",
           url: "/app/articulate"
         });
         this.dataList = data;
-      } catch (e) {}
+	  } 
+	  catch (e) 
+	  {
+
+	  }
+	},
+	
+	editItem(item) 
+	{
+		 this.$router.push('/useract/useractadd/'+item.id);
     },
-    editItem(item) {
-      this.edit = false;
-      this.editedIndex = this.dataList.indexOf(item);
-      this.editedItem = Object.assign({}, item);
-      this.dialog = true;
-    },
-    deleteItem(item) {
+	deleteItem(item) 
+	{
     	this.dataIndex = this.dataList.indexOf(item);
-			this.deleteTitle = "Are you sure you want to delete this item?";
-			this.isDelete = !this.isDelete;
+		this.deleteTitle = "Are you sure you want to delete this item?";
+		this.isDelete = !this.isDelete;
     },
     
  
-    async remove() {
-			try {
+	async remove() 
+		{
+			try 
+			{
 				let { data } = await axios({
 					method: "delete",
-					url: "/app/user/" + this.dataList[this.dataIndex].id
+					url: "/app/articulate/" + this.dataList[this.dataIndex].id
 				});
-				if (data.status) {
+				if (data.status) 
+				{
 					this.snacks('Successfully Done','green')
 					this.dataList.splice(this.dataIndex, 1);
 					this.close();				
@@ -186,7 +154,8 @@ props: {
 					this.loading = false;
 				}
 
-			} catch (e) {
+			} catch (e) 
+			{
 				this.snacks('Operation Failed','red')
 				this.loading = false;
 			}

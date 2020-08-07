@@ -111,6 +111,20 @@ class ArticulatController extends Controller
     
     public function destroy($id)
     {
-        //
+                $response=array();
+                $response['status']=false;
+                $response['data'] = Articulat::find($id);
+                if($response['data'])
+                {
+                    Comunicate::where('articulate_id',$id)->delete();
+                    TakeAction::where('articulate_id',$id)->delete();
+                    $response['data']=$response['data']->delete();
+                    $response['status']=true;
+                }
+                else
+                {
+                    $response['data']="Data Not deleted";  
+                }
+                return response()->json($response);
     }
 }
