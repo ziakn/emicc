@@ -442,6 +442,39 @@ export default {
             if(this.$route.params.id)
             {
                 console.log(this.$route.params.id)
+                 try 
+                {
+                    let { data } = await axios({
+                        method: "get",
+                        url: "/app/articulate/"+this.$route.params.id,
+                    });
+                        this.editedItem.arta= data.arta
+                        this.editedItem.artb= data.artb
+                        this.editedItem.artc= data.artc
+                        this.editedItem.date= data.date
+                        this.editedItem.arta1= data.comunicate.arta1
+                        this.editedItem.status= data.comunicate.status
+                        this.editedItem.arta2= data.comunicate.arta2
+                        this.editedItem.arta3= data.comunicate.arta3
+                        this.editedItem.artb1= data.comunicate.artb1
+                        this.editedItem.artb2= data.comunicate.artb2
+                        this.editedItem.artb3= data.comunicate.artb3
+                        this.editedItem.artc1= data.comunicate.artc1
+                        this.editedItem.artc2= data.comunicate.artc2
+                        this.editedItem.artc3= data.comunicate.artc3
+                        this.editedItem.saturday= data.takecation.saturday
+                        this.editedItem.sunday= data.takecation.sunday
+                        this.editedItem.monday= data.takecation.monday
+                        this.editedItem.tuesday= data.takecation.tuesday
+                        this.editedItem.wednesday= data.takecation.wednesday
+                        this.editedItem.thursday= data.takecation.thursday
+                        this.editedItem.friday= data.takecation.friday
+                        // console.log(data);
+                } 
+                catch (e) 
+                {
+                    this.snacks("Failed", "Red");
+                }
             }
         },
 
@@ -507,26 +540,53 @@ export default {
                  this.snacks("Select date", "warning");
                  return
             }
-            try 
+            if(this.$route.params.id)
             {
-                let { data } = await axios({
-                    method: "post",
-                    url: "/app/articulate",
-                    data: this.editedItem
-                });
-                if(data.status)
+                try 
                 {
-                    this.snacks("Successfully Done", "green");
+                    let { data } = await axios({
+                        method: "put",
+                        url: "/app/articulate/"+ this.$route.params.id,
+                        data: this.editedItem
+                    });
+                    if(data.status)
+                    {
+                        this.snacks("Successfully Done", "green");
+                    }
+                    else
+                    {
+                        this.snacks("Data Once Used", "red");
+                    }                
+                } 
+                catch (e) 
+                {
+                    this.snacks("Failed", "Red");
                 }
-                else
-                {
-                    this.snacks("Data Once Used", "red");
-                }                
-            } 
-            catch (e) 
-            {
-                this.snacks("Failed", "Red");
             }
+            else
+            {
+                try 
+                {
+                    let { data } = await axios({
+                        method: "post",
+                        url: "/app/articulate",
+                        data: this.editedItem
+                    });
+                    if(data.status)
+                    {
+                        this.snacks("Successfully Done", "green");
+                    }
+                    else
+                    {
+                        this.snacks("Data Once Used", "red");
+                    }                
+                } 
+                catch (e) 
+                {
+                    this.snacks("Failed", "Red");
+                }
+            }
+            
         }
     }
 };

@@ -9,6 +9,7 @@ import faqs from './components/dashboard/setting/Home.vue'
 import enroll from './components/dashboard/enroll/Home.vue'
 import useract from './components/dashboard/useract/Home.vue'
 
+
 import userlist from './components/dashboard/user/userlist.vue'
 import usertype from './components/dashboard/user/Type.vue'
 import userpassword from './components/dashboard/user/Password.vue'
@@ -19,6 +20,7 @@ import faqslist from './components/dashboard/setting/Faqs.vue'
 import userenroll from './components/dashboard/enroll/userenroll.vue'
 import useractlist from './components/dashboard/useract/ActList.vue'
 import useractadd from './components/dashboard/useract/AddList.vue'
+import mentorlist from './components/dashboard/useract/MentorList.vue'
 
 import i18n from './i18n';
 
@@ -108,6 +110,31 @@ export default new Router({
                 },
             ]
         },
+        {
+            path: '/mentor',
+            name: 'mentor',
+            component: useract,
+            meta: {
+                icon: 'perm_phone_msg',
+                title: i18n.t('message.leftbar.mentor'),
+                type: customerOnly,
+                status: true,
+            },
+            children: [
+                {
+                    path: 'mentorlist',
+                    name: 'mentorlist',
+                    component: mentorlist,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.mentor.list'),
+                        type: customerOnly,
+                        status: true,
+        
+                    }
+                },
+            ]
+        }, 
         {
             path: '/useract',
             name: 'useract',

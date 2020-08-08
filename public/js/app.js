@@ -4689,20 +4689,65 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _yield$axios, data;
+
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                if (_this.$route.params.id) {
-                  console.log(_this.$route.params.id);
+                if (!_this.$route.params.id) {
+                  _context.next = 33;
+                  break;
                 }
 
-              case 1:
+                console.log(_this.$route.params.id);
+                _context.prev = 2;
+                _context.next = 5;
+                return axios({
+                  method: "get",
+                  url: "/app/articulate/" + _this.$route.params.id
+                });
+
+              case 5:
+                _yield$axios = _context.sent;
+                data = _yield$axios.data;
+                _this.editedItem.arta = data.arta;
+                _this.editedItem.artb = data.artb;
+                _this.editedItem.artc = data.artc;
+                _this.editedItem.date = data.date;
+                _this.editedItem.arta1 = data.comunicate.arta1;
+                _this.editedItem.status = data.comunicate.status;
+                _this.editedItem.arta2 = data.comunicate.arta2;
+                _this.editedItem.arta3 = data.comunicate.arta3;
+                _this.editedItem.artb1 = data.comunicate.artb1;
+                _this.editedItem.artb2 = data.comunicate.artb2;
+                _this.editedItem.artb3 = data.comunicate.artb3;
+                _this.editedItem.artc1 = data.comunicate.artc1;
+                _this.editedItem.artc2 = data.comunicate.artc2;
+                _this.editedItem.artc3 = data.comunicate.artc3;
+                _this.editedItem.saturday = data.takecation.saturday;
+                _this.editedItem.sunday = data.takecation.sunday;
+                _this.editedItem.monday = data.takecation.monday;
+                _this.editedItem.tuesday = data.takecation.tuesday;
+                _this.editedItem.wednesday = data.takecation.wednesday;
+                _this.editedItem.thursday = data.takecation.thursday;
+                _this.editedItem.friday = data.takecation.friday; // console.log(data);
+
+                _context.next = 33;
+                break;
+
+              case 30:
+                _context.prev = 30;
+                _context.t0 = _context["catch"](2);
+
+                _this.snacks("Failed", "Red");
+
+              case 33:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee);
+        }, _callee, null, [[2, 30]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -4757,7 +4802,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var _yield$axios, data;
+        var _yield$axios2, data, _yield$axios3, _data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
@@ -4773,17 +4818,22 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 return _context2.abrupt("return");
 
               case 3:
-                _context2.prev = 3;
-                _context2.next = 6;
+                if (!_this2.$route.params.id) {
+                  _context2.next = 17;
+                  break;
+                }
+
+                _context2.prev = 4;
+                _context2.next = 7;
                 return axios({
-                  method: "post",
-                  url: "/app/articulate",
+                  method: "put",
+                  url: "/app/articulate/" + _this2.$route.params.id,
                   data: _this2.editedItem
                 });
 
-              case 6:
-                _yield$axios = _context2.sent;
-                data = _yield$axios.data;
+              case 7:
+                _yield$axios2 = _context2.sent;
+                data = _yield$axios2.data;
 
                 if (data.status) {
                   _this2.snacks("Successfully Done", "green");
@@ -4791,25 +4841,73 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                   _this2.snacks("Data Once Used", "red");
                 }
 
-                _context2.next = 14;
+                _context2.next = 15;
                 break;
 
-              case 11:
-                _context2.prev = 11;
-                _context2.t0 = _context2["catch"](3);
+              case 12:
+                _context2.prev = 12;
+                _context2.t0 = _context2["catch"](4);
 
                 _this2.snacks("Failed", "Red");
 
-              case 14:
+              case 15:
+                _context2.next = 28;
+                break;
+
+              case 17:
+                _context2.prev = 17;
+                _context2.next = 20;
+                return axios({
+                  method: "post",
+                  url: "/app/articulate",
+                  data: _this2.editedItem
+                });
+
+              case 20:
+                _yield$axios3 = _context2.sent;
+                _data = _yield$axios3.data;
+
+                if (_data.status) {
+                  _this2.snacks("Successfully Done", "green");
+                } else {
+                  _this2.snacks("Data Once Used", "red");
+                }
+
+                _context2.next = 28;
+                break;
+
+              case 25:
+                _context2.prev = 25;
+                _context2.t1 = _context2["catch"](17);
+
+                _this2.snacks("Failed", "Red");
+
+              case 28:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[3, 11]]);
+        }, _callee2, null, [[4, 12], [17, 25]]);
       }))();
     }
   }
 });
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/MentorList.vue?vue&type=script&lang=js&":
+/*!***************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/useract/MentorList.vue?vue&type=script&lang=js& ***!
+  \***************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+//
+//
+//
+/* harmony default export */ __webpack_exports__["default"] = ({});
 
 /***/ }),
 
@@ -49180,6 +49278,30 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c("router-view")
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/MentorList.vue?vue&type=template&id=368edb26&":
+/*!*******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/useract/MentorList.vue?vue&type=template&id=368edb26& ***!
+  \*******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c("div")
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -111106,6 +111228,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/dashboard/useract/MentorList.vue":
+/*!******************************************************************!*\
+  !*** ./resources/js/components/dashboard/useract/MentorList.vue ***!
+  \******************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _MentorList_vue_vue_type_template_id_368edb26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./MentorList.vue?vue&type=template&id=368edb26& */ "./resources/js/components/dashboard/useract/MentorList.vue?vue&type=template&id=368edb26&");
+/* harmony import */ var _MentorList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./MentorList.vue?vue&type=script&lang=js& */ "./resources/js/components/dashboard/useract/MentorList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _MentorList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _MentorList_vue_vue_type_template_id_368edb26___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _MentorList_vue_vue_type_template_id_368edb26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/dashboard/useract/MentorList.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/useract/MentorList.vue?vue&type=script&lang=js&":
+/*!*******************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/useract/MentorList.vue?vue&type=script&lang=js& ***!
+  \*******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MentorList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./MentorList.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/MentorList.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_MentorList_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/useract/MentorList.vue?vue&type=template&id=368edb26&":
+/*!*************************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/useract/MentorList.vue?vue&type=template&id=368edb26& ***!
+  \*************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MentorList_vue_vue_type_template_id_368edb26___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./MentorList.vue?vue&type=template&id=368edb26& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/useract/MentorList.vue?vue&type=template&id=368edb26&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MentorList_vue_vue_type_template_id_368edb26___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_MentorList_vue_vue_type_template_id_368edb26___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/i18n/index.js":
 /*!************************************!*\
   !*** ./resources/js/i18n/index.js ***!
@@ -111259,7 +111450,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/dashboard/enroll/userenroll.vue */ "./resources/js/components/dashboard/enroll/userenroll.vue");
 /* harmony import */ var _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/dashboard/useract/ActList.vue */ "./resources/js/components/dashboard/useract/ActList.vue");
 /* harmony import */ var _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/dashboard/useract/AddList.vue */ "./resources/js/components/dashboard/useract/AddList.vue");
-/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
+/* harmony import */ var _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/dashboard/useract/MentorList.vue */ "./resources/js/components/dashboard/useract/MentorList.vue");
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
+
 
 
 
@@ -111294,7 +111487,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_user_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     meta: {
       icon: 'face',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.user'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.user'),
       type: onlyAdminMentor,
       status: true
     },
@@ -111304,7 +111497,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_userlist_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.user.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.user.list'),
         type: onlyAdminMentor,
         status: true
       }
@@ -111314,7 +111507,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_Type_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.user.usertype'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.user.usertype'),
         type: onlyAdmin,
         status: true
       }
@@ -111324,7 +111517,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_Password_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.user.password'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.user.password'),
         type: onlyAdminMentor,
         status: true
       }
@@ -111335,7 +111528,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_enroll_Home_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     meta: {
       icon: 'alarm_add',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.enroll'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.enroll'),
       type: mentorOnly,
       status: true
     },
@@ -111345,8 +111538,29 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.enroll.userenroll'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.enroll.userenroll'),
         type: mentorOnly,
+        status: true
+      }
+    }]
+  }, {
+    path: '/mentor',
+    name: 'mentor',
+    component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
+    meta: {
+      icon: 'perm_phone_msg',
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.mentor'),
+      type: customerOnly,
+      status: true
+    },
+    children: [{
+      path: 'mentorlist',
+      name: 'mentorlist',
+      component: _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.mentor.list'),
+        type: customerOnly,
         status: true
       }
     }]
@@ -111356,7 +111570,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
       icon: 'account_circle',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.useract'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.useract'),
       type: customerOnly,
       status: true
     },
@@ -111366,7 +111580,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.useract.add'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.useract.add'),
         type: customerOnly,
         status: true
       }
@@ -111376,7 +111590,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.useract.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.useract.list'),
         type: customerOnly,
         status: true
       }
@@ -111386,7 +111600,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.useract.add'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.useract.add'),
         type: customerOnly,
         status: false
       }
@@ -111397,7 +111611,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'perm_phone_msg',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.contactus'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.contactus'),
       type: allOnly,
       status: true
     },
@@ -111407,7 +111621,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_ContactUs_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.contactus.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.contactus.list'),
         type: allOnly,
         status: true
       }
@@ -111418,7 +111632,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'question_answer',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.aboutus'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.aboutus'),
       type: allOnly,
       status: true
     },
@@ -111428,7 +111642,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_AboutUs_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.aboutus.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.aboutus.list'),
         type: allOnly,
         status: true
       }
@@ -111439,7 +111653,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'report_problem',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.faqs'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.faqs'),
       type: allOnly,
       status: true
     },
@@ -111449,7 +111663,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_Faqs_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.faqs.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.faqs.list'),
         type: allOnly,
         status: true
       }
@@ -111460,7 +111674,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'settings',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.leftbar.setting'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.setting'),
       type: allOnly,
       status: true
     },
@@ -111470,7 +111684,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_Profile_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_16__["default"].t('message.setting.profile'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.setting.profile'),
         type: allOnly,
         status: true
       }
