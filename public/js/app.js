@@ -111372,10 +111372,10 @@ webpackContext.id = "./resources/js/i18n/language sync recursive ^\\.\\/.*\\.lan
 /*!*************************************************!*\
   !*** ./resources/js/i18n/language/en.lang.json ***!
   \*************************************************/
-/*! exports provided: main, leftbar, account, bussinessdocument, services, setting, dashboard, user, enroll, useract, contactus, aboutus, faqs, default */
+/*! exports provided: main, leftbar, account, bussinessdocument, services, setting, dashboard, user, enroll, useract, contactus, aboutus, faqs, mentor, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Enroll\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\",\"add\":\"Add\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"}}");
+module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Enroll\",\"mentor\":\"Mentors\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\",\"add\":\"Add\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"},\"mentor\":{\"list\":\"List\"}}");
 
 /***/ }),
 
@@ -111450,7 +111450,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./components/dashboard/enroll/userenroll.vue */ "./resources/js/components/dashboard/enroll/userenroll.vue");
 /* harmony import */ var _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/dashboard/useract/ActList.vue */ "./resources/js/components/dashboard/useract/ActList.vue");
 /* harmony import */ var _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/dashboard/useract/AddList.vue */ "./resources/js/components/dashboard/useract/AddList.vue");
-/* harmony import */ var _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./components/dashboard/useract/MentorList.vue */ "./resources/js/components/dashboard/useract/MentorList.vue");
+/* harmony import */ var _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/dashboard/useract/MentorList.vue */ "./resources/js/components/dashboard/useract/MentorList.vue");
 /* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
 
 
@@ -111548,7 +111548,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'mentor',
     component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
-      icon: 'perm_phone_msg',
+      icon: 'accessibility',
       title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.mentor'),
       type: customerOnly,
       status: true
@@ -111556,7 +111556,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     children: [{
       path: 'mentorlist',
       name: 'mentorlist',
-      component: _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_18__["default"],
+      component: _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_16__["default"],
       meta: {
         icon: 'dashboard',
         title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.mentor.list'),

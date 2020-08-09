@@ -36,7 +36,8 @@
         "contactus": "Contact Us",
         "aboutus": "About Us",
         "faqs": "FAQS",
-        "enroll": "Enroll"
+        "enroll": "Enroll",
+        "mentor": "Mentors"
     },
     "account":{
         "ledgerhead": "Ledger Head",
@@ -94,6 +95,9 @@
         "list": "List"
     },
     "faqs":{
+        "list": "List"
+    },
+    "mentor":{
         "list": "List"
     }
 } 

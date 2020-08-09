@@ -115,7 +115,7 @@ export default new Router({
             name: 'mentor',
             component: useract,
             meta: {
-                icon: 'perm_phone_msg',
+                icon: 'accessibility',
                 title: i18n.t('message.leftbar.mentor'),
                 type: customerOnly,
                 status: true,
