@@ -25,6 +25,7 @@ Route::prefix('/app')->group(function () {
     Route::resource('/articulate', 'ArticulatController');
 });
 
+Route::get('/app/user', 'UserController@getMentor');
 
 
 
