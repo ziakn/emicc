@@ -4945,6 +4945,17 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4961,28 +4972,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       dataBreadcrumbs: [],
       userType: [],
       editedItem: {
-        name: "",
-        email: "",
-        type: "",
-        contact: "",
-        address: "",
-        status: 1,
-        company_name: "",
-        company_contact: "",
-        city: "",
-        postcode: ""
+        mentor_id: ""
       },
       defaultItem: {
-        name: "",
-        email: "",
-        type: "",
-        contact: "",
-        address: "",
-        status: 1,
-        company_name: "",
-        company_contact: "",
-        city: "",
-        postcode: ""
+        mentor_id: ""
       }
     };
   },
@@ -5009,7 +5002,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.next = 3;
                 return axios({
                   method: "get",
-                  url: "/app/user"
+                  url: "/app/getmentor"
                 });
 
               case 3:
@@ -49467,7 +49460,36 @@ var render = function() {
           _vm._v(" "),
           _c("Breadcrumbs"),
           _vm._v(" "),
-          _c("v-row", { attrs: { justify: "center" } })
+          _c(
+            "v-row",
+            { attrs: { justify: "center" } },
+            [
+              _c(
+                "v-col",
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.dataList,
+                      "item-text": "name",
+                      "item-value": "id",
+                      label: "Mentors",
+                      required: "",
+                      filled: ""
+                    },
+                    model: {
+                      value: _vm.editedItem.mentor_id,
+                      callback: function($$v) {
+                        _vm.$set(_vm.editedItem, "mentor_id", $$v)
+                      },
+                      expression: "editedItem.mentor_id"
+                    }
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
         ],
         1
       ),

@@ -235,6 +235,13 @@ return response()->json($response);
             'status' => false
         ],200);
    }
+
+
+   public function getMentor()
+   {
+       $data = User::where('type',2)->get();
+       return $data;
+   }
     
 
 }

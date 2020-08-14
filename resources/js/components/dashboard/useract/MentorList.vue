@@ -13,7 +13,18 @@
             </v-toolbar>
 			<Breadcrumbs/>
 			<v-row justify="center">
-			
+			<v-col>
+				<v-select
+				v-model="editedItem.mentor_id"
+				:items="dataList"
+				item-text="name"
+                item-value="id"
+                label="Mentors"
+                required
+                filled
+				>
+				</v-select>
+			</v-col>
 			</v-row>
 		</v-container>
 		<v-snackbar
@@ -47,28 +58,12 @@ export default {
 		
 		userType: [],
 		editedItem: {
-			name: "",
-			email: "",
-			type: "",
-			contact: "",
-			address: "",
-      status: 1,
-      company_name: "",
-			company_contact: "",
-			city: "",
-			postcode: "",
+			mentor_id: "",
+			
 		},
 		defaultItem: {
-			name: "",
-			email: "",
-			type: "",
-			contact: "",
-			address: "",
-      status: 1,
-       company_name: "",
-			company_contact: "",
-			city: "",
-			postcode: "",
+			mentor_id: "",
+			
 		},
 		
 	}),
@@ -87,13 +82,15 @@ props: {
       try {
         let { data } = await axios({
           method: "get",
-          url: "/app/user"
+          url: "/app/getmentor"
         });
         this.dataList = data;
       } catch (e) {}
  
     },
-    
+	
+	
+	
   
 
   }
