@@ -23,9 +23,11 @@ Route::prefix('/app')->group(function () {
     Route::resource('/usertype', 'UserTypeController');
     Route::resource('/user', 'UserController');
     Route::resource('/articulate', 'ArticulatController');
+    Route::resource('/mentoruser', 'MentorUserController');
 });
 
 Route::get('/app/getmentor', 'UserController@getMentor');
+Route::get('/app/getmentoruser', 'UserController@getMentorUser');
 
 
 

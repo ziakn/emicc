@@ -34,7 +34,7 @@ class MentorUserController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
+use App\MentorUser;
 use Mail;
 use Session;
 use Redirect;
@@ -240,6 +241,13 @@ return response()->json($response);
    public function getMentor()
    {
        $data = User::where('type',2)->get();
+       return $data;
+   }
+
+   public function getMentorUser()
+   {
+       $user_id = Auth::id();
+       $data = MentorUser::where('user_id',$user_id)->first();
        return $data;
    }
     

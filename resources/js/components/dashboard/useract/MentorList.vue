@@ -86,9 +86,31 @@ props: {
         });
         this.dataList = data;
       } catch (e) {}
+
+	  try {
+        let { data } = await axios({
+          method: "get",
+          url: "/app/getmentoruser"
+        });
+        this.editedItem.mentor_id = data.mentor_id;
+      } catch (e) {}
  
-    },
 	
+
+	},
+	async save()
+	{
+		 try {
+        let { data } = await axios({
+          method: "post",
+		  url: "/app/mentoruser",
+		  data :this.editedItem
+        });
+        
+      } catch (e) {}
+	}
+	
+
 	
 	
   
