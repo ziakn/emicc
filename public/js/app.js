@@ -4956,6 +4956,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4992,7 +4997,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _yield$axios, data;
+        var _yield$axios, data, _yield$axios2, _data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
@@ -5017,11 +5022,66 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.t0 = _context["catch"](0);
 
               case 10:
+                _context.prev = 10;
+                _context.next = 13;
+                return axios({
+                  method: "get",
+                  url: "/app/getmentoruser"
+                });
+
+              case 13:
+                _yield$axios2 = _context.sent;
+                _data = _yield$axios2.data;
+                _this.editedItem.mentor_id = _data.mentor_id;
+                _context.next = 20;
+                break;
+
+              case 18:
+                _context.prev = 18;
+                _context.t1 = _context["catch"](10);
+
+              case 20:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 8]]);
+        }, _callee, null, [[0, 8], [10, 18]]);
+      }))();
+    },
+    save: function save() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var _yield$axios3, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios({
+                  method: "post",
+                  url: "/app/mentoruser",
+                  data: _this2.editedItem
+                });
+
+              case 3:
+                _yield$axios3 = _context2.sent;
+                data = _yield$axios3.data;
+                _context2.next = 9;
+                break;
+
+              case 7:
+                _context2.prev = 7;
+                _context2.t0 = _context2["catch"](0);
+
+              case 9:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 7]]);
       }))();
     }
   }
@@ -49486,6 +49546,21 @@ var render = function() {
                   })
                 ],
                 1
+              )
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            [
+              _c(
+                "v-btn",
+                {
+                  attrs: { right: "", dark: "", color: "primary", text: "" },
+                  on: { click: _vm.save }
+                },
+                [_vm._v("Save")]
               )
             ],
             1
