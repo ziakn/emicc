@@ -13,7 +13,6 @@
 				
             </v-toolbar>
 			<Breadcrumbs/>
-			
 			<v-row justify="center">
 			<v-col>
 				<v-select
@@ -28,8 +27,24 @@
 				</v-select>
 			</v-col>
 			</v-row>
-			<v-row>
-				 <v-btn right dark color="primary" text @click="save" >Save</v-btn>
+			<v-row justify="center">
+				<v-col sm="4" md="4" lg="4">
+					
+				</v-col>
+				<v-col sm="4" md="4" lg="4">
+					
+				</v-col>
+				<v-col sm="4" md="4" lg="4">
+					<v-row>
+						<v-col sm="6" md="6" lg="6"></v-col>
+					<v-col sm="6" md="6" lg="6">
+
+					 <v-btn right dark color="primary" text @click="save" >Save</v-btn>
+					</v-col>
+					</v-row>
+					
+				</v-col>
+				
 			</v-row>
 		</v-container>
 		<v-snackbar
@@ -60,15 +75,13 @@ export default {
 		dialog: false,
 		dataList: [],
 		dataBreadcrumbs:[],
-		
+		flag:'',
 		userType: [],
 		editedItem: {
 			mentor_id: "",
-			
 		},
 		defaultItem: {
 			mentor_id: "",
-			
 		},
 		
 	}),
@@ -97,7 +110,8 @@ props: {
           method: "get",
           url: "/app/getmentoruser"
         });
-        this.editedItem.mentor_id = data.mentor_id;
+		this.editedItem.mentor_id = data.mentor_id;
+		this.flag=data.mentor_id;
       } catch (e) {}
  
 	
@@ -105,14 +119,29 @@ props: {
 	},
 	async save()
 	{
-		 try {
-        let { data } = await axios({
-          method: "post",
-		  url: "/app/mentoruser",
-		  data :this.editedItem
-        });
-        
-      } catch (e) {}
+		if(this.flag )
+		{
+				 try {
+						let { data } = await axios({
+						method: "put",
+						url: "/app/mentoruser/"+ this.editedItem.mentor_id,
+						data :this.editedItem
+						});
+						  this.snacks('Successfully Done','green')
+     					 } catch (e) {}
+		}
+		else
+		{
+			 try {
+						let { data } = await axios({
+						method: "post",
+						url: "/app/mentoruser",
+						data :this.editedItem
+						});
+						  this.snacks('Successfully Done','green')
+					} catch (e) {}
+		}
+		
 	}
 	
 

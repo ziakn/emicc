@@ -28,6 +28,7 @@ Route::prefix('/app')->group(function () {
 
 Route::get('/app/getmentor', 'UserController@getMentor');
 Route::get('/app/getmentoruser', 'UserController@getMentorUser');
+Route::get('/app/getusermentor', 'UserController@getusermentor');
 
 
 

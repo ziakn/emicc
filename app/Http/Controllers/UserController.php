@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use Auth;
 use App\User;
 use App\MentorUser;
+use App\Articulat;
 use Mail;
 use Session;
 use Redirect;
@@ -250,6 +251,32 @@ return response()->json($response);
        $data = MentorUser::where('user_id',$user_id)->first();
        return $data;
    }
+
+   public function getusermentor()
+   {
+       $type = Auth::user();
+       if($type->type == 1)
+       {
+         $data2 = Articulat::with('user')->with('comunicate')->with('takecation')->get();
+       }
+       elseif($type->type ==2)
+       {
+        $id = Auth::id();
+        $data = MentorUser::where('mentor_id',$id)->get();
+         $user_id = array();
+ 
+         foreach($data as $item)
+         {
+             array_push($user_id, $item['user_id']);
+         }
+ 
+         $data2 = Articulat::wherein('user_id',$user_id)->with('user')->with('comunicate')->with('takecation')->get();
+       }
+      
+
+       return $data2;
+   }
+   
     
 
 }

@@ -2291,6 +2291,847 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_Comunicate__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../common/Comunicate */ "./resources/js/components/common/Comunicate.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Comunicate: _common_Comunicate__WEBPACK_IMPORTED_MODULE_1__["default"]
+  },
+  data: function data() {
+    return {
+      date: new Date().toISOString().substr(0, 10),
+      menu2: false,
+      loading: false,
+      mode: "",
+      timeout: 6000,
+      snackbar: false,
+      tab: null,
+      edit: true,
+      dialog: false,
+      dialog1: false,
+      editedItem: {
+        arta: "",
+        artb: "",
+        artc: "",
+        date: "",
+        arta1: "",
+        status: "",
+        arta2: "",
+        arta3: "",
+        artb1: "",
+        artb2: "",
+        artb3: "",
+        artc1: "",
+        artc2: "",
+        artc3: "",
+        saturday: "",
+        sunday: "",
+        monday: "",
+        tuesday: "",
+        wednesday: "",
+        thursday: "",
+        friday: ""
+      },
+      articulateObj: {
+        articulateData: null,
+        articulate: null,
+        articulateFlag: null,
+        artData: null
+      },
+      statusType: [{
+        name: "Low",
+        value: 0
+      }, {
+        name: "Medium",
+        value: 1
+      }, {
+        name: "High",
+        value: 2
+      }]
+    };
+  },
+  computed: {},
+  watch: {},
+  created: function created() {
+    this.initialize();
+  },
+  methods: {
+    initialize: function initialize() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _yield$axios, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!_this.$route.params.id) {
+                  _context.next = 33;
+                  break;
+                }
+
+                console.log(_this.$route.params.id);
+                _context.prev = 2;
+                _context.next = 5;
+                return axios({
+                  method: "get",
+                  url: "/app/articulate/" + _this.$route.params.id
+                });
+
+              case 5:
+                _yield$axios = _context.sent;
+                data = _yield$axios.data;
+                _this.editedItem.arta = data.arta;
+                _this.editedItem.artb = data.artb;
+                _this.editedItem.artc = data.artc;
+                _this.editedItem.date = data.date;
+                _this.editedItem.arta1 = data.comunicate.arta1;
+                _this.editedItem.status = data.comunicate.status;
+                _this.editedItem.arta2 = data.comunicate.arta2;
+                _this.editedItem.arta3 = data.comunicate.arta3;
+                _this.editedItem.artb1 = data.comunicate.artb1;
+                _this.editedItem.artb2 = data.comunicate.artb2;
+                _this.editedItem.artb3 = data.comunicate.artb3;
+                _this.editedItem.artc1 = data.comunicate.artc1;
+                _this.editedItem.artc2 = data.comunicate.artc2;
+                _this.editedItem.artc3 = data.comunicate.artc3;
+                _this.editedItem.saturday = data.takecation.saturday;
+                _this.editedItem.sunday = data.takecation.sunday;
+                _this.editedItem.monday = data.takecation.monday;
+                _this.editedItem.tuesday = data.takecation.tuesday;
+                _this.editedItem.wednesday = data.takecation.wednesday;
+                _this.editedItem.thursday = data.takecation.thursday;
+                _this.editedItem.friday = data.takecation.friday; // console.log(data);
+
+                _context.next = 33;
+                break;
+
+              case 30:
+                _context.prev = 30;
+                _context.t0 = _context["catch"](2);
+
+                _this.snacks("Failed", "Red");
+
+              case 33:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[2, 30]]);
+      }))();
+    },
+    editItem: function editItem(item) {
+      this.edit = false;
+      this.editedIndex = this.dataList.indexOf(item);
+      this.editedItem = Object.assign({}, item);
+      this.dialog = true;
+    },
+    openModel: function openModel(param1, param2, param3) {
+      this.articulateObj.articulateData = param1;
+      this.articulateObj.articulate = param2, this.articulateObj.articulateFlag = param3;
+      this.dialog1 = !this.dialog1;
+    },
+    getarticulateObj: function getarticulateObj(item) {
+      if (item.articulate == "A1" && item.articulateFlag == "A") {
+        editedItem.arta1 = item.artData;
+      }
+
+      if (item.articulate == "A2" && item.articulateFlag == "A") {
+        editedItem.arta2 = item.artData;
+      }
+
+      if (item.articulate == "A3" && item.articulateFlag == "A") {
+        editedItem.arta3 = item.artData;
+      }
+
+      if (item.articulate == "B1" && item.articulateFlag == "B") {
+        editedItem.artb1 = item.artData;
+      }
+
+      if (item.articulate == "B2" && item.articulateFlag == "B") {
+        editedItem.artb2 = item.artData;
+      }
+
+      if (item.articulate == "B3" && item.articulateFlag == "B") {
+        editedItem.artb3 = item.artData;
+      }
+
+      if (item.articulate == "C1" && item.articulateFlag == "C") {
+        editedItem.artc1 = item.artData;
+      }
+
+      if (item.articulate == "C2" && item.articulateFlag == "C") {
+        editedItem.artc2 = item.artData;
+      }
+
+      if (item.articulate == "C3" && item.articulateFlag == "C") {
+        editedItem.artc3 = item.artData;
+      }
+    },
+    addData: function addData() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var _yield$axios2, data, _yield$axios3, _data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (!(_this2.editedItem.date == '')) {
+                  _context2.next = 3;
+                  break;
+                }
+
+                _this2.snacks("Select date", "warning");
+
+                return _context2.abrupt("return");
+
+              case 3:
+                if (!_this2.$route.params.id) {
+                  _context2.next = 17;
+                  break;
+                }
+
+                _context2.prev = 4;
+                _context2.next = 7;
+                return axios({
+                  method: "put",
+                  url: "/app/articulate/" + _this2.$route.params.id,
+                  data: _this2.editedItem
+                });
+
+              case 7:
+                _yield$axios2 = _context2.sent;
+                data = _yield$axios2.data;
+
+                if (data.status) {
+                  _this2.snacks("Successfully Done", "green");
+                } else {
+                  _this2.snacks("Data Once Used", "red");
+                }
+
+                _context2.next = 15;
+                break;
+
+              case 12:
+                _context2.prev = 12;
+                _context2.t0 = _context2["catch"](4);
+
+                _this2.snacks("Failed", "Red");
+
+              case 15:
+                _context2.next = 28;
+                break;
+
+              case 17:
+                _context2.prev = 17;
+                _context2.next = 20;
+                return axios({
+                  method: "post",
+                  url: "/app/articulate",
+                  data: _this2.editedItem
+                });
+
+              case 20:
+                _yield$axios3 = _context2.sent;
+                _data = _yield$axios3.data;
+
+                if (_data.status) {
+                  _this2.snacks("Successfully Done", "green");
+                } else {
+                  _this2.snacks("Data Once Used", "red");
+                }
+
+                _context2.next = 28;
+                break;
+
+              case 25:
+                _context2.prev = 25;
+                _context2.t1 = _context2["catch"](17);
+
+                _this2.snacks("Failed", "Red");
+
+              case 28:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[4, 12], [17, 25]]);
+      }))();
+    }
+  }
+});
+
+/***/ }),
+
+/***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=script&lang=js&":
+/*!**************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=script&lang=js& ***!
+  \**************************************************************************************************************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @babel/runtime/regenerator */ "./node_modules/@babel/runtime/regenerator/index.js");
+/* harmony import */ var _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var _common_Breadcrumbs__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./../../common/Breadcrumbs */ "./resources/js/components/common/Breadcrumbs.vue");
+/* harmony import */ var _common_NoDataList__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./../../common/NoDataList */ "./resources/js/components/common/NoDataList.vue");
+
+
+function asyncGeneratorStep(gen, resolve, reject, _next, _throw, key, arg) { try { var info = gen[key](arg); var value = info.value; } catch (error) { reject(error); return; } if (info.done) { resolve(value); } else { Promise.resolve(value).then(_next, _throw); } }
+
+function _asyncToGenerator(fn) { return function () { var self = this, args = arguments; return new Promise(function (resolve, reject) { var gen = fn.apply(self, args); function _next(value) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "next", value); } function _throw(err) { asyncGeneratorStep(gen, resolve, reject, _next, _throw, "throw", err); } _next(undefined); }); }; }
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+/* harmony default export */ __webpack_exports__["default"] = ({
+  components: {
+    Breadcrumbs: _common_Breadcrumbs__WEBPACK_IMPORTED_MODULE_1__["default"],
+    NoDataList: _common_NoDataList__WEBPACK_IMPORTED_MODULE_2__["default"]
+  },
+  data: function data() {
+    return {
+      search: "",
+      absolute: true,
+      loading: false,
+      dataIndex: null,
+      deleteTitle: "",
+      deleteBody: "",
+      isDelete: false,
+      edit: true,
+      dialog: false,
+      dataList: [],
+      userType: [],
+      headers: [{
+        text: "ID",
+        align: "left",
+        value: "id"
+      }, {
+        text: "A",
+        value: "arta"
+      }, {
+        text: "B",
+        value: "artbb"
+      }, {
+        text: "C",
+        value: "artcc"
+      }, {
+        text: "User",
+        value: "name"
+      }, {
+        text: "Mentor",
+        value: "mentor"
+      }, {
+        text: "Action",
+        value: "action"
+      }]
+    };
+  },
+  props: {
+    source: String
+  },
+  computed: {
+    formTitle: function formTitle() {
+      return this.editedIndex === -1 ? "New Item" : "Edit Item";
+    }
+  },
+  watch: {},
+  created: function created() {
+    this.initialize();
+  },
+  methods: {
+    initialize: function initialize() {
+      var _this = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
+        var _yield$axios, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                _context.prev = 0;
+                _context.next = 3;
+                return axios({
+                  method: "get",
+                  url: "/app/getusermentor"
+                });
+
+              case 3:
+                _yield$axios = _context.sent;
+                data = _yield$axios.data;
+                _this.dataList = data;
+                _context.next = 10;
+                break;
+
+              case 8:
+                _context.prev = 8;
+                _context.t0 = _context["catch"](0);
+
+              case 10:
+              case "end":
+                return _context.stop();
+            }
+          }
+        }, _callee, null, [[0, 8]]);
+      }))();
+    },
+    editItem: function editItem(item) {
+      this.$router.push('/enroll/useractdetail/' + item.id);
+    }
+  }
+});
+
+/***/ }),
+
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/setting/Profile.vue?vue&type=script&lang=js&":
 /*!************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/babel-loader/lib??ref--4-0!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/setting/Profile.vue?vue&type=script&lang=js& ***!
@@ -4961,6 +5802,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -4975,6 +5831,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       dialog: false,
       dataList: [],
       dataBreadcrumbs: [],
+      flag: '',
       userType: [],
       editedItem: {
         mentor_id: ""
@@ -5033,55 +5890,90 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _yield$axios2 = _context.sent;
                 _data = _yield$axios2.data;
                 _this.editedItem.mentor_id = _data.mentor_id;
-                _context.next = 20;
+                _this.flag = _data.mentor_id;
+                _context.next = 21;
                 break;
 
-              case 18:
-                _context.prev = 18;
+              case 19:
+                _context.prev = 19;
                 _context.t1 = _context["catch"](10);
 
-              case 20:
+              case 21:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 8], [10, 18]]);
+        }, _callee, null, [[0, 8], [10, 19]]);
       }))();
     },
     save: function save() {
       var _this2 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var _yield$axios3, data;
+        var _yield$axios3, data, _yield$axios4, _data2;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.prev = 0;
-                _context2.next = 3;
+                if (!_this2.flag) {
+                  _context2.next = 13;
+                  break;
+                }
+
+                _context2.prev = 1;
+                _context2.next = 4;
+                return axios({
+                  method: "put",
+                  url: "/app/mentoruser/" + _this2.editedItem.mentor_id,
+                  data: _this2.editedItem
+                });
+
+              case 4:
+                _yield$axios3 = _context2.sent;
+                data = _yield$axios3.data;
+
+                _this2.snacks('Successfully Done', 'green');
+
+                _context2.next = 11;
+                break;
+
+              case 9:
+                _context2.prev = 9;
+                _context2.t0 = _context2["catch"](1);
+
+              case 11:
+                _context2.next = 23;
+                break;
+
+              case 13:
+                _context2.prev = 13;
+                _context2.next = 16;
                 return axios({
                   method: "post",
                   url: "/app/mentoruser",
                   data: _this2.editedItem
                 });
 
-              case 3:
-                _yield$axios3 = _context2.sent;
-                data = _yield$axios3.data;
-                _context2.next = 9;
+              case 16:
+                _yield$axios4 = _context2.sent;
+                _data2 = _yield$axios4.data;
+
+                _this2.snacks('Successfully Done', 'green');
+
+                _context2.next = 23;
                 break;
 
-              case 7:
-                _context2.prev = 7;
-                _context2.t0 = _context2["catch"](0);
+              case 21:
+                _context2.prev = 21;
+                _context2.t1 = _context2["catch"](13);
 
-              case 9:
+              case 23:
               case "end":
                 return _context2.stop();
             }
           }
-        }, _callee2, null, [[0, 7]]);
+        }, _callee2, null, [[1, 9], [13, 21]]);
       }))();
     }
   }
@@ -46079,6 +46971,1434 @@ render._withStripped = true
 
 /***/ }),
 
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=template&id=0ce10b22&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=template&id=0ce10b22& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-content",
+    [
+      _c(
+        "v-container",
+        { attrs: { fluid: "" } },
+        [
+          _c(
+            "v-row",
+            { attrs: { justify: "center" } },
+            [
+              _c(
+                "v-col",
+                { attrs: { sm: "12", md: "12", lg: "12" } },
+                [
+                  _c(
+                    "v-tabs",
+                    {
+                      attrs: {
+                        "background-color": "primary",
+                        centered: "",
+                        dark: "",
+                        grow: ""
+                      },
+                      model: {
+                        value: _vm.tab,
+                        callback: function($$v) {
+                          _vm.tab = $$v
+                        },
+                        expression: "tab"
+                      }
+                    },
+                    [
+                      _c("v-tabs-slider"),
+                      _vm._v(" "),
+                      _c("v-tab", { attrs: { href: "#tab-1" } }, [
+                        _vm._v(
+                          "\n                            Article\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-tab", { attrs: { href: "#tab-2" } }, [
+                        _vm._v(
+                          "\n                            Comunicate\n                        "
+                        )
+                      ]),
+                      _vm._v(" "),
+                      _c("v-tab", { attrs: { href: "#tab-3" } }, [
+                        _vm._v(
+                          "\n                            Take Actions\n                        "
+                        )
+                      ])
+                    ],
+                    1
+                  ),
+                  _vm._v(" "),
+                  _c(
+                    "v-tabs-items",
+                    {
+                      model: {
+                        value: _vm.tab,
+                        callback: function($$v) {
+                          _vm.tab = $$v
+                        },
+                        expression: "tab"
+                      }
+                    },
+                    [
+                      _c(
+                        "v-tab-item",
+                        { attrs: { value: "tab-1" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mt-5" },
+                            [
+                              _c(
+                                "v-card-title",
+                                [
+                                  _c(
+                                    "v-row",
+                                    [
+                                      _c(
+                                        "v-col",
+                                        [
+                                          _c(
+                                            "v-icon",
+                                            {
+                                              attrs: {
+                                                large: "",
+                                                left: "",
+                                                color: "blue"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                dashboard\n                                            "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "title font-weight-light"
+                                            },
+                                            [_vm._v("Article")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "4"
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "v-menu",
+                                            {
+                                              attrs: {
+                                                "close-on-content-click": false,
+                                                "nudge-right": 40,
+                                                transition: "scale-transition",
+                                                "offset-y": "",
+                                                "min-width": "290px"
+                                              },
+                                              scopedSlots: _vm._u([
+                                                {
+                                                  key: "activator",
+                                                  fn: function(ref) {
+                                                    var on = ref.on
+                                                    var attrs = ref.attrs
+                                                    return [
+                                                      _c(
+                                                        "v-text-field",
+                                                        _vm._g(
+                                                          _vm._b(
+                                                            {
+                                                              attrs: {
+                                                                label:
+                                                                  "Picker without buttons",
+                                                                "prepend-icon":
+                                                                  "event",
+                                                                readonly: "",
+                                                                required: ""
+                                                              },
+                                                              model: {
+                                                                value:
+                                                                  _vm.editedItem
+                                                                    .date,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.$set(
+                                                                    _vm.editedItem,
+                                                                    "date",
+                                                                    $$v
+                                                                  )
+                                                                },
+                                                                expression:
+                                                                  "editedItem.date"
+                                                              }
+                                                            },
+                                                            "v-text-field",
+                                                            attrs,
+                                                            false
+                                                          ),
+                                                          on
+                                                        )
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ]),
+                                              model: {
+                                                value: _vm.menu2,
+                                                callback: function($$v) {
+                                                  _vm.menu2 = $$v
+                                                },
+                                                expression: "menu2"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(" "),
+                                              _c("v-date-picker", {
+                                                on: {
+                                                  input: function($event) {
+                                                    _vm.menu2 = false
+                                                  }
+                                                },
+                                                model: {
+                                                  value: _vm.editedItem.date,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.editedItem,
+                                                      "date",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression: "editedItem.date"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: { label: "A", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.arta,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.arta"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: { label: "B", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artb,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artb"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: { label: "C", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artc,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artc"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-tab-item",
+                        { attrs: { value: "tab-2" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mt-5" },
+                            [
+                              _c(
+                                "v-row",
+                                [
+                                  _c(
+                                    "v-col",
+                                    [
+                                      _c(
+                                        "v-card-title",
+                                        [
+                                          _c(
+                                            "v-icon",
+                                            {
+                                              attrs: {
+                                                large: "",
+                                                left: "",
+                                                color: "blue"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(
+                                                "\n                                                dashboard\n                                            "
+                                              )
+                                            ]
+                                          ),
+                                          _vm._v(" "),
+                                          _c(
+                                            "span",
+                                            {
+                                              staticClass:
+                                                "title font-weight-light"
+                                            },
+                                            [_vm._v("Comunicate")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "v-col",
+                                    { attrs: { cols: "12", sm: "6", md: "4" } },
+                                    [
+                                      _c("v-select", {
+                                        attrs: {
+                                          label: "Select level",
+                                          items: _vm.statusType,
+                                          "item-text": "name",
+                                          "item-value": "value"
+                                        },
+                                        model: {
+                                          value: _vm.editedItem.status,
+                                          callback: function($$v) {
+                                            _vm.$set(
+                                              _vm.editedItem,
+                                              "status",
+                                              $$v
+                                            )
+                                          },
+                                          expression: "editedItem.status"
+                                        }
+                                      })
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "A1", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.arta1,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta1",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.arta1"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.arta,
+                                                    "A1",
+                                                    "A"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "A2", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.arta2,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta2",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.arta2"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.arta,
+                                                    "A2",
+                                                    "A"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "A3", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.arta3,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta3",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.arta3"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.arta,
+                                                    "A3",
+                                                    "A"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "B1", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artb1,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb1",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artb1"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artb,
+                                                    "B1",
+                                                    "B"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "B2", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artb2,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb2",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artb2"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artb,
+                                                    "B2",
+                                                    "B"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "B3", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artb3,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb3",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artb3"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artb,
+                                                    "B3",
+                                                    "B"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "C1", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artc1,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc1",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artc1"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artc,
+                                                    "C1",
+                                                    "C"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "C2", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artc2,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc2",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artc2"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artc,
+                                                    "C2",
+                                                    "C"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                        },
+                                        [
+                                          _c("v-text-field", {
+                                            attrs: { label: "C3", filled: "" },
+                                            model: {
+                                              value: _vm.editedItem.artc3,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc3",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.artc3"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "2" }
+                                        },
+                                        [
+                                          _c(
+                                            "v-btn",
+                                            {
+                                              attrs: {
+                                                color: "primary",
+                                                small: "",
+                                                dark: ""
+                                              },
+                                              on: {
+                                                click: function($event) {
+                                                  return _vm.openModel(
+                                                    _vm.editedItem.artc,
+                                                    "C3",
+                                                    "C"
+                                                  )
+                                                }
+                                              }
+                                            },
+                                            [_vm._v("Open Dialog")]
+                                          )
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      ),
+                      _vm._v(" "),
+                      _c(
+                        "v-tab-item",
+                        { attrs: { value: "tab-3" } },
+                        [
+                          _c(
+                            "v-card",
+                            { staticClass: "mt-5" },
+                            [
+                              _c(
+                                "v-card-title",
+                                [
+                                  _c(
+                                    "v-icon",
+                                    {
+                                      attrs: {
+                                        large: "",
+                                        left: "",
+                                        color: "blue"
+                                      }
+                                    },
+                                    [
+                                      _vm._v(
+                                        "\n                                        dashboard\n                                    "
+                                      )
+                                    ]
+                                  ),
+                                  _vm._v(" "),
+                                  _c(
+                                    "span",
+                                    { staticClass: "title font-weight-light" },
+                                    [_vm._v("Take Action")]
+                                  )
+                                ],
+                                1
+                              ),
+                              _vm._v(" "),
+                              _c(
+                                "v-card-text",
+                                [
+                                  _c(
+                                    "v-row",
+                                    { attrs: { justify: "center" } },
+                                    [
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Saturday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.saturday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "saturday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.saturday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Sunday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.sunday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "sunday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.sunday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Monday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.monday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "monday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.monday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Tuesday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.tuesday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "tuesday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.tuesday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Wednesday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.wednesday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "wednesday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.wednesday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Thursady",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.thursaday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "thursaday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.thursaday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                        },
+                                        [
+                                          _c("v-textarea", {
+                                            attrs: {
+                                              label: "Friday",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.friday,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "friday",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.friday"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      )
+                                    ],
+                                    1
+                                  )
+                                ],
+                                1
+                              )
+                            ],
+                            1
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          attrs: {
+            vertical: _vm.snackvertical,
+            timeout: _vm.snacktimeout,
+            top: _vm.snacktop,
+            right: _vm.snackright,
+            color: _vm.snackcolor
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v("\n\t\t\t" + _vm._s(_vm.snacktext) + "\n\t\t\t"),
+          _c(
+            "v-btn",
+            {
+              attrs: { color: "white", text: "", right: "" },
+              on: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Close")]
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c("Comunicate", {
+        attrs: { trigger: _vm.dialog1, articulateObj: _vm.articulateObj },
+        on: { send: _vm.getarticulateObj }
+      })
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
+/***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=template&id=031b9804&":
+/*!******************************************************************************************************************************************************************************************************************************!*\
+  !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=template&id=031b9804& ***!
+  \******************************************************************************************************************************************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "render", function() { return render; });
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return staticRenderFns; });
+var render = function() {
+  var _vm = this
+  var _h = _vm.$createElement
+  var _c = _vm._self._c || _h
+  return _c(
+    "v-content",
+    [
+      _c(
+        "v-container",
+        { attrs: { fluid: "" } },
+        [
+          _c(
+            "v-overlay",
+            { attrs: { value: _vm.showFullLoading, absolute: _vm.absolute } },
+            [
+              _c("v-progress-circular", {
+                attrs: { indeterminate: "", size: "64" }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c(
+            "v-toolbar",
+            { attrs: { color: "transparent", flat: "" } },
+            [
+              _c(
+                "v-avatar",
+                {
+                  staticClass: " elevation-12",
+                  attrs: { tile: "", color: "primary" }
+                },
+                [_c("v-icon", { attrs: { dark: "" } }, [_vm._v("face")])],
+                1
+              ),
+              _vm._v(" "),
+              _c("v-toolbar-title", { staticClass: "ml-4 primary--text" }, [
+                _vm._v(_vm._s(_vm.$t("message.user.list")))
+              ]),
+              _vm._v(" "),
+              _c("v-spacer"),
+              _vm._v(" "),
+              _c("v-text-field", {
+                attrs: {
+                  "append-icon": "search",
+                  label: "Search",
+                  "hide-details": "",
+                  outlined: "",
+                  dense: ""
+                },
+                model: {
+                  value: _vm.search,
+                  callback: function($$v) {
+                    _vm.search = $$v
+                  },
+                  expression: "search"
+                }
+              })
+            ],
+            1
+          ),
+          _vm._v(" "),
+          _c("Breadcrumbs"),
+          _vm._v(" "),
+          _c(
+            "v-row",
+            { attrs: { justify: "center" } },
+            [
+              _c(
+                "v-col",
+                { attrs: { sm: "12", md: "12", lg: "12" } },
+                [
+                  _c("v-data-table", {
+                    staticClass: "elevation-4",
+                    attrs: {
+                      color: "white",
+                      headers: _vm.headers,
+                      items: _vm.dataList,
+                      search: _vm.search
+                    },
+                    scopedSlots: _vm._u([
+                      {
+                        key: "item.name",
+                        fn: function(ref) {
+                          var item = ref.item
+                          return [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t" +
+                                _vm._s(item.user.name) +
+                                "\n\t\t\t\t\t\t"
+                            )
+                          ]
+                        }
+                      },
+                      {
+                        key: "item.mentor",
+                        fn: function(ref) {
+                          var item = ref.item
+                          return [
+                            item.user.mentoruser
+                              ? _c("p", [
+                                  _vm._v(
+                                    _vm._s(item.user.mentoruser.mentor.name)
+                                  )
+                                ])
+                              : _c("p", [_vm._v("self")])
+                          ]
+                        }
+                      },
+                      {
+                        key: "item.action",
+                        fn: function(ref) {
+                          var item = ref.item
+                          return [
+                            _c(
+                              "v-icon",
+                              {
+                                attrs: { small: "" },
+                                on: {
+                                  click: function($event) {
+                                    return _vm.editItem(item)
+                                  }
+                                }
+                              },
+                              [_vm._v("edit")]
+                            )
+                          ]
+                        }
+                      },
+                      {
+                        key: "no-data",
+                        fn: function() {
+                          return [
+                            _c("NoDataList", {
+                              attrs: { loading: _vm.loading },
+                              on: { initialize: _vm.initialize }
+                            })
+                          ]
+                        },
+                        proxy: true
+                      }
+                    ])
+                  })
+                ],
+                1
+              )
+            ],
+            1
+          )
+        ],
+        1
+      ),
+      _vm._v(" "),
+      _c(
+        "v-snackbar",
+        {
+          attrs: {
+            vertical: _vm.snackvertical,
+            timeout: _vm.snacktimeout,
+            top: _vm.snacktop,
+            right: _vm.snackright,
+            color: _vm.snackcolor
+          },
+          model: {
+            value: _vm.snackbar,
+            callback: function($$v) {
+              _vm.snackbar = $$v
+            },
+            expression: "snackbar"
+          }
+        },
+        [
+          _vm._v("\n\t\t\t" + _vm._s(_vm.snacktext) + "\n\t\t\t"),
+          _c(
+            "v-btn",
+            {
+              attrs: { color: "white", text: "" },
+              on: {
+                click: function($event) {
+                  _vm.snackbar = false
+                }
+              }
+            },
+            [_vm._v("Close")]
+          )
+        ],
+        1
+      )
+    ],
+    1
+  )
+}
+var staticRenderFns = []
+render._withStripped = true
+
+
+
+/***/ }),
+
 /***/ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee&":
 /*!******************************************************************************************************************************************************************************************************************************!*\
   !*** ./node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!./node_modules/vue-loader/lib??vue-loader-options!./resources/js/components/dashboard/setting/ContactUs.vue?vue&type=template&id=e6efe3ee& ***!
@@ -47213,7 +49533,7 @@ var render = function() {
                 }
               }
             },
-            [_c("v-icon", [_vm._v("mdi-plus")])],
+            [_c("v-icon", [_vm._v("add")])],
             1
           )
         ],
@@ -47565,7 +49885,7 @@ var render = function() {
                 }
               }
             },
-            [_c("v-icon", [_vm._v("mdi-plus")])],
+            [_c("v-icon", [_vm._v("add")])],
             1
           )
         ],
@@ -49553,14 +51873,46 @@ var render = function() {
           _vm._v(" "),
           _c(
             "v-row",
+            { attrs: { justify: "center" } },
             [
+              _c("v-col", { attrs: { sm: "4", md: "4", lg: "4" } }),
+              _vm._v(" "),
+              _c("v-col", { attrs: { sm: "4", md: "4", lg: "4" } }),
+              _vm._v(" "),
               _c(
-                "v-btn",
-                {
-                  attrs: { right: "", dark: "", color: "primary", text: "" },
-                  on: { click: _vm.save }
-                },
-                [_vm._v("Save")]
+                "v-col",
+                { attrs: { sm: "4", md: "4", lg: "4" } },
+                [
+                  _c(
+                    "v-row",
+                    [
+                      _c("v-col", { attrs: { sm: "6", md: "6", lg: "6" } }),
+                      _vm._v(" "),
+                      _c(
+                        "v-col",
+                        { attrs: { sm: "6", md: "6", lg: "6" } },
+                        [
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                right: "",
+                                dark: "",
+                                color: "primary",
+                                text: ""
+                              },
+                              on: { click: _vm.save }
+                            },
+                            [_vm._v("Save")]
+                          )
+                        ],
+                        1
+                      )
+                    ],
+                    1
+                  )
+                ],
+                1
               )
             ],
             1
@@ -110811,6 +113163,75 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/js/components/dashboard/enroll/UserDetail.vue":
+/*!*****************************************************************!*\
+  !*** ./resources/js/components/dashboard/enroll/UserDetail.vue ***!
+  \*****************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _UserDetail_vue_vue_type_template_id_0ce10b22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./UserDetail.vue?vue&type=template&id=0ce10b22& */ "./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=template&id=0ce10b22&");
+/* harmony import */ var _UserDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./UserDetail.vue?vue&type=script&lang=js& */ "./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
+
+
+/* normalize component */
+
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _UserDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _UserDetail_vue_vue_type_template_id_0ce10b22___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _UserDetail_vue_vue_type_template_id_0ce10b22___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
+  false,
+  null,
+  null,
+  null
+  
+)
+
+/* hot reload */
+if (false) { var api; }
+component.options.__file = "resources/js/components/dashboard/enroll/UserDetail.vue"
+/* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UserDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./UserDetail.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_UserDetail_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=template&id=0ce10b22&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=template&id=0ce10b22& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UserDetail_vue_vue_type_template_id_0ce10b22___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./UserDetail.vue?vue&type=template&id=0ce10b22& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/UserDetail.vue?vue&type=template&id=0ce10b22&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UserDetail_vue_vue_type_template_id_0ce10b22___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_UserDetail_vue_vue_type_template_id_0ce10b22___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
+
+/***/ }),
+
 /***/ "./resources/js/components/dashboard/enroll/userenroll.vue":
 /*!*****************************************************************!*\
   !*** ./resources/js/components/dashboard/enroll/userenroll.vue ***!
@@ -110820,17 +113241,20 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
-var render, staticRenderFns
-var script = {}
+/* harmony import */ var _userenroll_vue_vue_type_template_id_031b9804___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./userenroll.vue?vue&type=template&id=031b9804& */ "./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=template&id=031b9804&");
+/* harmony import */ var _userenroll_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./userenroll.vue?vue&type=script&lang=js& */ "./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport *//* harmony import */ var _node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../../../../node_modules/vue-loader/lib/runtime/componentNormalizer.js */ "./node_modules/vue-loader/lib/runtime/componentNormalizer.js");
+
+
+
 
 
 /* normalize component */
 
-var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_0__["default"])(
-  script,
-  render,
-  staticRenderFns,
+var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_js__WEBPACK_IMPORTED_MODULE_2__["default"])(
+  _userenroll_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_1__["default"],
+  _userenroll_vue_vue_type_template_id_031b9804___WEBPACK_IMPORTED_MODULE_0__["render"],
+  _userenroll_vue_vue_type_template_id_031b9804___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"],
   false,
   null,
   null,
@@ -110838,8 +113262,42 @@ var component = Object(_node_modules_vue_loader_lib_runtime_componentNormalizer_
   
 )
 
+/* hot reload */
+if (false) { var api; }
 component.options.__file = "resources/js/components/dashboard/enroll/userenroll.vue"
 /* harmony default export */ __webpack_exports__["default"] = (component.exports);
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=script&lang=js&":
+/*!******************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=script&lang=js& ***!
+  \******************************************************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_userenroll_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/babel-loader/lib??ref--4-0!../../../../../node_modules/vue-loader/lib??vue-loader-options!./userenroll.vue?vue&type=script&lang=js& */ "./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=script&lang=js&");
+/* empty/unused harmony star reexport */ /* harmony default export */ __webpack_exports__["default"] = (_node_modules_babel_loader_lib_index_js_ref_4_0_node_modules_vue_loader_lib_index_js_vue_loader_options_userenroll_vue_vue_type_script_lang_js___WEBPACK_IMPORTED_MODULE_0__["default"]); 
+
+/***/ }),
+
+/***/ "./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=template&id=031b9804&":
+/*!************************************************************************************************!*\
+  !*** ./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=template&id=031b9804& ***!
+  \************************************************************************************************/
+/*! exports provided: render, staticRenderFns */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_userenroll_vue_vue_type_template_id_031b9804___WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! -!../../../../../node_modules/vue-loader/lib/loaders/templateLoader.js??vue-loader-options!../../../../../node_modules/vue-loader/lib??vue-loader-options!./userenroll.vue?vue&type=template&id=031b9804& */ "./node_modules/vue-loader/lib/loaders/templateLoader.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/components/dashboard/enroll/userenroll.vue?vue&type=template&id=031b9804&");
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "render", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_userenroll_vue_vue_type_template_id_031b9804___WEBPACK_IMPORTED_MODULE_0__["render"]; });
+
+/* harmony reexport (safe) */ __webpack_require__.d(__webpack_exports__, "staticRenderFns", function() { return _node_modules_vue_loader_lib_loaders_templateLoader_js_vue_loader_options_node_modules_vue_loader_lib_index_js_vue_loader_options_userenroll_vue_vue_type_template_id_031b9804___WEBPACK_IMPORTED_MODULE_0__["staticRenderFns"]; });
+
+
 
 /***/ }),
 
@@ -111756,7 +114214,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./components/dashboard/useract/ActList.vue */ "./resources/js/components/dashboard/useract/ActList.vue");
 /* harmony import */ var _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./components/dashboard/useract/AddList.vue */ "./resources/js/components/dashboard/useract/AddList.vue");
 /* harmony import */ var _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./components/dashboard/useract/MentorList.vue */ "./resources/js/components/dashboard/useract/MentorList.vue");
-/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
+/* harmony import */ var _components_dashboard_enroll_UserDetail_vue__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./components/dashboard/enroll/UserDetail.vue */ "./resources/js/components/dashboard/enroll/UserDetail.vue");
+/* harmony import */ var _i18n__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./i18n */ "./resources/js/i18n/index.js");
+
 
 
 
@@ -111792,7 +114252,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_user_Home_vue__WEBPACK_IMPORTED_MODULE_2__["default"],
     meta: {
       icon: 'face',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.user'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.user'),
       type: onlyAdminMentor,
       status: true
     },
@@ -111802,7 +114262,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_userlist_vue__WEBPACK_IMPORTED_MODULE_6__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.user.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.user.list'),
         type: onlyAdminMentor,
         status: true
       }
@@ -111812,7 +114272,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_Type_vue__WEBPACK_IMPORTED_MODULE_7__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.user.usertype'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.user.usertype'),
         type: onlyAdmin,
         status: true
       }
@@ -111822,7 +114282,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_user_Password_vue__WEBPACK_IMPORTED_MODULE_8__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.user.password'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.user.password'),
         type: onlyAdminMentor,
         status: true
       }
@@ -111833,8 +114293,8 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_enroll_Home_vue__WEBPACK_IMPORTED_MODULE_4__["default"],
     meta: {
       icon: 'alarm_add',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.enroll'),
-      type: mentorOnly,
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.enroll'),
+      type: onlyAdminMentor,
       status: true
     },
     children: [{
@@ -111843,9 +114303,19 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_enroll_userenroll_vue__WEBPACK_IMPORTED_MODULE_13__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.enroll.userenroll'),
-        type: mentorOnly,
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.enroll.userenroll'),
+        type: onlyAdminMentor,
         status: true
+      }
+    }, {
+      path: 'useractdetail/:id',
+      name: 'useractdetail',
+      component: _components_dashboard_enroll_UserDetail_vue__WEBPACK_IMPORTED_MODULE_17__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.useract.add'),
+        type: onlyAdminMentor,
+        status: false
       }
     }]
   }, {
@@ -111854,7 +114324,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
       icon: 'accessibility',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.mentor'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.mentor'),
       type: customerOnly,
       status: true
     },
@@ -111864,7 +114334,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_MentorList_vue__WEBPACK_IMPORTED_MODULE_16__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.mentor.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.mentor.list'),
         type: customerOnly,
         status: true
       }
@@ -111875,7 +114345,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
       icon: 'account_circle',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.useract'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.useract'),
       type: customerOnly,
       status: true
     },
@@ -111885,7 +114355,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.useract.add'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.useract.add'),
         type: customerOnly,
         status: true
       }
@@ -111895,7 +114365,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_ActList_vue__WEBPACK_IMPORTED_MODULE_14__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.useract.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.useract.list'),
         type: customerOnly,
         status: true
       }
@@ -111905,7 +114375,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.useract.add'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.useract.add'),
         type: customerOnly,
         status: false
       }
@@ -111916,7 +114386,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'perm_phone_msg',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.contactus'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.contactus'),
       type: allOnly,
       status: true
     },
@@ -111926,7 +114396,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_ContactUs_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.contactus.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.contactus.list'),
         type: allOnly,
         status: true
       }
@@ -111937,7 +114407,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'question_answer',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.aboutus'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.aboutus'),
       type: allOnly,
       status: true
     },
@@ -111947,7 +114417,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_AboutUs_vue__WEBPACK_IMPORTED_MODULE_11__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.aboutus.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.aboutus.list'),
         type: allOnly,
         status: true
       }
@@ -111958,7 +114428,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'report_problem',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.faqs'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.faqs'),
       type: allOnly,
       status: true
     },
@@ -111968,7 +114438,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_Faqs_vue__WEBPACK_IMPORTED_MODULE_12__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.faqs.list'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.faqs.list'),
         type: allOnly,
         status: true
       }
@@ -111979,7 +114449,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
       icon: 'settings',
-      title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.leftbar.setting'),
+      title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.setting'),
       type: allOnly,
       status: true
     },
@@ -111989,7 +114459,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       component: _components_dashboard_setting_Profile_vue__WEBPACK_IMPORTED_MODULE_9__["default"],
       meta: {
         icon: 'dashboard',
-        title: _i18n__WEBPACK_IMPORTED_MODULE_17__["default"].t('message.setting.profile'),
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.setting.profile'),
         type: allOnly,
         status: true
       }

@@ -24,11 +24,17 @@ class User extends Authenticatable
     {
        return $this->belongsTo('App\UserType','type');
     } 
-    /**
-     * The attributes that should be hidden for arrays.
-     *
-     * @var array
-     */
+   
+    public function articulate()
+    {
+       return $this->hasMany('App\Articulat','user_id');
+    }
+
+    public function mentoruser()
+    {
+       return $this->hasOne('App\MentorUser','user_id')->with('mentor');
+    }
+
     protected $hidden = [
         'password', 'remember_token',
     ];

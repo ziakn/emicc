@@ -42,7 +42,7 @@
 				</v-col>
 			</v-row>
 			<v-btn bottom color="primary" dark fab fixed right @click="dialog = !dialog">
-				<v-icon>mdi-plus</v-icon>
+				<v-icon>add</v-icon>
 			</v-btn>
 		</v-container>
         <v-dialog v-model="dialog" max-width="500px" persistent>

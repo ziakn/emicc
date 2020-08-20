@@ -21,6 +21,7 @@ import userenroll from './components/dashboard/enroll/userenroll.vue'
 import useractlist from './components/dashboard/useract/ActList.vue'
 import useractadd from './components/dashboard/useract/AddList.vue'
 import mentorlist from './components/dashboard/useract/MentorList.vue'
+import useractdetail from './components/dashboard/enroll/UserDetail.vue'
 
 import i18n from './i18n';
 
@@ -93,7 +94,7 @@ export default new Router({
             meta: {
                 icon: 'alarm_add',
                 title: i18n.t('message.leftbar.enroll'),
-                type: mentorOnly,
+                type: onlyAdminMentor,
                 status: true,
             },
             children: [
@@ -104,8 +105,20 @@ export default new Router({
                     meta: {
                         icon: 'dashboard',
                         title: i18n.t('message.enroll.userenroll'),
-                        type: mentorOnly,
+                        type: onlyAdminMentor,
                         status: true,
+                    }
+                },
+                {
+                    path: 'useractdetail/:id',
+                    name: 'useractdetail',
+                    component: useractdetail,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.useract.add'),
+                        type: onlyAdminMentor,
+                        status: false,
+        
                     }
                 },
             ]
@@ -182,6 +195,7 @@ export default new Router({
         
                     }
                 },
+               
             ]
 
         },
