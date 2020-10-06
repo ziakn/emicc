@@ -24,6 +24,7 @@ class CreateTakeActionsTable extends Migration
             $table->text('wednesday')->Nullable();
             $table->text('thursday')->Nullable();
             $table->text('friday')->Nullable();
+            $table->text('repeattask')->Nullable();
             $table->softDeletes();
             $table->timestamps();
         });

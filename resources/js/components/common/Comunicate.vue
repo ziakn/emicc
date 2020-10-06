@@ -41,6 +41,7 @@ export default {
         {
             this.$emit('send', this.articulateObj)
             this.dialog1=false
+            this.articulateObj.artData=''
         }
 
     },

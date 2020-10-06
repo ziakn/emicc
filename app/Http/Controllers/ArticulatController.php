@@ -77,6 +77,8 @@ class ArticulatController extends Controller
                 'wednesday' => $request->wednesday,
                 'thursday' => $request->thursday,
                 'friday' => $request->friday,
+                'repeattask' => $request->repeattask,
+                'time' => $request->time,
             ]);
 
 
@@ -146,6 +148,8 @@ class ArticulatController extends Controller
                 'wednesday' => $request->wednesday,
                 'thursday' => $request->thursday,
                 'friday' => $request->friday,
+                'repeattask' => $request->repeattask,
+                'time' => $request->time,
             ]);
 
 

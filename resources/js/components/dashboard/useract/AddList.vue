@@ -30,10 +30,7 @@
                                             <v-icon large left color="blue">
                                                 dashboard
                                             </v-icon>
-                                            <span
-                                                class="title font-weight-light"
-                                                >Article</span
-                                            >
+                                            <span class="title font-weight-light">Article</span>
                                         </v-col>
                                         <v-col cols="12" sm="6" md="4">
                                             <v-menu
@@ -52,7 +49,7 @@
                                                 >
                                                     <v-text-field
                                                         v-model="editedItem.date"
-                                                        label="Picker without buttons"
+                                                        label="Select Date"
                                                         prepend-icon="event"
                                                         readonly
                                                         v-bind="attrs"
@@ -112,7 +109,7 @@
                                     <v-col cols="12" sm="6" md="4">
                                         <v-select
                                             v-model="editedItem.status"
-                                            label="Select level"
+                                            label="Importance level"
                                             :items="statusType"
                                             item-text="name"
                                             item-value="value"
@@ -120,7 +117,7 @@
                                     </v-col>
                                 </v-row>
                                 <v-card-text>
-                                    <v-row justify="center">
+                                      <v-row justify="center">
                                         <v-col sm="12" md="12" lg="8">
                                             <v-text-field
                                                 v-model="editedItem.arta1"
@@ -132,9 +129,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.arta,'A1', 'A')"
+                                                @click="openModel(editedItem.arta,'A1', 'A',editedItem.arta1)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -148,9 +145,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.arta,'A2', 'A')"
+                                                @click="openModel(editedItem.arta,'A2', 'A',editedItem.arta2)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -164,9 +161,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.arta,'A3', 'A')"
+                                                @click="openModel(editedItem.arta,'A3', 'A',editedItem.arta3)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -180,9 +177,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.artb,'B1', 'B')"
+                                                @click="openModel(editedItem.artb,'B1', 'B',editedItem.artb1)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -196,9 +193,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.artb,'B2', 'B')"
+                                                @click="openModel(editedItem.artb,'B2', 'B',editedItem.artb2)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -212,9 +209,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.artb,'B3', 'B')"
+                                                @click="openModel(editedItem.artb,'B3', 'B',editedItem.artb3)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -228,9 +225,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.artc,'C1', 'C')"
+                                                @click="openModel(editedItem.artc,'C1', 'C',editedItem.artc1)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -244,9 +241,9 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.artc,'C2', 'C')"
+                                                @click="openModel(editedItem.artc,'C2', 'C',editedItem.artc2)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                         <v-col sm="12" md="12" lg="8">
@@ -260,14 +257,26 @@
                                             <v-btn
                                                 color="primary"
                                                 small
-                                                @click="openModel(editedItem.artc,'C3', 'C')"
+                                                @click="openModel(editedItem.artc,'C3', 'C',editedItem.artc3)"
                                                 dark
-                                                >Open Dialog</v-btn
+                                                >Edit</v-btn
                                             >
                                         </v-col>
                                     </v-row>
                                 </v-card-text>
                             </v-card>
+                              <v-btn
+                                        bottom
+                                        color="success"
+                                        dark
+                                        fab
+                                        fixed
+                                        large
+                                        right
+                                        @click="addData"
+                                    >
+                                        <v-icon>check</v-icon>
+                                    </v-btn>
                         </v-tab-item>
                         <v-tab-item value="tab-3">
                             <v-card class="mt-5">
@@ -278,10 +287,50 @@
                                     <span class="title font-weight-light"
                                         >Take Action</span
                                     >
+                                    
                                 </v-card-title>
                                 <v-card-text>
                                     <v-row justify="center">
-                                        <v-col sm="12" md="12" lg="4">
+                                    <v-col cols="12" sm="12" md="12">
+                                        <v-select
+                                            v-model="editedItem.repeattask"
+                                            label="Reapeted Task"
+                                            :items="repeatTask"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
+                                    <v-col cols="12" sm="12" md="12">
+                                            <v-menu
+                                                ref="menu"
+                                                v-model="menu1"
+                                                :close-on-content-click="false"
+                                                :nudge-right="40"
+                                                :return-value.sync="editedItem.time"
+                                                transition="scale-transition"
+                                                offset-y
+                                                max-width="300px"
+                                                min-width="300px"
+                                            >
+                                                <template v-slot:activator="{ on, attrs }">
+                                                <v-text-field
+                                                    v-model="editedItem.time"
+                                                    label="Time"
+                                                    prepend-icon="mdi-clock-time-four-outline"
+                                                    readonly
+                                                    v-bind="attrs"
+                                                    v-on="on"
+                                                ></v-text-field>
+                                                </template>
+                                                <v-time-picker
+                                                v-if="menu1"
+                                                v-model="editedItem.time"
+                                                full-width
+                                                @click:minute="$refs.menu.save(editedItem.time)"
+                                                ></v-time-picker>
+                                            </v-menu>
+                                        </v-col>
+                                        <!-- <v-col sm="12" md="12" lg="4">
                                             <v-textarea
                                                 v-model="editedItem.saturday"
                                                 label="Saturday"
@@ -329,7 +378,7 @@
                                                 label="Friday"
                                                 filled
                                             ></v-textarea>
-                                        </v-col>
+                                        </v-col> -->
                                     </v-row>
                                      <v-btn
                                         bottom
@@ -379,7 +428,9 @@ export default {
     data: () => ({
         date: new Date().toISOString().substr(0, 10),
         menu2: false,
+        menu1: false,
         loading: false,
+        picker: null,
         mode: "",
         timeout: 6000,
         snackbar: false,
@@ -408,7 +459,9 @@ export default {
             tuesday: "",
             wednesday: "",
             thursday: "",
-            friday: ""
+            friday: "",
+            repeattask:'',
+            time:'',
         },
         articulateObj:
         {
@@ -420,8 +473,14 @@ export default {
         statusType: [
             { name: "Low", value: 0 },
             { name: "Medium", value: 1 },
-            { name: "High", value: 2 }
-        ]
+            { name: "High", value: 2 },
+            { name: "Very High", value: 3 }
+        ],
+        repeatTask: [
+            { name: "Daily", value: 'Daily' },
+            { name: "Weekly", value: 'Weekly' },
+            { name: "Monthly", value: 'Monthly' },
+        ],
     }),
 
     computed: {},
@@ -469,6 +528,8 @@ export default {
                         this.editedItem.wednesday= data.takecation.wednesday
                         this.editedItem.thursday= data.takecation.thursday
                         this.editedItem.friday= data.takecation.friday
+                        this.editedItem.repeattask= data.takecation.repeattask
+                        this.editedItem.time= data.takecation.time
                         // console.log(data);
                 } 
                 catch (e) 
@@ -497,39 +558,39 @@ export default {
         {
             if(item.articulate=="A1" && item.articulateFlag =="A")
             {
-                editedItem.arta1 = item.artData
+                this.editedItem.arta1 = item.artData
             }
             if(item.articulate=="A2" && item.articulateFlag =="A")
             {
-                editedItem.arta2 = item.artData
+                this.editedItem.arta2 = item.artData
             }
             if(item.articulate=="A3" && item.articulateFlag =="A")
             {
-                editedItem.arta3 = item.artData
+                this.editedItem.arta3 = item.artData
             }
             if(item.articulate=="B1" && item.articulateFlag =="B")
             {
-                editedItem.artb1 = item.artData
+                this.editedItem.artb1 = item.artData
             }
             if(item.articulate=="B2" && item.articulateFlag =="B")
             {
-                editedItem.artb2 = item.artData
+                this.editedItem.artb2 = item.artData
             }
             if(item.articulate=="B3" && item.articulateFlag =="B")
             {
-                editedItem.artb3 = item.artData
+                this.editedItem.artb3 = item.artData
             }
             if(item.articulate=="C1" && item.articulateFlag =="C")
             {
-                editedItem.artc1 = item.artData
+               this.editedItem.artc1 = item.artData
             }
             if(item.articulate=="C2" && item.articulateFlag =="C")
             {
-                editedItem.artc2 = item.artData
+                this.editedItem.artc2 = item.artData
             }
             if(item.articulate=="C3" && item.articulateFlag =="C")
             {
-                editedItem.artc3 = item.artData
+                this.editedItem.artc3 = item.artData
             }
         },
 

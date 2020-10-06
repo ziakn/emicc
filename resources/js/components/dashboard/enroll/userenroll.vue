@@ -1,5 +1,5 @@
 <template>
-	<v-content >
+	<v-main >
 		<v-container fluid> 
 			<v-overlay :value="showFullLoading" :absolute="absolute">
 				<v-progress-circular indeterminate size="64"></v-progress-circular>
@@ -10,16 +10,30 @@
                 </v-avatar>
                 <v-toolbar-title class="ml-4 primary--text" >{{$t('message.user.list')}}</v-toolbar-title>
                 <v-spacer></v-spacer>
+				  	<v-col cols="4">
+				 <v-select
+                                v-model="filters.user_id"
+                                :items="dataUser"
+                                item-text="name"
+                                item-value="id"
+                                label="Users"
+                                filled
+								@change="getUser"
+                    ></v-select> 
+				  </v-col> 
+				    <v-col cols="4">  
                 <v-text-field
-                    v-model="search"
+                    v-model="filters.name"
                     append-icon="search"
                     label="Search"
                     hide-details
                     outlined
                     dense
                 ></v-text-field>
+				  </v-col> 
             </v-toolbar>
 			<Breadcrumbs/>
+		 
 			<v-row justify="center">
 				<v-col sm="12" md="12" lg="12">
 					<v-data-table color="white" :headers="headers" :items="dataList" :search="search" class="elevation-4">
@@ -37,6 +51,13 @@
 							<NoDataList :loading="loading" @initialize="initialize"></NoDataList>
 						</template>
 					</v-data-table>
+					 <div class="text-center">
+                                <v-pagination
+                                v-model="filters.page"
+                                :length="pageCount"
+                                @input="getUser"
+                                ></v-pagination>
+                            </div>
 				</v-col>
 			</v-row>
 		</v-container>
@@ -51,7 +72,7 @@
 			{{ snacktext }}
 			<v-btn color="white" text @click="snackbar = false">Close</v-btn>
 		</v-snackbar>
-	</v-content>
+	</v-main>
 </template>
 
 <script>
@@ -66,6 +87,8 @@ export default {
 		search: "",
 		absolute: true,
 		loading: false,
+		itemsPerPage:1,
+        pageCount:2,
 		dataIndex: null,
 		deleteTitle: "",
 		deleteBody: "",
@@ -73,17 +96,25 @@ export default {
 		edit: true,
 		dialog: false,
 		dataList: [],
-		userType: [],
+		dataUser: [],
 		headers: 
 		[
 		    {text: "ID", align: "left", value: "id" },
             {text: "A", value: "arta"},
-            {text: "B", value: "artbb"},
-            {text: "C", value: "artcc"},
+            {text: "B", value: "artb"},
+            {text: "C", value: "artc"},
             {text: "User", value: "name"},
             {text: "Mentor", value: "mentor"},
 			{text: "Action", value: "action" },
 		],
+		 filters:
+        {
+			page:1,
+			user_id:'',
+			name:'',
+
+        },
+    
 		
 	}),
 
@@ -97,8 +128,14 @@ props: {
         return this.editedIndex === -1 ? "New Item" : "Edit Item";
     }
   },
-  watch: {},
-  
+ watch: 
+		{
+			'filters.name'(after, before) 
+				{	
+					this.getUser();
+				}
+    	},
+
   created() 
   {
     this.initialize();
@@ -109,18 +146,41 @@ props: {
 
 	async initialize() 
 	{
-	  try 
-	  {
+		 this.getUser();
+		  this.getUserFilter();
+	 
+	},
+
+async getUserFilter()
+    {
+		 try 
+		 {
         let { data } = await axios({
           method: "get",
-          url: "/app/getusermentor"
+          url: "/app/getuserfilter",
         });
-        this.dataList = data;
+         this.dataUser = data;
+      } catch (e) {}
+    },
+	async getUser()
+	{	
+		 try 
+	  {
+        let { data } = await axios({
+          method: "post",
+		  url: "/app/getusermentor",
+		   params: this.filters,
+        });
+        this.dataList = data.data;
+                this.itemsPerPage=data.per_page;
+                this.pageCount=data.last_page;
+				this.filters.page=data.current_page
 	  } 
 	  catch (e) 
 	  {
 
 	  }
+
 	},
 	
 	editItem(item) 

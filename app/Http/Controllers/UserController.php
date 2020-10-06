@@ -19,7 +19,23 @@ use Image;
 class UserController extends Controller
 {
     
-    public function index()
+    public function index(Request $request)
+    {
+        $auth=Auth::user();
+        if($auth->type==1)
+        {
+            $data=User::with('user_type')->paginate(20);
+        }
+        if($auth->type==2)
+        {
+            $data=User::where('admin_id',$auth->id)->with('user_type')->paginate(20);
+        }
+       
+        return $data;
+    }
+
+   
+    public function getUserFilter()
     {
         $auth=Auth::user();
         if($auth->type==1)
@@ -28,16 +44,10 @@ class UserController extends Controller
         }
         if($auth->type==2)
         {
-            $data=User::where('admin_id',$auth->id)->with('user_type')->get();
+            $data=User::where('admin_id',$auth->id)->get();
         }
        
         return $data;
-    }
-
-   
-    public function create()
-    {
-        //
     }
 
    
@@ -252,12 +262,24 @@ return response()->json($response);
        return $data;
    }
 
-   public function getusermentor()
+   public function getusermentor(Request $request)
    {
        $type = Auth::user();
        if($type->type == 1)
        {
-         $data2 = Articulat::with('user')->with('comunicate')->with('takecation')->get();
+         $data2 = Articulat::with('user')->with('comunicate')->with('takecation');
+         if(isset($request->user_id) && !empty($request->user_id))
+        {
+            $data2= $data2->where('user_id',$request->user_id);
+        }
+        if(isset($request->name) && !empty($request->name))
+        {
+            $name=$request->name;
+            $data2= $data2->whereHas('user', function ($query) use ($name) {
+                $query->where('name', '=', $name);
+            });
+        }
+        $data2=$data2->paginate(20);
        }
        elseif($type->type ==2)
        {
@@ -270,7 +292,29 @@ return response()->json($response);
              array_push($user_id, $item['user_id']);
          }
  
-         $data2 = Articulat::wherein('user_id',$user_id)->with('user')->with('comunicate')->with('takecation')->get();
+         $data2 = Articulat::with('user')->with('comunicate')->with('takecation');
+         if(isset($request->user_id) && !empty($request->user_id))
+        {
+            $data2= $data2->where('user_id',$request->user_id);
+        }
+        else
+        {
+            $data2= $data2->wherein('user_id',$user_id);
+        }
+        if(isset($request->name) && !empty($request->name))
+        {
+            $name=$request->name;
+            $data2= $data2->whereHas('user', function ($query) use ($name) {
+                $query->where('name', '=', $name);
+            });
+        }
+        else
+        {
+            $data2= $data2->wherein('user_id',$user_id);
+        }
+
+
+         $data2=$data2->paginate(20);
        }
       
 

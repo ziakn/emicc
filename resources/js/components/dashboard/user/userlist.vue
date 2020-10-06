@@ -8,9 +8,7 @@
                 <v-avatar tile color="primary" class=" elevation-12">
                     <v-icon dark>face</v-icon>
                 </v-avatar>
-
                 <v-toolbar-title class="ml-4 primary--text" >{{$t('message.user.list')}}</v-toolbar-title>
-
                 <v-spacer></v-spacer>
                 <v-text-field
                     v-model="search"
@@ -19,7 +17,6 @@
                     hide-details
                     outlined
                     dense
-
                 ></v-text-field>
             </v-toolbar>
 			<Breadcrumbs/>
@@ -40,6 +37,13 @@
 						</template>
 					</v-data-table>
 				</v-col>
+         <div class="text-center">
+                                <v-pagination
+                                v-model="filters.page"
+                                :length="pageCount"
+                                @input="getUser"
+                                ></v-pagination>
+                            </div>
 			</v-row>
 			<v-btn bottom color="primary" dark fab fixed right @click="dialog = !dialog">
 				<v-icon>add</v-icon>
@@ -191,7 +195,9 @@ export default {
 	},
 	data: () => ({
 		search: "",
-		absolute: true,
+    absolute: true,
+    itemsPerPage:1,
+        pageCount:2,
 		loading: false,
 		edit: true,
 		dialog: false,
@@ -254,15 +260,23 @@ export default {
 			contact: "",
 			address: "",
       status: 1,
-       company_name: "",
+      company_name: "",
 			company_contact: "",
 			city: "",
 			postcode: "",
-		},
-		dataStatus: [
+    },
+     filters:
+        {
+			page:1,
+
+        },
+    
+    dataStatus: 
+    [
 			{ name: "Active", value: 1 },
 			{ name: "Disable", value: 0 }
-		],
+    ],
+    
 	}),
 
 props: {
@@ -279,19 +293,31 @@ props: {
   },
   methods: {
     async initialize() {
-      try {
-        let { data } = await axios({
-          method: "get",
-          url: "/app/user"
-        });
-        this.dataList = data;
-      } catch (e) {}
+   
  try {
         let { data } = await axios({
           method: "get",
           url: "/app/usertype"
         });
         this.userType = data;
+      } catch (e) {}
+      this.getUser();
+    },
+
+    
+
+    async getUser()
+    {
+         try {
+        let { data } = await axios({
+          method: "get",
+          url: "/app/user",
+          params: this.filters,
+        });
+         this.dataList = data.data;
+                this.itemsPerPage=data.per_page;
+                this.pageCount=data.last_page;
+				this.filters.page=data.current_page
       } catch (e) {}
     },
     editItem(item) {

@@ -2052,6 +2052,7 @@ __webpack_require__.r(__webpack_exports__);
     sendBackData: function sendBackData() {
       this.$emit('send', this.articulateObj);
       this.dialog1 = false;
+      this.articulateObj.artData = '';
     }
   },
   watch: {
@@ -2681,6 +2682,45 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -2690,7 +2730,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       date: new Date().toISOString().substr(0, 10),
       menu2: false,
+      menu1: false,
       loading: false,
+      picker: null,
       mode: "",
       timeout: 6000,
       snackbar: false,
@@ -2719,7 +2761,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         tuesday: "",
         wednesday: "",
         thursday: "",
-        friday: ""
+        friday: "",
+        repeattask: '',
+        time: ''
       },
       articulateObj: {
         articulateData: null,
@@ -2736,6 +2780,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         name: "High",
         value: 2
+      }, {
+        name: "Very High",
+        value: 3
+      }],
+      repeatTask: [{
+        name: "Daily",
+        value: 'Daily'
+      }, {
+        name: "Weekly",
+        value: 'Weekly'
+      }, {
+        name: "Monthly",
+        value: 'Monthly'
       }]
     };
   },
@@ -2756,7 +2813,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$route.params.id) {
-                  _context.next = 33;
+                  _context.next = 35;
                   break;
                 }
 
@@ -2791,23 +2848,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.tuesday = data.takecation.tuesday;
                 _this.editedItem.wednesday = data.takecation.wednesday;
                 _this.editedItem.thursday = data.takecation.thursday;
-                _this.editedItem.friday = data.takecation.friday; // console.log(data);
+                _this.editedItem.friday = data.takecation.friday;
+                _this.editedItem.repeattask = data.takecation.repeattask;
+                _this.editedItem.time = data.takecation.time; // console.log(data);
 
-                _context.next = 33;
+                _context.next = 35;
                 break;
 
-              case 30:
-                _context.prev = 30;
+              case 32:
+                _context.prev = 32;
                 _context.t0 = _context["catch"](2);
 
                 _this.snacks("Failed", "Red");
 
-              case 33:
+              case 35:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 30]]);
+        }, _callee, null, [[2, 32]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -2816,9 +2875,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.editedItem = Object.assign({}, item);
       this.dialog = true;
     },
-    openModel: function openModel(param1, param2, param3) {
+    openModel: function openModel(param1, param2, param3, param4) {
       this.articulateObj.articulateData = param1;
-      this.articulateObj.articulate = param2, this.articulateObj.articulateFlag = param3;
+      this.articulateObj.articulate = param2, this.articulateObj.articulateFlag = param3, this.articulateObj.artData = param4;
       this.dialog1 = !this.dialog1;
     },
     getarticulateObj: function getarticulateObj(item) {
@@ -3030,6 +3089,27 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -3042,6 +3122,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       search: "",
       absolute: true,
       loading: false,
+      itemsPerPage: 1,
+      pageCount: 2,
       dataIndex: null,
       deleteTitle: "",
       deleteBody: "",
@@ -3049,7 +3131,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       edit: true,
       dialog: false,
       dataList: [],
-      userType: [],
+      dataUser: [],
       headers: [{
         text: "ID",
         align: "left",
@@ -3059,10 +3141,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         value: "arta"
       }, {
         text: "B",
-        value: "artbb"
+        value: "artb"
       }, {
         text: "C",
-        value: "artcc"
+        value: "artc"
       }, {
         text: "User",
         value: "name"
@@ -3072,7 +3154,12 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         text: "Action",
         value: "action"
-      }]
+      }],
+      filters: {
+        page: 1,
+        user_id: '',
+        name: ''
+      }
     };
   },
   props: {
@@ -3083,7 +3170,11 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       return this.editedIndex === -1 ? "New Item" : "Edit Item";
     }
   },
-  watch: {},
+  watch: {
+    'filters.name': function filtersName(after, before) {
+      this.getUser();
+    }
+  },
   created: function created() {
     this.initialize();
   },
@@ -3092,36 +3183,96 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _yield$axios, data;
-
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
-                _context.next = 3;
-                return axios({
-                  method: "get",
-                  url: "/app/getusermentor"
-                });
+                _this.getUser();
 
-              case 3:
-                _yield$axios = _context.sent;
-                data = _yield$axios.data;
-                _this.dataList = data;
-                _context.next = 10;
-                break;
+                _this.getUserFilter();
 
-              case 8:
-                _context.prev = 8;
-                _context.t0 = _context["catch"](0);
-
-              case 10:
+              case 2:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 8]]);
+        }, _callee);
+      }))();
+    },
+    getUserFilter: function getUserFilter() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var _yield$axios, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios({
+                  method: "get",
+                  url: "/app/getuserfilter"
+                });
+
+              case 3:
+                _yield$axios = _context2.sent;
+                data = _yield$axios.data;
+                _this2.dataUser = data;
+                _context2.next = 10;
+                break;
+
+              case 8:
+                _context2.prev = 8;
+                _context2.t0 = _context2["catch"](0);
+
+              case 10:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 8]]);
+      }))();
+    },
+    getUser: function getUser() {
+      var _this3 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
+        var _yield$axios2, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                _context3.prev = 0;
+                _context3.next = 3;
+                return axios({
+                  method: "post",
+                  url: "/app/getusermentor",
+                  params: _this3.filters
+                });
+
+              case 3:
+                _yield$axios2 = _context3.sent;
+                data = _yield$axios2.data;
+                _this3.dataList = data.data;
+                _this3.itemsPerPage = data.per_page;
+                _this3.pageCount = data.last_page;
+                _this3.filters.page = data.current_page;
+                _context3.next = 13;
+                break;
+
+              case 11:
+                _context3.prev = 11;
+                _context3.t0 = _context3["catch"](0);
+
+              case 13:
+              case "end":
+                return _context3.stop();
+            }
+          }
+        }, _callee3, null, [[0, 11]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -4498,6 +4649,10 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
@@ -4509,6 +4664,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       search: "",
       absolute: true,
+      itemsPerPage: 1,
+      pageCount: 2,
       loading: false,
       edit: true,
       dialog: false,
@@ -4586,6 +4743,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         city: "",
         postcode: ""
       },
+      filters: {
+        page: 1
+      },
       dataStatus: [{
         name: "Active",
         value: 1
@@ -4612,7 +4772,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       var _this = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee() {
-        var _yield$axios, data, _yield$axios2, _data;
+        var _yield$axios, data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee$(_context) {
           while (1) {
@@ -4622,13 +4782,13 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.next = 3;
                 return axios({
                   method: "get",
-                  url: "/app/user"
+                  url: "/app/usertype"
                 });
 
               case 3:
                 _yield$axios = _context.sent;
                 data = _yield$axios.data;
-                _this.dataList = data;
+                _this.userType = data;
                 _context.next = 10;
                 break;
 
@@ -4637,30 +4797,54 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _context.t0 = _context["catch"](0);
 
               case 10:
-                _context.prev = 10;
-                _context.next = 13;
-                return axios({
-                  method: "get",
-                  url: "/app/usertype"
-                });
+                _this.getUser();
 
-              case 13:
-                _yield$axios2 = _context.sent;
-                _data = _yield$axios2.data;
-                _this.userType = _data;
-                _context.next = 20;
-                break;
-
-              case 18:
-                _context.prev = 18;
-                _context.t1 = _context["catch"](10);
-
-              case 20:
+              case 11:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[0, 8], [10, 18]]);
+        }, _callee, null, [[0, 8]]);
+      }))();
+    },
+    getUser: function getUser() {
+      var _this2 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
+        var _yield$axios2, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                _context2.prev = 0;
+                _context2.next = 3;
+                return axios({
+                  method: "get",
+                  url: "/app/user",
+                  params: _this2.filters
+                });
+
+              case 3:
+                _yield$axios2 = _context2.sent;
+                data = _yield$axios2.data;
+                _this2.dataList = data.data;
+                _this2.itemsPerPage = data.per_page;
+                _this2.pageCount = data.last_page;
+                _this2.filters.page = data.current_page;
+                _context2.next = 13;
+                break;
+
+              case 11:
+                _context2.prev = 11;
+                _context2.t0 = _context2["catch"](0);
+
+              case 13:
+              case "end":
+                return _context2.stop();
+            }
+          }
+        }, _callee2, null, [[0, 11]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -4675,164 +4859,164 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       this.isDelete = !this.isDelete;
     },
     close: function close() {
-      var _this2 = this;
+      var _this3 = this;
 
       this.dialog = false;
       this.edit = true;
       setTimeout(function () {
-        _this2.editedItem = Object.assign({}, _this2.defaultItem);
-        _this2.editedIndex = -1;
+        _this3.editedItem = Object.assign({}, _this3.defaultItem);
+        _this3.editedIndex = -1;
       }, 300);
     },
     save: function save() {
-      var _this3 = this;
-
-      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee2() {
-        var _yield$axios3, data, _yield$axios4, _data2;
-
-        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee2$(_context2) {
-          while (1) {
-            switch (_context2.prev = _context2.next) {
-              case 0:
-                if (!(_this3.editedIndex > -1)) {
-                  _context2.next = 16;
-                  break;
-                }
-
-                _context2.prev = 1;
-                _this3.loading = true;
-                _context2.next = 5;
-                return axios({
-                  method: "put",
-                  url: "/app/user/" + _this3.dataList[_this3.editedIndex].id,
-                  data: _this3.editedItem
-                });
-
-              case 5:
-                _yield$axios3 = _context2.sent;
-                data = _yield$axios3.data;
-
-                if (data.status) {
-                  _this3.snacks('Successfully Done', 'green');
-
-                  Object.assign(_this3.dataList[_this3.editedIndex], data.data);
-                  _this3.loading = false;
-
-                  _this3.close();
-                } else {
-                  _this3.snacks("Failed", "red");
-
-                  _this3.loading = false;
-                }
-
-                _context2.next = 14;
-                break;
-
-              case 10:
-                _context2.prev = 10;
-                _context2.t0 = _context2["catch"](1);
-
-                _this3.snacks("Failed", "red");
-
-                _this3.loading = false;
-
-              case 14:
-                _context2.next = 27;
-                break;
-
-              case 16:
-                _context2.prev = 16;
-                _this3.loading = true;
-                _context2.next = 20;
-                return axios({
-                  method: "post",
-                  url: "/app/user",
-                  data: _this3.editedItem
-                });
-
-              case 20:
-                _yield$axios4 = _context2.sent;
-                _data2 = _yield$axios4.data;
-
-                if (_data2.status) {
-                  _this3.snacks('Successfully Done', 'green');
-
-                  _this3.dataList.unshift(_data2.data);
-
-                  _this3.loading = false;
-
-                  _this3.close();
-                } else {
-                  _this3.snacks("Failed", "red");
-
-                  _this3.loading = false;
-                }
-
-                _context2.next = 27;
-                break;
-
-              case 25:
-                _context2.prev = 25;
-                _context2.t1 = _context2["catch"](16);
-
-              case 27:
-              case "end":
-                return _context2.stop();
-            }
-          }
-        }, _callee2, null, [[1, 10], [16, 25]]);
-      }))();
-    },
-    remove: function remove() {
       var _this4 = this;
 
       return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee3() {
-        var _yield$axios5, data;
+        var _yield$axios3, data, _yield$axios4, _data;
 
         return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
-                _context3.prev = 0;
-                _context3.next = 3;
+                if (!(_this4.editedIndex > -1)) {
+                  _context3.next = 16;
+                  break;
+                }
+
+                _context3.prev = 1;
+                _this4.loading = true;
+                _context3.next = 5;
                 return axios({
-                  method: "delete",
-                  url: "/app/user/" + _this4.dataList[_this4.dataIndex].id
+                  method: "put",
+                  url: "/app/user/" + _this4.dataList[_this4.editedIndex].id,
+                  data: _this4.editedItem
                 });
 
-              case 3:
-                _yield$axios5 = _context3.sent;
-                data = _yield$axios5.data;
+              case 5:
+                _yield$axios3 = _context3.sent;
+                data = _yield$axios3.data;
 
                 if (data.status) {
                   _this4.snacks('Successfully Done', 'green');
 
-                  _this4.dataList.splice(_this4.dataIndex, 1);
+                  Object.assign(_this4.dataList[_this4.editedIndex], data.data);
+                  _this4.loading = false;
 
                   _this4.close();
                 } else {
-                  _this4.snacks(data.data, 'red');
+                  _this4.snacks("Failed", "red");
 
                   _this4.loading = false;
                 }
 
-                _context3.next = 12;
+                _context3.next = 14;
                 break;
 
-              case 8:
-                _context3.prev = 8;
-                _context3.t0 = _context3["catch"](0);
+              case 10:
+                _context3.prev = 10;
+                _context3.t0 = _context3["catch"](1);
 
-                _this4.snacks('Operation Failed', 'red');
+                _this4.snacks("Failed", "red");
 
                 _this4.loading = false;
 
-              case 12:
+              case 14:
+                _context3.next = 27;
+                break;
+
+              case 16:
+                _context3.prev = 16;
+                _this4.loading = true;
+                _context3.next = 20;
+                return axios({
+                  method: "post",
+                  url: "/app/user",
+                  data: _this4.editedItem
+                });
+
+              case 20:
+                _yield$axios4 = _context3.sent;
+                _data = _yield$axios4.data;
+
+                if (_data.status) {
+                  _this4.snacks('Successfully Done', 'green');
+
+                  _this4.dataList.unshift(_data.data);
+
+                  _this4.loading = false;
+
+                  _this4.close();
+                } else {
+                  _this4.snacks("Failed", "red");
+
+                  _this4.loading = false;
+                }
+
+                _context3.next = 27;
+                break;
+
+              case 25:
+                _context3.prev = 25;
+                _context3.t1 = _context3["catch"](16);
+
+              case 27:
               case "end":
                 return _context3.stop();
             }
           }
-        }, _callee3, null, [[0, 8]]);
+        }, _callee3, null, [[1, 10], [16, 25]]);
+      }))();
+    },
+    remove: function remove() {
+      var _this5 = this;
+
+      return _asyncToGenerator( /*#__PURE__*/_babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.mark(function _callee4() {
+        var _yield$axios5, data;
+
+        return _babel_runtime_regenerator__WEBPACK_IMPORTED_MODULE_0___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                _context4.prev = 0;
+                _context4.next = 3;
+                return axios({
+                  method: "delete",
+                  url: "/app/user/" + _this5.dataList[_this5.dataIndex].id
+                });
+
+              case 3:
+                _yield$axios5 = _context4.sent;
+                data = _yield$axios5.data;
+
+                if (data.status) {
+                  _this5.snacks('Successfully Done', 'green');
+
+                  _this5.dataList.splice(_this5.dataIndex, 1);
+
+                  _this5.close();
+                } else {
+                  _this5.snacks(data.data, 'red');
+
+                  _this5.loading = false;
+                }
+
+                _context4.next = 12;
+                break;
+
+              case 8:
+                _context4.prev = 8;
+                _context4.t0 = _context4["catch"](0);
+
+                _this5.snacks('Operation Failed', 'red');
+
+                _this5.loading = false;
+
+              case 12:
+              case "end":
+                return _context4.stop();
+            }
+          }
+        }, _callee4, null, [[0, 8]]);
       }))();
     }
   }
@@ -5462,6 +5646,55 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -5471,7 +5704,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       date: new Date().toISOString().substr(0, 10),
       menu2: false,
+      menu1: false,
       loading: false,
+      picker: null,
       mode: "",
       timeout: 6000,
       snackbar: false,
@@ -5500,7 +5735,9 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         tuesday: "",
         wednesday: "",
         thursday: "",
-        friday: ""
+        friday: "",
+        repeattask: '',
+        time: ''
       },
       articulateObj: {
         articulateData: null,
@@ -5517,6 +5754,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         name: "High",
         value: 2
+      }, {
+        name: "Very High",
+        value: 3
+      }],
+      repeatTask: [{
+        name: "Daily",
+        value: 'Daily'
+      }, {
+        name: "Weekly",
+        value: 'Weekly'
+      }, {
+        name: "Monthly",
+        value: 'Monthly'
       }]
     };
   },
@@ -5537,7 +5787,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$route.params.id) {
-                  _context.next = 33;
+                  _context.next = 35;
                   break;
                 }
 
@@ -5572,23 +5822,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.tuesday = data.takecation.tuesday;
                 _this.editedItem.wednesday = data.takecation.wednesday;
                 _this.editedItem.thursday = data.takecation.thursday;
-                _this.editedItem.friday = data.takecation.friday; // console.log(data);
+                _this.editedItem.friday = data.takecation.friday;
+                _this.editedItem.repeattask = data.takecation.repeattask;
+                _this.editedItem.time = data.takecation.time; // console.log(data);
 
-                _context.next = 33;
+                _context.next = 35;
                 break;
 
-              case 30:
-                _context.prev = 30;
+              case 32:
+                _context.prev = 32;
                 _context.t0 = _context["catch"](2);
 
                 _this.snacks("Failed", "Red");
 
-              case 33:
+              case 35:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 30]]);
+        }, _callee, null, [[2, 32]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -5604,39 +5856,39 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     },
     getarticulateObj: function getarticulateObj(item) {
       if (item.articulate == "A1" && item.articulateFlag == "A") {
-        editedItem.arta1 = item.artData;
+        this.editedItem.arta1 = item.artData;
       }
 
       if (item.articulate == "A2" && item.articulateFlag == "A") {
-        editedItem.arta2 = item.artData;
+        this.editedItem.arta2 = item.artData;
       }
 
       if (item.articulate == "A3" && item.articulateFlag == "A") {
-        editedItem.arta3 = item.artData;
+        this.editedItem.arta3 = item.artData;
       }
 
       if (item.articulate == "B1" && item.articulateFlag == "B") {
-        editedItem.artb1 = item.artData;
+        this.editedItem.artb1 = item.artData;
       }
 
       if (item.articulate == "B2" && item.articulateFlag == "B") {
-        editedItem.artb2 = item.artData;
+        this.editedItem.artb2 = item.artData;
       }
 
       if (item.articulate == "B3" && item.articulateFlag == "B") {
-        editedItem.artb3 = item.artData;
+        this.editedItem.artb3 = item.artData;
       }
 
       if (item.articulate == "C1" && item.articulateFlag == "C") {
-        editedItem.artc1 = item.artData;
+        this.editedItem.artc1 = item.artData;
       }
 
       if (item.articulate == "C2" && item.articulateFlag == "C") {
-        editedItem.artc2 = item.artData;
+        this.editedItem.artc2 = item.artData;
       }
 
       if (item.articulate == "C3" && item.articulateFlag == "C") {
-        editedItem.artc3 = item.artData;
+        this.editedItem.artc3 = item.artData;
       }
     },
     addData: function addData() {
@@ -46987,7 +47239,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -47427,12 +47679,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.arta,
                                                     "A1",
-                                                    "A"
+                                                    "A",
+                                                    _vm.editedItem.arta1
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47481,12 +47734,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.arta,
                                                     "A2",
-                                                    "A"
+                                                    "A",
+                                                    _vm.editedItem.arta2
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47535,12 +47789,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.arta,
                                                     "A3",
-                                                    "A"
+                                                    "A",
+                                                    _vm.editedItem.arta3
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47589,12 +47844,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artb,
                                                     "B1",
-                                                    "B"
+                                                    "B",
+                                                    _vm.editedItem.artb1
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47643,12 +47899,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artb,
                                                     "B2",
-                                                    "B"
+                                                    "B",
+                                                    _vm.editedItem.artb2
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47697,12 +47954,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artb,
                                                     "B3",
-                                                    "B"
+                                                    "B",
+                                                    _vm.editedItem.artb3
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47751,12 +48009,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artc,
                                                     "C1",
-                                                    "C"
+                                                    "C",
+                                                    _vm.editedItem.artc1
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47805,12 +48064,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artc,
                                                     "C2",
-                                                    "C"
+                                                    "C",
+                                                    _vm.editedItem.artc2
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47859,12 +48119,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artc,
                                                     "C3",
-                                                    "C"
+                                                    "C",
+                                                    _vm.editedItem.artc3
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -47928,24 +48189,31 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
                                         },
                                         [
-                                          _c("v-textarea", {
+                                          _c("v-select", {
                                             attrs: {
-                                              label: "Saturday",
-                                              filled: ""
+                                              label: "Reapeted Task",
+                                              items: _vm.repeatTask,
+                                              "item-text": "name",
+                                              "item-value": "value"
                                             },
                                             model: {
-                                              value: _vm.editedItem.saturday,
+                                              value: _vm.editedItem.repeattask,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.editedItem,
-                                                  "saturday",
+                                                  "repeattask",
                                                   $$v
                                                 )
                                               },
-                                              expression: "editedItem.saturday"
+                                              expression:
+                                                "editedItem.repeattask"
                                             }
                                           })
                                         ],
@@ -47955,161 +48223,133 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
                                         },
                                         [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Sunday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.sunday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "sunday",
-                                                  $$v
-                                                )
+                                          _c(
+                                            "v-menu",
+                                            {
+                                              ref: "menu",
+                                              attrs: {
+                                                "close-on-content-click": false,
+                                                "nudge-right": 40,
+                                                "return-value":
+                                                  _vm.editedItem.time,
+                                                transition: "scale-transition",
+                                                "offset-y": "",
+                                                "max-width": "300px",
+                                                "min-width": "300px"
                                               },
-                                              expression: "editedItem.sunday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Monday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.monday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "monday",
-                                                  $$v
-                                                )
+                                              on: {
+                                                "update:returnValue": function(
+                                                  $event
+                                                ) {
+                                                  return _vm.$set(
+                                                    _vm.editedItem,
+                                                    "time",
+                                                    $event
+                                                  )
+                                                },
+                                                "update:return-value": function(
+                                                  $event
+                                                ) {
+                                                  return _vm.$set(
+                                                    _vm.editedItem,
+                                                    "time",
+                                                    $event
+                                                  )
+                                                }
                                               },
-                                              expression: "editedItem.monday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Tuesday",
-                                              filled: ""
+                                              scopedSlots: _vm._u([
+                                                {
+                                                  key: "activator",
+                                                  fn: function(ref) {
+                                                    var on = ref.on
+                                                    var attrs = ref.attrs
+                                                    return [
+                                                      _c(
+                                                        "v-text-field",
+                                                        _vm._g(
+                                                          _vm._b(
+                                                            {
+                                                              attrs: {
+                                                                label: "Time",
+                                                                "prepend-icon":
+                                                                  "mdi-clock-time-four-outline",
+                                                                readonly: ""
+                                                              },
+                                                              model: {
+                                                                value:
+                                                                  _vm.editedItem
+                                                                    .time,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.$set(
+                                                                    _vm.editedItem,
+                                                                    "time",
+                                                                    $$v
+                                                                  )
+                                                                },
+                                                                expression:
+                                                                  "editedItem.time"
+                                                              }
+                                                            },
+                                                            "v-text-field",
+                                                            attrs,
+                                                            false
+                                                          ),
+                                                          on
+                                                        )
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ]),
+                                              model: {
+                                                value: _vm.menu1,
+                                                callback: function($$v) {
+                                                  _vm.menu1 = $$v
+                                                },
+                                                expression: "menu1"
+                                              }
                                             },
-                                            model: {
-                                              value: _vm.editedItem.tuesday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "tuesday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.tuesday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Wednesday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.wednesday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "wednesday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.wednesday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Thursady",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.thursaday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "thursaday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.thursaday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Friday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.friday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "friday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.friday"
-                                            }
-                                          })
+                                            [
+                                              _vm._v(" "),
+                                              _vm.menu1
+                                                ? _c("v-time-picker", {
+                                                    attrs: { "full-width": "" },
+                                                    on: {
+                                                      "click:minute": function(
+                                                        $event
+                                                      ) {
+                                                        return _vm.$refs.menu.save(
+                                                          _vm.editedItem.time
+                                                        )
+                                                      }
+                                                    },
+                                                    model: {
+                                                      value:
+                                                        _vm.editedItem.time,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          _vm.editedItem,
+                                                          "time",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "editedItem.time"
+                                                    }
+                                                  })
+                                                : _vm._e()
+                                            ],
+                                            1
+                                          )
                                         ],
                                         1
                                       )
@@ -48205,7 +48445,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -48242,22 +48482,54 @@ var render = function() {
               _vm._v(" "),
               _c("v-spacer"),
               _vm._v(" "),
-              _c("v-text-field", {
-                attrs: {
-                  "append-icon": "search",
-                  label: "Search",
-                  "hide-details": "",
-                  outlined: "",
-                  dense: ""
-                },
-                model: {
-                  value: _vm.search,
-                  callback: function($$v) {
-                    _vm.search = $$v
-                  },
-                  expression: "search"
-                }
-              })
+              _c(
+                "v-col",
+                { attrs: { cols: "4" } },
+                [
+                  _c("v-select", {
+                    attrs: {
+                      items: _vm.dataUser,
+                      "item-text": "name",
+                      "item-value": "id",
+                      label: "Users",
+                      filled: ""
+                    },
+                    on: { change: _vm.getUser },
+                    model: {
+                      value: _vm.filters.user_id,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "user_id", $$v)
+                      },
+                      expression: "filters.user_id"
+                    }
+                  })
+                ],
+                1
+              ),
+              _vm._v(" "),
+              _c(
+                "v-col",
+                { attrs: { cols: "4" } },
+                [
+                  _c("v-text-field", {
+                    attrs: {
+                      "append-icon": "search",
+                      label: "Search",
+                      "hide-details": "",
+                      outlined: "",
+                      dense: ""
+                    },
+                    model: {
+                      value: _vm.filters.name,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "name", $$v)
+                      },
+                      expression: "filters.name"
+                    }
+                  })
+                ],
+                1
+              )
             ],
             1
           ),
@@ -48342,7 +48614,26 @@ var render = function() {
                         proxy: true
                       }
                     ])
-                  })
+                  }),
+                  _vm._v(" "),
+                  _c(
+                    "div",
+                    { staticClass: "text-center" },
+                    [
+                      _c("v-pagination", {
+                        attrs: { length: _vm.pageCount },
+                        on: { input: _vm.getUser },
+                        model: {
+                          value: _vm.filters.page,
+                          callback: function($$v) {
+                            _vm.$set(_vm.filters, "page", $$v)
+                          },
+                          expression: "filters.page"
+                        }
+                      })
+                    ],
+                    1
+                  )
                 ],
                 1
               )
@@ -49863,6 +50154,25 @@ var render = function() {
                   })
                 ],
                 1
+              ),
+              _vm._v(" "),
+              _c(
+                "div",
+                { staticClass: "text-center" },
+                [
+                  _c("v-pagination", {
+                    attrs: { length: _vm.pageCount },
+                    on: { input: _vm.getUser },
+                    model: {
+                      value: _vm.filters.page,
+                      callback: function($$v) {
+                        _vm.$set(_vm.filters, "page", $$v)
+                      },
+                      expression: "filters.page"
+                    }
+                  })
+                ],
+                1
               )
             ],
             1
@@ -50686,7 +50996,7 @@ var render = function() {
                                                             {
                                                               attrs: {
                                                                 label:
-                                                                  "Picker without buttons",
+                                                                  "Select Date",
                                                                 "prepend-icon":
                                                                   "event",
                                                                 readonly: "",
@@ -50906,7 +51216,7 @@ var render = function() {
                                     [
                                       _c("v-select", {
                                         attrs: {
-                                          label: "Select level",
+                                          label: "Importance level",
                                           items: _vm.statusType,
                                           "item-text": "name",
                                           "item-value": "value"
@@ -50980,12 +51290,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.arta,
                                                     "A1",
-                                                    "A"
+                                                    "A",
+                                                    _vm.editedItem.arta1
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51034,12 +51345,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.arta,
                                                     "A2",
-                                                    "A"
+                                                    "A",
+                                                    _vm.editedItem.arta2
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51088,12 +51400,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.arta,
                                                     "A3",
-                                                    "A"
+                                                    "A",
+                                                    _vm.editedItem.arta3
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51142,12 +51455,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artb,
                                                     "B1",
-                                                    "B"
+                                                    "B",
+                                                    _vm.editedItem.artb1
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51196,12 +51510,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artb,
                                                     "B2",
-                                                    "B"
+                                                    "B",
+                                                    _vm.editedItem.artb2
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51250,12 +51565,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artb,
                                                     "B3",
-                                                    "B"
+                                                    "B",
+                                                    _vm.editedItem.artb3
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51304,12 +51620,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artc,
                                                     "C1",
-                                                    "C"
+                                                    "C",
+                                                    _vm.editedItem.artc1
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51358,12 +51675,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artc,
                                                     "C2",
-                                                    "C"
+                                                    "C",
+                                                    _vm.editedItem.artc2
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51412,12 +51730,13 @@ var render = function() {
                                                   return _vm.openModel(
                                                     _vm.editedItem.artc,
                                                     "C3",
-                                                    "C"
+                                                    "C",
+                                                    _vm.editedItem.artc3
                                                   )
                                                 }
                                               }
                                             },
-                                            [_vm._v("Open Dialog")]
+                                            [_vm._v("Edit")]
                                           )
                                         ],
                                         1
@@ -51429,6 +51748,24 @@ var render = function() {
                                 1
                               )
                             ],
+                            1
+                          ),
+                          _vm._v(" "),
+                          _c(
+                            "v-btn",
+                            {
+                              attrs: {
+                                bottom: "",
+                                color: "success",
+                                dark: "",
+                                fab: "",
+                                fixed: "",
+                                large: "",
+                                right: ""
+                              },
+                              on: { click: _vm.addData }
+                            },
+                            [_c("v-icon", [_vm._v("check")])],
                             1
                           )
                         ],
@@ -51481,24 +51818,31 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
                                         },
                                         [
-                                          _c("v-textarea", {
+                                          _c("v-select", {
                                             attrs: {
-                                              label: "Saturday",
-                                              filled: ""
+                                              label: "Reapeted Task",
+                                              items: _vm.repeatTask,
+                                              "item-text": "name",
+                                              "item-value": "value"
                                             },
                                             model: {
-                                              value: _vm.editedItem.saturday,
+                                              value: _vm.editedItem.repeattask,
                                               callback: function($$v) {
                                                 _vm.$set(
                                                   _vm.editedItem,
-                                                  "saturday",
+                                                  "repeattask",
                                                   $$v
                                                 )
                                               },
-                                              expression: "editedItem.saturday"
+                                              expression:
+                                                "editedItem.repeattask"
                                             }
                                           })
                                         ],
@@ -51508,161 +51852,133 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
                                         },
                                         [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Sunday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.sunday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "sunday",
-                                                  $$v
-                                                )
+                                          _c(
+                                            "v-menu",
+                                            {
+                                              ref: "menu",
+                                              attrs: {
+                                                "close-on-content-click": false,
+                                                "nudge-right": 40,
+                                                "return-value":
+                                                  _vm.editedItem.time,
+                                                transition: "scale-transition",
+                                                "offset-y": "",
+                                                "max-width": "300px",
+                                                "min-width": "300px"
                                               },
-                                              expression: "editedItem.sunday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Monday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.monday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "monday",
-                                                  $$v
-                                                )
+                                              on: {
+                                                "update:returnValue": function(
+                                                  $event
+                                                ) {
+                                                  return _vm.$set(
+                                                    _vm.editedItem,
+                                                    "time",
+                                                    $event
+                                                  )
+                                                },
+                                                "update:return-value": function(
+                                                  $event
+                                                ) {
+                                                  return _vm.$set(
+                                                    _vm.editedItem,
+                                                    "time",
+                                                    $event
+                                                  )
+                                                }
                                               },
-                                              expression: "editedItem.monday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Tuesday",
-                                              filled: ""
+                                              scopedSlots: _vm._u([
+                                                {
+                                                  key: "activator",
+                                                  fn: function(ref) {
+                                                    var on = ref.on
+                                                    var attrs = ref.attrs
+                                                    return [
+                                                      _c(
+                                                        "v-text-field",
+                                                        _vm._g(
+                                                          _vm._b(
+                                                            {
+                                                              attrs: {
+                                                                label: "Time",
+                                                                "prepend-icon":
+                                                                  "mdi-clock-time-four-outline",
+                                                                readonly: ""
+                                                              },
+                                                              model: {
+                                                                value:
+                                                                  _vm.editedItem
+                                                                    .time,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.$set(
+                                                                    _vm.editedItem,
+                                                                    "time",
+                                                                    $$v
+                                                                  )
+                                                                },
+                                                                expression:
+                                                                  "editedItem.time"
+                                                              }
+                                                            },
+                                                            "v-text-field",
+                                                            attrs,
+                                                            false
+                                                          ),
+                                                          on
+                                                        )
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ]),
+                                              model: {
+                                                value: _vm.menu1,
+                                                callback: function($$v) {
+                                                  _vm.menu1 = $$v
+                                                },
+                                                expression: "menu1"
+                                              }
                                             },
-                                            model: {
-                                              value: _vm.editedItem.tuesday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "tuesday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.tuesday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Wednesday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.wednesday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "wednesday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.wednesday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Thursady",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.thursaday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "thursaday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.thursaday"
-                                            }
-                                          })
-                                        ],
-                                        1
-                                      ),
-                                      _vm._v(" "),
-                                      _c(
-                                        "v-col",
-                                        {
-                                          attrs: { sm: "12", md: "12", lg: "4" }
-                                        },
-                                        [
-                                          _c("v-textarea", {
-                                            attrs: {
-                                              label: "Friday",
-                                              filled: ""
-                                            },
-                                            model: {
-                                              value: _vm.editedItem.friday,
-                                              callback: function($$v) {
-                                                _vm.$set(
-                                                  _vm.editedItem,
-                                                  "friday",
-                                                  $$v
-                                                )
-                                              },
-                                              expression: "editedItem.friday"
-                                            }
-                                          })
+                                            [
+                                              _vm._v(" "),
+                                              _vm.menu1
+                                                ? _c("v-time-picker", {
+                                                    attrs: { "full-width": "" },
+                                                    on: {
+                                                      "click:minute": function(
+                                                        $event
+                                                      ) {
+                                                        return _vm.$refs.menu.save(
+                                                          _vm.editedItem.time
+                                                        )
+                                                      }
+                                                    },
+                                                    model: {
+                                                      value:
+                                                        _vm.editedItem.time,
+                                                      callback: function($$v) {
+                                                        _vm.$set(
+                                                          _vm.editedItem,
+                                                          "time",
+                                                          $$v
+                                                        )
+                                                      },
+                                                      expression:
+                                                        "editedItem.time"
+                                                    }
+                                                  })
+                                                : _vm._e()
+                                            ],
+                                            1
+                                          )
                                         ],
                                         1
                                       )
