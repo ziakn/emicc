@@ -49489,27 +49489,6 @@ var render = function() {
               )
             ],
             1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              attrs: {
-                bottom: "",
-                color: "primary",
-                dark: "",
-                fab: "",
-                fixed: "",
-                right: ""
-              },
-              on: {
-                click: function($event) {
-                  _vm.dialog = !_vm.dialog
-                }
-              }
-            },
-            [_c("v-icon", [_vm._v("mdi-plus")])],
-            1
           )
         ],
         1
