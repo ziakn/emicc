@@ -107,14 +107,14 @@
   }
   
   .txt1 {
-    font-family: Poppins-Regular;
+    font-family: Helvetica;
     font-size: 13px;
     line-height: 1.5;
     color: #999999;
   }
   
   .txt2 {
-    font-family: Poppins-Regular;
+    font-family: Helvetica;
     font-size: 13px;
     line-height: 1.5;
     color: #666666;
@@ -140,7 +140,7 @@
     align-items: center;
     padding: 15px;
     background: rgb(51,1,70);
-    background: linear-gradient(90deg, rgba(51,1,70,1) 4%, rgba(127,63,152,1) 79%, rgba(240,43,83,1) 100%);
+    background: linear-gradient(90deg, #e81d31 4%, #e3342f 79%, rgba(240,43,83,1) 100%); 100%);
   }
 
   .container-login150 {
@@ -156,7 +156,7 @@
     align-items: center;
     padding: 40px 0px 40px 0px;
     background: rgb(51,1,70);
-    background: linear-gradient(90deg, rgba(51,1,70,1) 4%, rgba(127,63,152,1) 79%, rgba(240,43,83,1) 100%);
+    background: linear-gradient(90deg, #e81d31 4%, #e3342f 79%, rgba(240,43,83,1) 100%); 100%);
   }
   
   
@@ -221,7 +221,7 @@
   }
   
   .login100-form-title {
-    font-family: Poppins-Bold;
+    font-family: Helvetica;
     font-size: 24px;
     color: #333333;
     line-height: 1.2;
@@ -233,7 +233,7 @@
   }
 
   .reg100-form-title {
-    font-family: Poppins-Bold;
+    font-family: Helvetica;
     font-size: 24px;
     color: #333333;
     line-height: 1.2;
@@ -344,7 +344,7 @@
   }
   
   .login100-form-btn {
-    font-family: Montserrat-Bold;
+    font-family: Helvetica;
     font-size: 15px;
     line-height: 1.5;
     color: #fff;
@@ -375,7 +375,7 @@
   
 
   .login150-form-btn {
-    font-family: Montserrat-Bold;
+    font-family: Helvetica;
     font-size: 15px;
     line-height: 1.5;
     color: #fff;

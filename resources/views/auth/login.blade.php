@@ -11,7 +11,7 @@
     <div class="container-login100">
         <div class="wrap-login100">
             <div class="login100-pic " >
-                <img src="/images/img-02.png"  alt="IMG">
+                <img src="/logo.png"  alt="IMG">
             </div>
 
             <form class="login100-form" method="POST" action="{{ route('login') }}">

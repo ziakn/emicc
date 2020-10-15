@@ -12,7 +12,7 @@
             <form class="regis100-form" method="POST" action="{{ route('register') }}">
                 @csrf
                 <div class="reg100-pic">
-                    <img src="/images/img-02.png" class="d-flex" alt="">
+                    <img src="/logo.png" class="d-flex" alt="">
                 </div>
                 <span class="reg100-form-title">
                     Registration
@@ -53,16 +53,16 @@
                     </div>
                 </div>
 
-                <div class="p-b-10 ">
+                {{-- <div class="p-b-10 ">
                     <div class="wrap-input100 " >
                         <input  type="text" name="company_name" placeholder="Company Name" value="{{ old('company_name') }}" required class="input100">
                         <span class="symbol-input100">
                             <i class="fa fa-building" aria-hidden="true"></i>
                         </span>
                     </div>
-                </div>
+                </div> --}}
 
-                <div class="p-b-10 row">
+                {{-- <div class="p-b-10 row">
                     <div class="wrap-input100 col-md-6 col-sm-12" >
                         <input type="text" name="city" placeholder="City" value="{{ old('city') }}" required  class="input100">
                         <span class="symbol-input100">
@@ -105,7 +105,7 @@
                     </div>
                     </div>
                 
-
+ --}}
 
                 <div class="p-b-10 row">
                     <div class="wrap-input100 col-md-6 col-sm-12" >
