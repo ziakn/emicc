@@ -1,5 +1,5 @@
 <template>
-    <v-content>
+    <v-main>
         <v-container fluid>
             <v-row justify="center">
                 <v-col sm="12" md="12" lg="12">
@@ -106,25 +106,26 @@
                                             >
                                         </v-card-title>
                                     </v-col>
-                                    <v-col cols="12" sm="6" md="4">
-                                        <v-select
-                                            v-model="editedItem.status"
-                                            label="Importance level"
-                                            :items="statusType"
-                                            item-text="name"
-                                            item-value="value"
-                                        ></v-select>
-                                    </v-col>
+                                    
                                 </v-row>
                                 <v-card-text>
                                       <v-row justify="center">
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.arta1"
                                                 label="A1"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.arta1status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                         <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -134,13 +135,23 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                       
+                                         <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.arta2"
                                                 label="A2"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.arta2status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                         <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -150,13 +161,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.arta3"
                                                 label="A3"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.arta3status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                         <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -166,13 +186,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.artb1"
                                                 label="B1"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.artb1status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                         <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -182,13 +211,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.artb2"
                                                 label="B2"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.artb2status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                            <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -198,13 +236,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.artb3"
                                                 label="B3"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.artb3status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                            <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -214,13 +261,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.artc1"
                                                 label="C1"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.artc1status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                            <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -230,13 +286,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                       <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.artc2"
                                                 label="C2"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.artc2status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                            <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -246,13 +311,22 @@
                                                 >Edit</v-btn
                                             >
                                         </v-col>
-                                        <v-col sm="12" md="12" lg="8">
+                                        <v-col sm="12" md="12" lg="6">
                                             <v-text-field
                                                 v-model="editedItem.artc3"
                                                 label="C3"
                                                 filled
                                             ></v-text-field>
                                         </v-col>
+                                         <v-col cols="12" sm="6" md="2">
+                                        <v-select
+                                            v-model="editedItem.artc3status"
+                                            label="Importance level"
+                                            :items="statusType"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
                                            <v-col sm="12" md="12" lg="2">
                                             <v-btn
                                                 color="primary"
@@ -265,7 +339,7 @@
                                     </v-row>
                                 </v-card-text>
                             </v-card>
-                              <v-btn
+                              <v-btn 
                                         bottom
                                         color="success"
                                         dark
@@ -292,10 +366,56 @@
                                 <v-card-text>
                                     <v-row justify="center">
                                     <v-col cols="12" sm="12" md="12">
+                                        <v-switch v-model="editedItem.notification" color="primary" inset  label="Notification"></v-switch>
+                                    </v-col>
+                                        <v-col cols="12" sm="12" md="12">
+                                        <v-select
+                                            v-model="editedItem.actionstatus"
+                                            label="Status"
+                                            :items="statusAction"
+                                            item-text="name"
+                                            item-value="value"
+                                            filled
+                                        ></v-select>
+                                    </v-col>
+                                         <v-col cols="12" sm="12" md="12">
+                                             
+                                        <v-select
+                                            v-model="editedItem.ringtone"
+                                            label="Ring Tone"
+                                            :items="ringtoneTask"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
+                                   
+                                      <v-col cols="12" sm="12" md="12">
+                                            <v-switch v-model="editedItem.notification_frequency" color="primary" inset  label="Repeat Notification"></v-switch>
+                                      </v-col>
+                                                    
+                                    <v-col cols="12" sm="12" md="12">
                                         <v-select
                                             v-model="editedItem.repeattask"
                                             label="Reapeted Task"
                                             :items="repeatTask"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
+                                    <v-col cols="12" sm="12" md="12" v-if="editedItem.repeattask=='Weekly'">
+                                        <v-select
+                                            v-model="editedItem.repeat_flag"
+                                            label="Reapeted Task"
+                                            :items="weeklyTask"
+                                            item-text="name"
+                                            item-value="value"
+                                        ></v-select>
+                                    </v-col>
+                                     <v-col cols="12" sm="12" md="12" v-if="editedItem.repeattask=='Monthly'">
+                                        <v-select
+                                            v-model="editedItem.repeat_flag"
+                                            label="Reapeted Task"
+                                            :items="monthlyTask"
                                             item-text="name"
                                             item-value="value"
                                         ></v-select>
@@ -330,6 +450,7 @@
                                                 ></v-time-picker>
                                             </v-menu>
                                         </v-col>
+                                        
                                         <!-- <v-col sm="12" md="12" lg="4">
                                             <v-textarea
                                                 v-model="editedItem.saturday"
@@ -416,7 +537,7 @@
 			:articulateObj="articulateObj"
             @send="getarticulateObj"
         ></Comunicate>
-    </v-content>
+    </v-main>
 </template>
 
 <script>
@@ -443,8 +564,8 @@ export default {
             artb: "",
             artc: "",
             date: "",
-            arta1: "",
             status: "",
+            arta1: "",
             arta2: "",
             arta3: "",
             artb1: "",
@@ -462,6 +583,25 @@ export default {
             friday: "",
             repeattask:'',
             time:'',
+            arta1status: 1,
+            arta2status: 1,
+            arta3status: 1,
+            artb1status: 1,
+            artb2status: 1,
+            artb3status: 1,
+            artc1status: 1,
+            artc2status: 1,
+            artc3status: 1,
+            repeat_flag:'',
+            ringtone:'',
+            actionstatus:'',
+            notification_frequency:'',
+            notification:'',
+            
+            
+
+            
+
         },
         articulateObj:
         {
@@ -476,10 +616,43 @@ export default {
             { name: "High", value: 2 },
             { name: "Very High", value: 3 }
         ],
+         statusAction: [
+            { name: "Low", value: 0 },
+            { name: "Medium", value: 1 },
+            { name: "High", value: 2 },
+            { name: "Very High", value: 3 }
+        ],
         repeatTask: [
             { name: "Daily", value: 'Daily' },
             { name: "Weekly", value: 'Weekly' },
             { name: "Monthly", value: 'Monthly' },
+        ],
+         ringtoneTask: [
+            { name: "ring1", value: 'ring1' },
+            { name: "ring2", value: 'ring2' },
+        ],
+        weeklyTask: [
+            { name: "Saturday", value: 'Saturday' },
+            { name: "Sunday", value: 'Sunday' },
+            { name: "Monday", value: 'Monday' },
+            { name: "Tuesday", value: 'Tuesday' },
+            { name: "Wednesday", value: 'Wednesday' },
+            { name: "Thursday", value: 'Thursday' },
+            { name: "Friday", value: 'Friday' },
+        ],
+         monthlyTask: [
+            { name: "January", value: 'January' },
+            { name: "February", value: 'February' },
+            { name: "March", value: 'March' },
+            { name: "April", value: 'April' },
+            { name: "May", value: 'May' },
+            { name: "June", value: 'June' },
+            { name: "July", value: 'July' },
+            { name: "August", value: 'August' },
+            { name: "September", value: 'September' },
+            { name: "October", value: 'October' },
+            { name: "November", value: 'November' },
+            { name: "December", value: 'December' },
         ],
     }),
 
@@ -512,7 +685,6 @@ export default {
                         this.editedItem.artc= data.artc
                         this.editedItem.date= data.date
                         this.editedItem.arta1= data.comunicate.arta1
-                        this.editedItem.status= data.comunicate.status
                         this.editedItem.arta2= data.comunicate.arta2
                         this.editedItem.arta3= data.comunicate.arta3
                         this.editedItem.artb1= data.comunicate.artb1
@@ -521,6 +693,17 @@ export default {
                         this.editedItem.artc1= data.comunicate.artc1
                         this.editedItem.artc2= data.comunicate.artc2
                         this.editedItem.artc3= data.comunicate.artc3
+
+                        this.editedItem.arta1status= data.comunicate.arta1status
+                        this.editedItem.arta2status= data.comunicate.arta2status
+                        this.editedItem.arta3status= data.comunicate.arta3status
+                        this.editedItem.artb1status= data.comunicate.artb1status
+                        this.editedItem.artb2status= data.comunicate.artb2status
+                        this.editedItem.artb3status= data.comunicate.artb3status
+                        this.editedItem.artc1status= data.comunicate.artc1status
+                        this.editedItem.artc2status= data.comunicate.artc2status
+                        this.editedItem.artc3status= data.comunicate.artc3status
+                        
                         this.editedItem.saturday= data.takecation.saturday
                         this.editedItem.sunday= data.takecation.sunday
                         this.editedItem.monday= data.takecation.monday
@@ -530,6 +713,13 @@ export default {
                         this.editedItem.friday= data.takecation.friday
                         this.editedItem.repeattask= data.takecation.repeattask
                         this.editedItem.time= data.takecation.time
+
+                        this.editedItem.repeat_flag= data.takecation.repeat_flag
+                        this.editedItem.ringtone= data.takecation.ringtone
+                        this.editedItem.actionstatus= data.takecation.actionstatus
+                        this.editedItem.notification_frequency= data.takecation.notification_frequency
+                        this.editedItem.notification= data.takecation.notification
+                        // this.editedItem.time= data.takecation.time
                         // console.log(data);
                 } 
                 catch (e) 

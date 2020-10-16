@@ -291,6 +291,7 @@ return response()->json($response);
          {
              array_push($user_id, $item['user_id']);
          }
+         array_push($user_id, $id);
  
          $data2 = Articulat::with('user')->with('comunicate')->with('takecation');
          if(isset($request->user_id) && !empty($request->user_id))

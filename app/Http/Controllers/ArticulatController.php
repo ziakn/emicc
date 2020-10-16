@@ -63,7 +63,15 @@ class ArticulatController extends Controller
                 'artc1' => $request->artc1,
                 'artc2' => $request->artc2,
                 'artc3' => $request->artc3,
-                'status' => $request->status,
+                'arta1status' => $request->arta1status,
+                'arta2status' => $request->arta2status,
+                'arta3status' => $request->arta3status,
+                'artb1status' => $request->artb1status,
+                'artb2status' => $request->artb2status,
+                'artb3status' => $request->artb3status,
+                'artc1status' => $request->artc1status,
+                'artc2status' => $request->artc2status,
+                'artc3status' => $request->artc3status,
             ]);
         
         TakeAction::create(
@@ -79,6 +87,12 @@ class ArticulatController extends Controller
                 'friday' => $request->friday,
                 'repeattask' => $request->repeattask,
                 'time' => $request->time,
+
+                'repeat_flag' => $request->repeat_flag,
+                'ringtone' => $request->ringtone,
+                'actionstatus' => $request->actionstatus,
+                'notification_frequency' => $request->notification_frequency==true?1:0,
+                'notification' => $request->notification==true?1:0
             ]);
 
 
@@ -136,7 +150,15 @@ class ArticulatController extends Controller
                 'artc1' => $request->artc1,
                 'artc2' => $request->artc2,
                 'artc3' => $request->artc3,
-                'status' => $request->status,
+                'arta1status' => $request->arta1status,
+                'arta2status' => $request->arta2status,
+                'arta3status' => $request->arta3status,
+                'artb1status' => $request->artb1status,
+                'artb2status' => $request->artb2status,
+                'artb3status' => $request->artb3status,
+                'artc1status' => $request->artc1status,
+                'artc2status' => $request->artc2status,
+                'artc3status' => $request->artc3status,
             ]);
         
         TakeAction::where('articulate_id',$id)->update(
@@ -150,6 +172,12 @@ class ArticulatController extends Controller
                 'friday' => $request->friday,
                 'repeattask' => $request->repeattask,
                 'time' => $request->time,
+
+                'repeat_flag' => $request->repeat_flag,
+                'ringtone' => $request->ringtone,
+                'actionstatus' => $request->actionstatus,
+                'notification_frequency' => $request->notification_frequency==true?1:0,
+                'notification' => $request->notification==true?1:0
             ]);
 
 

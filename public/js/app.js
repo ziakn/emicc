@@ -2136,12 +2136,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   props: {
     source: String
@@ -3276,7 +3270,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }))();
     },
     editItem: function editItem(item) {
-      this.$router.push('/enroll/useractdetail/' + item.id);
+      this.$router.push('/useract/useractadd/' + item.id);
     }
   }
 });
@@ -5695,6 +5689,127 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -5719,8 +5834,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         artb: "",
         artc: "",
         date: "",
-        arta1: "",
         status: "",
+        arta1: "",
         arta2: "",
         arta3: "",
         artb1: "",
@@ -5737,7 +5852,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         thursday: "",
         friday: "",
         repeattask: '',
-        time: ''
+        time: '',
+        arta1status: 1,
+        arta2status: 1,
+        arta3status: 1,
+        artb1status: 1,
+        artb2status: 1,
+        artb3status: 1,
+        artc1status: 1,
+        artc2status: 1,
+        artc3status: 1,
+        repeat_flag: '',
+        ringtone: '',
+        actionstatus: '',
+        notification_frequency: '',
+        notification: ''
       },
       articulateObj: {
         articulateData: null,
@@ -5746,6 +5875,19 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         artData: null
       },
       statusType: [{
+        name: "Low",
+        value: 0
+      }, {
+        name: "Medium",
+        value: 1
+      }, {
+        name: "High",
+        value: 2
+      }, {
+        name: "Very High",
+        value: 3
+      }],
+      statusAction: [{
         name: "Low",
         value: 0
       }, {
@@ -5767,6 +5909,72 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
       }, {
         name: "Monthly",
         value: 'Monthly'
+      }],
+      ringtoneTask: [{
+        name: "ring1",
+        value: 'ring1'
+      }, {
+        name: "ring2",
+        value: 'ring2'
+      }],
+      weeklyTask: [{
+        name: "Saturday",
+        value: 'Saturday'
+      }, {
+        name: "Sunday",
+        value: 'Sunday'
+      }, {
+        name: "Monday",
+        value: 'Monday'
+      }, {
+        name: "Tuesday",
+        value: 'Tuesday'
+      }, {
+        name: "Wednesday",
+        value: 'Wednesday'
+      }, {
+        name: "Thursday",
+        value: 'Thursday'
+      }, {
+        name: "Friday",
+        value: 'Friday'
+      }],
+      monthlyTask: [{
+        name: "January",
+        value: 'January'
+      }, {
+        name: "February",
+        value: 'February'
+      }, {
+        name: "March",
+        value: 'March'
+      }, {
+        name: "April",
+        value: 'April'
+      }, {
+        name: "May",
+        value: 'May'
+      }, {
+        name: "June",
+        value: 'June'
+      }, {
+        name: "July",
+        value: 'July'
+      }, {
+        name: "August",
+        value: 'August'
+      }, {
+        name: "September",
+        value: 'September'
+      }, {
+        name: "October",
+        value: 'October'
+      }, {
+        name: "November",
+        value: 'November'
+      }, {
+        name: "December",
+        value: 'December'
       }]
     };
   },
@@ -5787,7 +5995,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$route.params.id) {
-                  _context.next = 35;
+                  _context.next = 48;
                   break;
                 }
 
@@ -5807,7 +6015,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.artc = data.artc;
                 _this.editedItem.date = data.date;
                 _this.editedItem.arta1 = data.comunicate.arta1;
-                _this.editedItem.status = data.comunicate.status;
                 _this.editedItem.arta2 = data.comunicate.arta2;
                 _this.editedItem.arta3 = data.comunicate.arta3;
                 _this.editedItem.artb1 = data.comunicate.artb1;
@@ -5816,6 +6023,15 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.artc1 = data.comunicate.artc1;
                 _this.editedItem.artc2 = data.comunicate.artc2;
                 _this.editedItem.artc3 = data.comunicate.artc3;
+                _this.editedItem.arta1status = data.comunicate.arta1status;
+                _this.editedItem.arta2status = data.comunicate.arta2status;
+                _this.editedItem.arta3status = data.comunicate.arta3status;
+                _this.editedItem.artb1status = data.comunicate.artb1status;
+                _this.editedItem.artb2status = data.comunicate.artb2status;
+                _this.editedItem.artb3status = data.comunicate.artb3status;
+                _this.editedItem.artc1status = data.comunicate.artc1status;
+                _this.editedItem.artc2status = data.comunicate.artc2status;
+                _this.editedItem.artc3status = data.comunicate.artc3status;
                 _this.editedItem.saturday = data.takecation.saturday;
                 _this.editedItem.sunday = data.takecation.sunday;
                 _this.editedItem.monday = data.takecation.monday;
@@ -5824,23 +6040,29 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.thursday = data.takecation.thursday;
                 _this.editedItem.friday = data.takecation.friday;
                 _this.editedItem.repeattask = data.takecation.repeattask;
-                _this.editedItem.time = data.takecation.time; // console.log(data);
+                _this.editedItem.time = data.takecation.time;
+                _this.editedItem.repeat_flag = data.takecation.repeat_flag;
+                _this.editedItem.ringtone = data.takecation.ringtone;
+                _this.editedItem.actionstatus = data.takecation.actionstatus;
+                _this.editedItem.notification_frequency = data.takecation.notification_frequency;
+                _this.editedItem.notification = data.takecation.notification; // this.editedItem.time= data.takecation.time
+                // console.log(data);
 
-                _context.next = 35;
+                _context.next = 48;
                 break;
 
-              case 32:
-                _context.prev = 32;
+              case 45:
+                _context.prev = 45;
                 _context.t0 = _context["catch"](2);
 
                 _this.snacks("Failed", "Red");
 
-              case 35:
+              case 48:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 32]]);
+        }, _callee, null, [[2, 45]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -46929,20 +47151,6 @@ var render = function() {
       _vm._v(" "),
       _c(
         "v-btn",
-        { attrs: { icon: "" } },
-        [_c("v-icon", { attrs: { color: "primary" } }, [_vm._v("toc")])],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
-        { attrs: { icon: "" } },
-        [_c("v-icon", [_vm._v("notification_important")])],
-        1
-      ),
-      _vm._v(" "),
-      _c(
-        "v-btn",
         { attrs: { icon: "", large: "" } },
         [
           _c(
@@ -50829,7 +51037,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -51187,33 +51395,6 @@ var render = function() {
                                       )
                                     ],
                                     1
-                                  ),
-                                  _vm._v(" "),
-                                  _c(
-                                    "v-col",
-                                    { attrs: { cols: "12", sm: "6", md: "4" } },
-                                    [
-                                      _c("v-select", {
-                                        attrs: {
-                                          label: "Importance level",
-                                          items: _vm.statusType,
-                                          "item-text": "name",
-                                          "item-value": "value"
-                                        },
-                                        model: {
-                                          value: _vm.editedItem.status,
-                                          callback: function($$v) {
-                                            _vm.$set(
-                                              _vm.editedItem,
-                                              "status",
-                                              $$v
-                                            )
-                                          },
-                                          expression: "editedItem.status"
-                                        }
-                                      })
-                                    ],
-                                    1
                                   )
                                 ],
                                 1
@@ -51229,7 +51410,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51244,6 +51425,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.arta1"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.arta1status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta1status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.arta1status"
                                             }
                                           })
                                         ],
@@ -51284,7 +51499,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51299,6 +51514,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.arta2"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.arta2status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta2status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.arta2status"
                                             }
                                           })
                                         ],
@@ -51339,7 +51588,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51354,6 +51603,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.arta3"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.arta3status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "arta3status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.arta3status"
                                             }
                                           })
                                         ],
@@ -51394,7 +51677,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51409,6 +51692,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.artb1"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.artb1status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb1status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.artb1status"
                                             }
                                           })
                                         ],
@@ -51449,7 +51766,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51464,6 +51781,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.artb2"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.artb2status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb2status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.artb2status"
                                             }
                                           })
                                         ],
@@ -51504,7 +51855,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51519,6 +51870,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.artb3"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.artb3status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artb3status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.artb3status"
                                             }
                                           })
                                         ],
@@ -51559,7 +51944,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51574,6 +51959,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.artc1"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.artc1status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc1status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.artc1status"
                                             }
                                           })
                                         ],
@@ -51614,7 +52033,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51629,6 +52048,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.artc2"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.artc2status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc2status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.artc2status"
                                             }
                                           })
                                         ],
@@ -51669,7 +52122,7 @@ var render = function() {
                                       _c(
                                         "v-col",
                                         {
-                                          attrs: { sm: "12", md: "12", lg: "8" }
+                                          attrs: { sm: "12", md: "12", lg: "6" }
                                         },
                                         [
                                           _c("v-text-field", {
@@ -51684,6 +52137,40 @@ var render = function() {
                                                 )
                                               },
                                               expression: "editedItem.artc3"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "6",
+                                            md: "2"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Importance level",
+                                              items: _vm.statusType,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.artc3status,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "artc3status",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.artc3status"
                                             }
                                           })
                                         ],
@@ -51804,6 +52291,144 @@ var render = function() {
                                           }
                                         },
                                         [
+                                          _c("v-switch", {
+                                            attrs: {
+                                              color: "primary",
+                                              inset: "",
+                                              label: "Notification"
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.editedItem.notification,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "notification",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.notification"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Status",
+                                              items: _vm.statusAction,
+                                              "item-text": "name",
+                                              "item-value": "value",
+                                              filled: ""
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.editedItem.actionstatus,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "actionstatus",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.actionstatus"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
+                                        },
+                                        [
+                                          _c("v-select", {
+                                            attrs: {
+                                              label: "Ring Tone",
+                                              items: _vm.ringtoneTask,
+                                              "item-text": "name",
+                                              "item-value": "value"
+                                            },
+                                            model: {
+                                              value: _vm.editedItem.ringtone,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "ringtone",
+                                                  $$v
+                                                )
+                                              },
+                                              expression: "editedItem.ringtone"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
+                                        },
+                                        [
+                                          _c("v-switch", {
+                                            attrs: {
+                                              color: "primary",
+                                              inset: "",
+                                              label: "Repeat Notification"
+                                            },
+                                            model: {
+                                              value:
+                                                _vm.editedItem
+                                                  .notification_frequency,
+                                              callback: function($$v) {
+                                                _vm.$set(
+                                                  _vm.editedItem,
+                                                  "notification_frequency",
+                                                  $$v
+                                                )
+                                              },
+                                              expression:
+                                                "editedItem.notification_frequency"
+                                            }
+                                          })
+                                        ],
+                                        1
+                                      ),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
+                                        },
+                                        [
                                           _c("v-select", {
                                             attrs: {
                                               label: "Reapeted Task",
@@ -51827,6 +52452,80 @@ var render = function() {
                                         ],
                                         1
                                       ),
+                                      _vm._v(" "),
+                                      _vm.editedItem.repeattask == "Weekly"
+                                        ? _c(
+                                            "v-col",
+                                            {
+                                              attrs: {
+                                                cols: "12",
+                                                sm: "12",
+                                                md: "12"
+                                              }
+                                            },
+                                            [
+                                              _c("v-select", {
+                                                attrs: {
+                                                  label: "Reapeted Task",
+                                                  items: _vm.weeklyTask,
+                                                  "item-text": "name",
+                                                  "item-value": "value"
+                                                },
+                                                model: {
+                                                  value:
+                                                    _vm.editedItem.repeat_flag,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.editedItem,
+                                                      "repeat_flag",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression:
+                                                    "editedItem.repeat_flag"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        : _vm._e(),
+                                      _vm._v(" "),
+                                      _vm.editedItem.repeattask == "Monthly"
+                                        ? _c(
+                                            "v-col",
+                                            {
+                                              attrs: {
+                                                cols: "12",
+                                                sm: "12",
+                                                md: "12"
+                                              }
+                                            },
+                                            [
+                                              _c("v-select", {
+                                                attrs: {
+                                                  label: "Reapeted Task",
+                                                  items: _vm.monthlyTask,
+                                                  "item-text": "name",
+                                                  "item-value": "value"
+                                                },
+                                                model: {
+                                                  value:
+                                                    _vm.editedItem.repeat_flag,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.editedItem,
+                                                      "repeat_flag",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression:
+                                                    "editedItem.repeat_flag"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        : _vm._e(),
                                       _vm._v(" "),
                                       _c(
                                         "v-col",
@@ -114611,6 +115310,16 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
         title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.useract.add'),
         type: onlyAdminMentor,
         status: false
+      }
+    }, {
+      path: 'useractadd',
+      name: 'useractadd',
+      component: _components_dashboard_useract_AddList_vue__WEBPACK_IMPORTED_MODULE_15__["default"],
+      meta: {
+        icon: 'dashboard',
+        title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.useract.add'),
+        type: mentorOnly,
+        status: true
       }
     }]
   }, {

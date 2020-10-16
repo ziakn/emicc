@@ -185,7 +185,7 @@ async getUserFilter()
 	
 	editItem(item) 
 	{
-		 this.$router.push('/enroll/useractdetail/'+item.id);
+		 this.$router.push('/useract/useractadd/'+item.id);
     },
 
     

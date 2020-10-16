@@ -5,12 +5,6 @@
       <span class="hidden-sm-and-down">EMICC</span>
     </v-toolbar-title>
     <div class="flex-grow-1"></div>
-    <v-btn icon>
-      <v-icon color="primary">toc</v-icon>
-    </v-btn>
-    <v-btn icon>
-      <v-icon>notification_important</v-icon>
-    </v-btn>
     <v-btn icon large>
       <v-avatar size="32px" item>
         <v-img :src="dataUser.image" :alt="dataUser.name"></v-img>

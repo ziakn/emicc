@@ -121,6 +121,18 @@ export default new Router({
         
                     }
                 },
+                {
+                    path: 'useractadd',
+                    name: 'useractadd',
+                    component: useractadd,
+                    meta: {
+                        icon: 'dashboard',
+                        title: i18n.t('message.useract.add'),
+                        type: mentorOnly,
+                        status: true,
+        
+                    }
+                },
             ]
         },
         {
