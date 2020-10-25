@@ -607,7 +607,7 @@ export default {
                     }
                     else
                     {
-                        this.snacks("Data Once Used", "red");
+                        this.snacks("Failed", "red");
                     }                
                 } 
                 catch (e) 
@@ -630,7 +630,7 @@ export default {
                     }
                     else
                     {
-                        this.snacks("Data Once Used", "red");
+                        this.snacks("Failed", "red");
                     }                
                 } 
                 catch (e) 

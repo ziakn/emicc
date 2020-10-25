@@ -19,7 +19,8 @@ class ArticulatController extends Controller
     
     public function index()
     {
-        $data = Articulat::orderBy('id','DESC')->get();
+        $auth_id = Auth::id();
+        $data = Articulat::orderBy('id','DESC')->where('user_id',$auth_id)->get();
         return $data;
     }
 

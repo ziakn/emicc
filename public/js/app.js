@@ -2951,7 +2951,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (data.status) {
                   _this2.snacks("Successfully Done", "green");
                 } else {
-                  _this2.snacks("Data Once Used", "red");
+                  _this2.snacks("Failed", "red");
                 }
 
                 _context2.next = 15;
@@ -2983,7 +2983,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (_data.status) {
                   _this2.snacks("Successfully Done", "green");
                 } else {
-                  _this2.snacks("Data Once Used", "red");
+                  _this2.snacks("Failed", "red");
                 }
 
                 _context2.next = 28;
@@ -6153,7 +6153,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (data.status) {
                   _this2.snacks("Successfully Done", "green");
                 } else {
-                  _this2.snacks("Data Once Used", "red");
+                  _this2.snacks("Failed", "red");
                 }
 
                 _context2.next = 15;
@@ -6185,7 +6185,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 if (_data.status) {
                   _this2.snacks("Successfully Done", "green");
                 } else {
-                  _this2.snacks("Data Once Used", "red");
+                  _this2.snacks("Failed", "red");
                 }
 
                 _context2.next = 28;
@@ -115132,7 +115132,7 @@ webpackContext.id = "./resources/js/i18n/language sync recursive ^\\.\\/.*\\.lan
 /*! exports provided: main, leftbar, account, bussinessdocument, services, setting, dashboard, user, enroll, useract, contactus, aboutus, faqs, mentor, default */
 /***/ (function(module) {
 
-module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Enroll\",\"mentor\":\"Mentors\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\",\"add\":\"Add\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"},\"mentor\":{\"list\":\"List\"}}");
+module.exports = JSON.parse("{\"main\":{\"welcome\":\"welcome \",\"english\":\"English\",\"arabic\":\"Arabic\",\"login\":\"Login\",\"imageupload\":\"Image Uploader\"},\"leftbar\":{\"dashboard\":\"Dashboard\",\"overview\":\"Overview\",\"services\":\"Services\",\"user\":\"User\",\"userlist\":\"User List\",\"account\":\"Account\",\"invoice\":\"Invoices\",\"bussinessdocument\":\"Business Doc\",\"setting\":\"Setting\",\"profile\":\"Profile\",\"vendor\":\"Vendor\",\"lead\":\"Lead\",\"voucher\":\"Voucher\",\"shop\":\"Shop\",\"product\":\"Product\",\"category\":\"Category\",\"branch\":\"Branch\",\"page\":\"Page Setting\",\"report\":\"Report\",\"order\":\"Order\",\"useract\":\"Act\",\"contactus\":\"Contact Us\",\"aboutus\":\"About Us\",\"faqs\":\"FAQS\",\"enroll\":\"Act\",\"mentor\":\"Mentors\"},\"account\":{\"ledgerhead\":\"Ledger Head\",\"ledgerlist\":\"Ledger List\"},\"bussinessdocument\":{\"doclist\":\"Document List\"},\"services\":{\"webhosting\":\"Web Hosting\",\"wordpresshosting\":\"WordPress Hosting\",\"servers\":\"Servers \"},\"setting\":{\"profile\":\"Profile\"},\"dashboard\":{\"view\":\"Today's View\",\"totalview\":\"Total View\",\"pendingorder\":\"Pending Order\",\"deliverorder\":\"Total Delivered\",\"product\":\"Products\",\"newcustomer\":\"New Customer\",\"newinvoice\":\"New Invoices\",\"renewalinvoive\":\"Invoice Expiry\",\"ticket\":\"New Ticket\",\"monthlyearning\":\"Monthly Earning\",\"salebycountry\":\"Sale By Country\",\"client\":\"Clients\",\"newinvocies\":\"New Invoices\"},\"user\":{\"title\":\"User\",\"list\":\"User List\",\"usertype\":\"User Type\",\"password\":\"Password\",\"deliveryagent\":\"Delivery Agent List\",\"customerlist\":\"Customer List\"},\"enroll\":{\"userenroll\":\"User List\"},\"useract\":{\"list\":\"Act List\",\"add\":\"Add\"},\"contactus\":{\"list\":\"List\"},\"aboutus\":{\"list\":\"List\"},\"faqs\":{\"list\":\"List\"},\"mentor\":{\"list\":\"List\"}}");
 
 /***/ }),
 
