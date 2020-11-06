@@ -79,13 +79,7 @@ class ArticulatController extends Controller
             [
                 'articulate_id' => $create->id,
                 'user_id' => $auth_id,
-                'saturday' => $request->saturday,
-                'sunday' => $request->sunday,
-                'monday' => $request->monday,
-                'tuesday' => $request->tuesday,
-                'wednesday' => $request->wednesday,
-                'thursday' => $request->thursday,
-                'friday' => $request->friday,
+                'action_date' => $request->action_date,
                 'repeattask' => $request->repeattask,
                 'time' => $request->time,
 
