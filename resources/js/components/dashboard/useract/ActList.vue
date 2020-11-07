@@ -1,5 +1,5 @@
 <template>
-	<v-content >
+	<v-main >
 		<v-container fluid> 
 			<v-overlay :value="showFullLoading" :absolute="absolute">
 				<v-progress-circular indeterminate size="64"></v-progress-circular>
@@ -33,9 +33,6 @@
 					</v-data-table>
 				</v-col>
 			</v-row>
-			<v-btn bottom color="primary" dark fab fixed right @click="dialog = !dialog">
-				<v-icon>mdi-plus</v-icon>
-			</v-btn>
 		</v-container>
 		<v-snackbar
 			v-model="snackbar"
@@ -49,7 +46,7 @@
 			<v-btn color="white" text @click="snackbar = false">Close</v-btn>
 		</v-snackbar>
 		<DeleteModal :trigger="isDelete" :title="deleteTitle" :body="deleteBody" @request="remove"></DeleteModal>
-	</v-content>
+	</v-main>
 </template>
 
 <script>

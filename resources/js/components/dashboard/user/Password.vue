@@ -1,5 +1,5 @@
 <template>
-	<v-content >
+	<v-main >
 		<v-container fluid> 
 			<v-overlay :value="showFullLoading" :absolute="absolute">
 				<v-progress-circular indeterminate size="64"></v-progress-circular>
@@ -95,7 +95,7 @@
 		>
 			{{ snacktext }}
 		</v-snackbar>
-	</v-content>
+	</v-main>
 </template>
 
 <script>

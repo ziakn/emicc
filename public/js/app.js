@@ -5089,9 +5089,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
-//
-//
-//
 
 
 
@@ -5844,13 +5841,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         artc1: "",
         artc2: "",
         artc3: "",
-        saturday: "",
-        sunday: "",
-        monday: "",
-        tuesday: "",
-        wednesday: "",
-        thursday: "",
-        friday: "",
         repeattask: '',
         time: '',
         arta1status: 1,
@@ -5995,7 +5985,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$route.params.id) {
-                  _context.next = 48;
+                  _context.next = 41;
                   break;
                 }
 
@@ -6032,13 +6022,6 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.artc1status = data.comunicate.artc1status;
                 _this.editedItem.artc2status = data.comunicate.artc2status;
                 _this.editedItem.artc3status = data.comunicate.artc3status;
-                _this.editedItem.saturday = data.takecation.saturday;
-                _this.editedItem.sunday = data.takecation.sunday;
-                _this.editedItem.monday = data.takecation.monday;
-                _this.editedItem.tuesday = data.takecation.tuesday;
-                _this.editedItem.wednesday = data.takecation.wednesday;
-                _this.editedItem.thursday = data.takecation.thursday;
-                _this.editedItem.friday = data.takecation.friday;
                 _this.editedItem.repeattask = data.takecation.repeattask;
                 _this.editedItem.time = data.takecation.time;
                 _this.editedItem.repeat_flag = data.takecation.repeat_flag;
@@ -6048,21 +6031,21 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.notification = data.takecation.notification; // this.editedItem.time= data.takecation.time
                 // console.log(data);
 
-                _context.next = 48;
+                _context.next = 41;
                 break;
 
-              case 45:
-                _context.prev = 45;
+              case 38:
+                _context.prev = 38;
                 _context.t0 = _context["catch"](2);
 
                 _this.snacks("Failed", "Red");
 
-              case 48:
+              case 41:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 45]]);
+        }, _callee, null, [[2, 38]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -48962,7 +48945,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -49547,7 +49530,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -49859,7 +49842,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -50194,7 +50177,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -50812,7 +50795,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",
@@ -50939,27 +50922,6 @@ var render = function() {
                 1
               )
             ],
-            1
-          ),
-          _vm._v(" "),
-          _c(
-            "v-btn",
-            {
-              attrs: {
-                bottom: "",
-                color: "primary",
-                dark: "",
-                fab: "",
-                fixed: "",
-                right: ""
-              },
-              on: {
-                click: function($event) {
-                  _vm.dialog = !_vm.dialog
-                }
-              }
-            },
-            [_c("v-icon", [_vm._v("mdi-plus")])],
             1
           )
         ],
@@ -52794,7 +52756,7 @@ var render = function() {
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
   return _c(
-    "v-content",
+    "v-main",
     [
       _c(
         "v-container",

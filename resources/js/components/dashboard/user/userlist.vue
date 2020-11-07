@@ -1,5 +1,5 @@
 <template>
-	<v-content >
+	<v-main >
 		<v-container fluid> 
 			<v-overlay :value="showFullLoading" :absolute="absolute">
 				<v-progress-circular indeterminate size="64"></v-progress-circular>
@@ -182,7 +182,7 @@
 			{{ snacktext }}
 			<v-btn color="white" text @click="snackbar = false">Close</v-btn>
 		</v-snackbar>
-	</v-content>
+	</v-main>
 </template>
 
 <script>

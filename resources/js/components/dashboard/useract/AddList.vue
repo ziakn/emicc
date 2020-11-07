@@ -574,13 +574,6 @@ export default {
             artc1: "",
             artc2: "",
             artc3: "",
-            saturday: "",
-            sunday: "",
-            monday: "",
-            tuesday: "",
-            wednesday: "",
-            thursday: "",
-            friday: "",
             repeattask:'',
             time:'',
             arta1status: 1,
@@ -704,13 +697,7 @@ export default {
                         this.editedItem.artc2status= data.comunicate.artc2status
                         this.editedItem.artc3status= data.comunicate.artc3status
                         
-                        this.editedItem.saturday= data.takecation.saturday
-                        this.editedItem.sunday= data.takecation.sunday
-                        this.editedItem.monday= data.takecation.monday
-                        this.editedItem.tuesday= data.takecation.tuesday
-                        this.editedItem.wednesday= data.takecation.wednesday
-                        this.editedItem.thursday= data.takecation.thursday
-                        this.editedItem.friday= data.takecation.friday
+                     
                         this.editedItem.repeattask= data.takecation.repeattask
                         this.editedItem.time= data.takecation.time
 
