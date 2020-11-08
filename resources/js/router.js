@@ -212,7 +212,7 @@ export default new Router({
 
         },
         {
-            path: '/contactus/contactuslist',
+            path: '/contactus',
             name: 'contactus',
             component: contactuslist,
             meta: {
