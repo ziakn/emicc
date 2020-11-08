@@ -82,7 +82,6 @@ class ArticulatController extends Controller
                 'action_date' => $request->action_date,
                 'repeattask' => $request->repeattask,
                 'time' => $request->time,
-
                 'repeat_flag' => $request->repeat_flag,
                 'ringtone' => $request->ringtone,
                 'actionstatus' => $request->actionstatus,
@@ -158,16 +157,10 @@ class ArticulatController extends Controller
         
         TakeAction::where('articulate_id',$id)->update(
             [
-                'saturday' => $request->saturday,
-                'sunday' => $request->sunday,
-                'monday' => $request->monday,
-                'tuesday' => $request->tuesday,
-                'wednesday' => $request->wednesday,
-                'thursday' => $request->thursday,
-                'friday' => $request->friday,
+             
                 'repeattask' => $request->repeattask,
                 'time' => $request->time,
-
+                'action_date' => $request->action_date,
                 'repeat_flag' => $request->repeat_flag,
                 'ringtone' => $request->ringtone,
                 'actionstatus' => $request->actionstatus,

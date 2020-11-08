@@ -5807,6 +5807,37 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
@@ -5816,6 +5847,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
     return {
       date: new Date().toISOString().substr(0, 10),
       menu2: false,
+      menu3: false,
       menu1: false,
       loading: false,
       picker: null,
@@ -5856,7 +5888,8 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
         ringtone: '',
         actionstatus: '',
         notification_frequency: '',
-        notification: ''
+        notification: '',
+        action_date: ''
       },
       articulateObj: {
         articulateData: null,
@@ -5985,7 +6018,7 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
             switch (_context.prev = _context.next) {
               case 0:
                 if (!_this.$route.params.id) {
-                  _context.next = 41;
+                  _context.next = 42;
                   break;
                 }
 
@@ -6028,24 +6061,25 @@ function _asyncToGenerator(fn) { return function () { var self = this, args = ar
                 _this.editedItem.ringtone = data.takecation.ringtone;
                 _this.editedItem.actionstatus = data.takecation.actionstatus;
                 _this.editedItem.notification_frequency = data.takecation.notification_frequency;
-                _this.editedItem.notification = data.takecation.notification; // this.editedItem.time= data.takecation.time
+                _this.editedItem.notification = data.takecation.notification;
+                _this.editedItem.action_date = data.takecation.action_date; // this.editedItem.time= data.takecation.time
                 // console.log(data);
 
-                _context.next = 41;
+                _context.next = 42;
                 break;
 
-              case 38:
-                _context.prev = 38;
+              case 39:
+                _context.prev = 39;
                 _context.t0 = _context["catch"](2);
 
                 _this.snacks("Failed", "Red");
 
-              case 41:
+              case 42:
               case "end":
                 return _context.stop();
             }
           }
-        }, _callee, null, [[2, 38]]);
+        }, _callee, null, [[2, 39]]);
       }))();
     },
     editItem: function editItem(item) {
@@ -52488,6 +52522,111 @@ var render = function() {
                                             1
                                           )
                                         : _vm._e(),
+                                      _vm._v(" "),
+                                      _c(
+                                        "v-col",
+                                        {
+                                          attrs: {
+                                            cols: "12",
+                                            sm: "12",
+                                            md: "12"
+                                          }
+                                        },
+                                        [
+                                          _c(
+                                            "v-menu",
+                                            {
+                                              attrs: {
+                                                "close-on-content-click": false,
+                                                "nudge-right": 40,
+                                                transition: "scale-transition",
+                                                "offset-y": "",
+                                                "min-width": "290px"
+                                              },
+                                              scopedSlots: _vm._u([
+                                                {
+                                                  key: "activator",
+                                                  fn: function(ref) {
+                                                    var on = ref.on
+                                                    var attrs = ref.attrs
+                                                    return [
+                                                      _c(
+                                                        "v-text-field",
+                                                        _vm._g(
+                                                          _vm._b(
+                                                            {
+                                                              attrs: {
+                                                                label:
+                                                                  "Select Date",
+                                                                "prepend-icon":
+                                                                  "event",
+                                                                readonly: "",
+                                                                required: ""
+                                                              },
+                                                              model: {
+                                                                value:
+                                                                  _vm.editedItem
+                                                                    .action_date,
+                                                                callback: function(
+                                                                  $$v
+                                                                ) {
+                                                                  _vm.$set(
+                                                                    _vm.editedItem,
+                                                                    "action_date",
+                                                                    $$v
+                                                                  )
+                                                                },
+                                                                expression:
+                                                                  "editedItem.action_date"
+                                                              }
+                                                            },
+                                                            "v-text-field",
+                                                            attrs,
+                                                            false
+                                                          ),
+                                                          on
+                                                        )
+                                                      )
+                                                    ]
+                                                  }
+                                                }
+                                              ]),
+                                              model: {
+                                                value: _vm.menu3,
+                                                callback: function($$v) {
+                                                  _vm.menu3 = $$v
+                                                },
+                                                expression: "menu3"
+                                              }
+                                            },
+                                            [
+                                              _vm._v(" "),
+                                              _c("v-date-picker", {
+                                                on: {
+                                                  input: function($event) {
+                                                    _vm.menu3 = false
+                                                  }
+                                                },
+                                                model: {
+                                                  value:
+                                                    _vm.editedItem.action_date,
+                                                  callback: function($$v) {
+                                                    _vm.$set(
+                                                      _vm.editedItem,
+                                                      "action_date",
+                                                      $$v
+                                                    )
+                                                  },
+                                                  expression:
+                                                    "editedItem.action_date"
+                                                }
+                                              })
+                                            ],
+                                            1
+                                          )
+                                        ],
+                                        1
+                                      ),
                                       _vm._v(" "),
                                       _c(
                                         "v-col",

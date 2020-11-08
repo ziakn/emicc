@@ -421,6 +421,37 @@
                                         ></v-select>
                                     </v-col>
                                     <v-col cols="12" sm="12" md="12">
+                                        <v-menu
+                                                v-model="menu3"
+                                                :close-on-content-click="false"
+                                                :nudge-right="40"
+                                                transition="scale-transition"
+                                                offset-y
+                                                min-width="290px"
+                                            >
+                                                <template
+                                                    v-slot:activator="{
+                                                        on,
+                                                        attrs
+                                                    }"
+                                                >
+                                                    <v-text-field
+                                                        v-model="editedItem.action_date"
+                                                        label="Select Date"
+                                                        prepend-icon="event"
+                                                        readonly
+                                                        v-bind="attrs"
+                                                        v-on="on"
+                                                        required
+                                                    ></v-text-field>
+                                                </template>
+                                                <v-date-picker
+                                                    v-model="editedItem.action_date"
+                                                    @input="menu3 = false"
+                                                ></v-date-picker>
+                                            </v-menu>
+                                    </v-col>
+                                    <v-col cols="12" sm="12" md="12">
                                             <v-menu
                                                 ref="menu"
                                                 v-model="menu1"
@@ -549,6 +580,7 @@ export default {
     data: () => ({
         date: new Date().toISOString().substr(0, 10),
         menu2: false,
+        menu3: false,
         menu1: false,
         loading: false,
         picker: null,
@@ -590,7 +622,7 @@ export default {
             actionstatus:'',
             notification_frequency:'',
             notification:'',
-            
+            action_date:'',
             
 
             
@@ -706,6 +738,7 @@ export default {
                         this.editedItem.actionstatus= data.takecation.actionstatus
                         this.editedItem.notification_frequency= data.takecation.notification_frequency
                         this.editedItem.notification= data.takecation.notification
+                        this.editedItem.action_date= data.takecation.action_date
                         // this.editedItem.time= data.takecation.time
                         // console.log(data);
                 } 
