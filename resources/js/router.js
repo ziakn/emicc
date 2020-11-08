@@ -212,9 +212,9 @@ export default new Router({
 
         },
         {
-            path: '/contactus',
+            path: '/contactus/contactuslist',
             name: 'contactus',
-            component: contactus,
+            component: contactuslist,
             meta: {
                 icon: 'perm_phone_msg',
                 title: i18n.t('message.leftbar.contactus'),

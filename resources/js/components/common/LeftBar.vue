@@ -82,7 +82,9 @@ data: function () {
           return flag;
 
       },
-    handleGoToMenu(d) {
+    handleGoToMenu(d) 
+    {
+      // console.log(d)
       return d;
     },
     showChild(link) {
