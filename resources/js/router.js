@@ -165,7 +165,7 @@ export default new Router({
             name: 'useract',
             component: useract,
             meta: {
-                icon: 'account_circle',
+                icon: 'edit',
                 title: i18n.t('message.leftbar.useract'),
                 type: customerOnly,
                 status: true,
@@ -241,7 +241,7 @@ export default new Router({
             name: 'aboutus',
             component: aboutus,
             meta: {
-                icon: 'question_answer',
+                icon: 'info',
                 title: i18n.t('message.leftbar.aboutus'),
                 type: allOnly,
                 status: true,
@@ -266,7 +266,7 @@ export default new Router({
             name: 'faqs',
             component: faqs,
             meta: {
-                icon: 'report_problem',
+                icon: 'contact_support',
                 title: i18n.t('message.leftbar.faqs'),
                 type: allOnly,
                 status: true,

@@ -115310,7 +115310,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'useract',
     component: _components_dashboard_useract_Home_vue__WEBPACK_IMPORTED_MODULE_5__["default"],
     meta: {
-      icon: 'account_circle',
+      icon: 'edit',
       title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.useract'),
       type: customerOnly,
       status: true
@@ -115372,7 +115372,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'aboutus',
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
-      icon: 'question_answer',
+      icon: 'info',
       title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.aboutus'),
       type: allOnly,
       status: true
@@ -115393,7 +115393,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     name: 'faqs',
     component: _components_dashboard_setting_Home_vue__WEBPACK_IMPORTED_MODULE_3__["default"],
     meta: {
-      icon: 'report_problem',
+      icon: 'contact_support',
       title: _i18n__WEBPACK_IMPORTED_MODULE_18__["default"].t('message.leftbar.faqs'),
       type: allOnly,
       status: true
