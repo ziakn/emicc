@@ -20,10 +20,10 @@ use Illuminate\Support\Facades\Route;
 
 Route::post('/userregister', 'UserController@register');
 Route::post('/login', 'API\UserController@login');
-Route::get('/logout', 'UserController@logout')->middleware('auth:api');
-Route::get('/account', 'UserController@account')->middleware('auth:api');
-Route::post('/updateprofile', 'UserController@update')->middleware('auth:api');
-Route::post('/changepassword', 'UserController@changePass')->middleware('auth:api');
-Route::post('/avatar', 'UserController@avatar')->middleware('auth:api');
+Route::get('/logout', 'API\UserController@logout')->middleware('auth:api');
+Route::get('/account', 'API\UserController@account')->middleware('auth:api');
+Route::post('/updateprofile', 'API\UserController@update')->middleware('auth:api');
+Route::post('/changepassword', 'API\UserController@changePass')->middleware('auth:api');
+Route::post('/avatar', 'API\UserController@avatar')->middleware('auth:api');
 
 Route::resource('/articulate', 'API\ArticulatController')->middleware('auth:api');
