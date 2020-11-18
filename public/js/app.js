@@ -115766,7 +115766,7 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
       }
     }]
   }, {
-    path: '/contactus/contactuslist',
+    path: '/contactus',
     name: 'contactus',
     component: _components_dashboard_setting_ContactUs_vue__WEBPACK_IMPORTED_MODULE_10__["default"],
     meta: {
