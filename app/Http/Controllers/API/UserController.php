@@ -13,6 +13,7 @@ use App\User;
 use Session;
 use Redirect;
 use DateTime;
+use URL;
 use Mail;
 class UserController extends Controller
 {
@@ -27,7 +28,7 @@ class UserController extends Controller
         $validator = Validator::make($request->all(), [
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
-            'password' => ['required', 'string', 'min:8'],
+            'password' => ['required', 'string', 'min:8', 'confirmed'],
             'contact' => ['required', 'string','min:8'],
         ]);
         if ($validator->fails()) {
@@ -39,6 +40,7 @@ class UserController extends Controller
         DB::beginTransaction();
         try {
             $data=new User;
+            $data->admin_id=1;
             $data->name=$request->input('name');
             $data->email=$request->input('email');
             $data->contact=$request->input('contact');
@@ -116,27 +118,17 @@ class UserController extends Controller
     }
 
     
-    public function update(Request $request, $id)
+    public function update(Request $request)
    {
        
-        if(Auth::id()!=$id)
-        {
-            $response['data'] ='Auth id and Prams is didnt matched';
-            return $response;
-
-        }
-        $validator = Validator::make($request->all(), [
-            'name' => ['required', 'string', 'max:255'],
-            'contact' => ['required', 'string','min:8'],
-        ]);
-        if ($validator->fails()) {
-            $response['data'] = $validator->errors();
-            return response()->json($response);
-        }
+        $id=Auth::id();
+        $response=array();
+        $response['status']=false;
+        $response['data']='';
         DB::beginTransaction();
         try {
         
-            $response['data']=User::where('id',$id)->update(
+            User::where('id',$id)->update(
                 [
                     'name' => $request->name,
                     'contact' => $request->contact,
@@ -144,6 +136,7 @@ class UserController extends Controller
         
             DB::commit();
             $response['status']=true;
+            $response['data']=User::find($id);
         } catch (\Exception $e) {
             $response['data']=$e->getMessage();
             DB::rollback();

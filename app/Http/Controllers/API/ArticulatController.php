@@ -91,6 +91,7 @@ class ArticulatController extends Controller
 
             DB::commit();
             $response['status'] = true;
+            $response['status'] = Articulat::with('comunicate')->with('takecation')->find($create->id);
         } catch (\Exception $e) {
             $response['data']=$e->getMessage();
             $response['status'] = false;
@@ -169,6 +170,7 @@ class ArticulatController extends Controller
 
             DB::commit();
             $response['status'] = true;
+            $response['status'] = Articulat::with('comunicate')->with('takecation')->find($id);
         } catch (\Exception $e) {
             $response['data']=$e->getMessage();
             $response['status'] = false;
@@ -192,7 +194,7 @@ class ArticulatController extends Controller
                 }
                 else
                 {
-                    $response['data']="Data Not deleted";  
+                    $response['data']="Data Not Found";  
                 }
                 return response()->json($response);
     }

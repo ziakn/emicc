@@ -27,3 +27,8 @@ Route::post('/changepassword', 'API\UserController@changePass')->middleware('aut
 Route::post('/avatar', 'API\UserController@avatar')->middleware('auth:api');
 
 Route::resource('/articulate', 'API\ArticulatController')->middleware('auth:api');
+
+
+
+// forget password
+Route::post('forget', 'Auth\ForgotPasswordController@getResetToken');
