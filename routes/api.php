@@ -19,6 +19,7 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::post('/userregister', 'API\UserController@register');
+Route::post('/mentorregister', 'API\MentorController@register');
 Route::post('/login', 'API\UserController@login');
 Route::get('/logout', 'API\UserController@logout')->middleware('auth:api');
 Route::get('/account', 'API\UserController@account')->middleware('auth:api');
