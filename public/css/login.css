@@ -327,7 +327,7 @@
   }
   
   .input100:focus + .focus-input100 + .symbol-input100 {
-    color: #7f3f98;
+    color: #f70707;
     padding-left: 28px;
   }
   
