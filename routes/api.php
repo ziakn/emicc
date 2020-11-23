@@ -29,7 +29,10 @@ Route::post('/avatar', 'API\UserController@avatar')->middleware('auth:api');
 
 Route::resource('/articulate', 'API\ArticulatController')->middleware('auth:api');
 
-
+//get mentor
+Route::get('/getmentor', 'API\MentorController@getMentor')->middleware('auth:api');
+Route::get('/getmentoruser', 'API\MentorController@getMentorUser')->middleware('auth:api');
+Route::post('/choosementor', 'API\MentorController@store')->middleware('auth:api');
 
 // forget password
 Route::post('forget', 'Auth\ForgotPasswordController@getResetToken');

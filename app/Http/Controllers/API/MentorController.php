@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Http;
 use DB;
 use Auth;
 use App\User;
+use App\MentorUser;
 use Session;
 use Redirect;
 use DateTime;
@@ -58,5 +59,44 @@ class MentorController extends Controller
             'status' => $status
         ],200);
    }
+
+   public function getMentor()
+   {
+       $data = User::where('type',2)->get();
+       return $data;
+   }
+
+   public function getMentorUser()
+   {
+       $user_id = Auth::id();
+       $data = MentorUser::where('user_id',$user_id)->with('mentor')->first();
+       return $data;
+   }
+
+   public function store(Request $request)
+    {
+        // dd($request->all());
+        $response=array();
+        $response['status']=false;
+        $response['data'] ='';
+        DB::beginTransaction();
+        try {
+             
+        $auth_id = Auth::id();
+        MentorUser::where('user_id',$auth_id)->delete();
+        $create=MentorUser::create(
+        [
+            'user_id' => $auth_id,
+            'mentor_id' => $request->mentor_id,
+        ]);
+            DB::commit();
+            $response['status'] = true;
+        } catch (\Exception $e) {
+            $response['data']=$e->getMessage();
+            $response['status'] = false;
+            DB::rollback();
+        }
+        return response()->json($response);
+    }
 
 }
